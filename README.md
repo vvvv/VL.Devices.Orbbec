@@ -1,4 +1,4 @@
-# VL.NewLibrary.Template
+# VL.Devices.Orbbec
 What this library is used for
 
 For use with vvvv, the visual live-programming environment for .NET: http://visualprogramming.net
