@@ -85,7 +85,7 @@ namespace VL.Devices.TheImagingSource
 
         public void Dispose()
         {
-            _ic4LibSubscription.Dispose();
+            //_ic4LibSubscription.Dispose();
         }
     }
 }
