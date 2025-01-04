@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using VL.Core.CompilerServices;
 
-namespace VL.Devices.TheImagingSource
+namespace VL.Devices.Orbbec
 {
     /// <summary>
     /// 

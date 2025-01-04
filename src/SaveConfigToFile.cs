@@ -3,7 +3,7 @@ using System.Reactive.Disposables;
 using System.Reactive.Linq;
 using Path = VL.Lib.IO.Path;
 
-namespace VL.Devices.TheImagingSource
+namespace VL.Devices.Orbbec
 {
     [ProcessNode(Name = "ConfigWriter")]
     public class SaveConfigToFile : IDisposable
@@ -28,7 +28,7 @@ namespace VL.Devices.TheImagingSource
                     {
                         try
                         {
-                            a.PropertyMap.Serialize(filePath.ToString());
+                            //a.PropertyMap.Serialize(filePath.ToString());
                         }
                         catch (Exception e)
                         {

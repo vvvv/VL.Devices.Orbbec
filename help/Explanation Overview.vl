@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Document xmlns:p="property" xmlns:r="reflection" Id="CAVFpoIAlKAP2FSfLJ5iwH" LanguageVersion="2024.6.7-0310-g6266ca42c1" Version="0.128">
+  <NugetDependency Id="BKMlRTjek6INClI8OTKWOU" Location="VL.CoreLib" Version="2024.6.7-0310-g6266ca42c1" />
+  <Patch Id="I6Ez2fp0vrKPQRZJfnIg0Q">
+    <Canvas Id="C7qdhnAsgeIOOnvJ4TQ040" DefaultCategory="Main" BordersChecked="false" CanvasType="FullCategory" />
+    <!--
+
+    ************************ Application ************************
+
+-->
+    <Node Name="Application" Bounds="100,100" Id="QClsbOZtHxlNfLuSceE9H2">
+      <p:NodeReference>
+        <Choice Kind="ContainerDefinition" Name="Process" />
+        <CategoryReference Kind="Category" Name="Primitive" />
+      </p:NodeReference>
+      <Patch Id="AIaQUBKXZZONqZSfIQfKsK">
+        <Canvas Id="G61AeaQQh54NlDbhJaepCo" CanvasType="Group">
+          <Node Bounds="499,410,65,19" Id="IVM9nKSeYoDO7uLAXJ9CrG">
+            <p:NodeReference LastCategoryFullName="Devices.Orbbec" LastDependency="VL.Devices.Orbbec.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <CategoryReference Kind="Category" Name="Orbbec" />
+              <Choice Kind="ProcessAppFlag" Name="VideoIn" />
+            </p:NodeReference>
+            <Pin Id="Mv67S5Zg4tXLyt8ChTO1JF" Name="Node Context" Kind="InputPin" IsHidden="true" />
+            <Pin Id="I52dTfIAtC7LsCfuVjjxGT" Name="Device" Kind="InputPin" />
+            <Pin Id="JogwuyHbwwRNkukQ8tWUde" Name="Resolution" Kind="InputPin" />
+            <Pin Id="AoPapfggVbEMMSak4fFFan" Name="FPS" Kind="InputPin" />
+            <Pin Id="BSK7b0j9LZAPoVTZNaensv" Name="Enabled" Kind="InputPin" />
+            <Pin Id="Lae73bhpIzkMaVqYFIhmER" Name="Output" Kind="OutputPin" />
+            <Pin Id="Oduz06qOzlVOASx6godSew" Name="Info" Kind="OutputPin" />
+          </Node>
+          <Pad Id="FKgs5EtPPYjMDwJhdQugAg" Comment="Enabled" Bounds="592,376,35,35" ShowValueBox="true" isIOBox="true" Value="False">
+            <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
+              <Choice Kind="ImmutableTypeFlag" Name="Boolean" />
+            </p:TypeAnnotation>
+            <p:ValueBoxSettings>
+              <p:buttonmode p:Assembly="VL.UI.Forms" p:Type="VL.HDE.PatchEditor.Editors.ButtonModeEnum">Toggle</p:buttonmode>
+            </p:ValueBoxSettings>
+          </Pad>
+          <Node Bounds="489,535,123,19" Id="LZoD7BHCUCCM8LbVMLpMM9">
+            <p:NodeReference LastCategoryFullName="Stride.Video" LastDependency="VL.Stride.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <Choice Kind="ProcessAppFlag" Name="VideoSourceToTexture" />
+            </p:NodeReference>
+            <Pin Id="F9vsiN1Iu8VPFJ3nJmxeE1" Name="Node Context" Kind="InputPin" IsHidden="true" />
+            <Pin Id="Hrx1DGGIch6NvamgyQCZRd" Name="Input" Kind="InputPin" />
+            <Pin Id="UUYb3Cvi3jYMhiaBjbMNgJ" Name="Fallback" Kind="InputPin" />
+            <Pin Id="RYhcUgfPRrlNe7xxnAtg6p" Name="Prefer Push" Kind="InputPin" />
+            <Pin Id="PSpJNSLg4ZqPMaAMTcXKEe" Name="Prefer Gpu" Kind="InputPin" />
+            <Pin Id="BgcvZckhcN4Nf6olynutTc" Name="Output" Kind="OutputPin" />
+          </Node>
+          <Pad Id="UqrWutYFS00Nqs6Z8pPDx1" Comment="Device" Bounds="492,348,56,15" ShowValueBox="true" isIOBox="true" Value="Default">
+            <p:TypeAnnotation LastCategoryFullName="Devices.Orbbec" LastDependency="VL.Devices.Orbbec.vl">
+              <Choice Kind="TypeFlag" Name="OrbbecDevice" />
+            </p:TypeAnnotation>
+          </Pad>
+        </Canvas>
+        <Patch Id="KHKDxmU0opWNfbuaAhYK6t" Name="Create" />
+        <Patch Id="R77olOyhdd0MkPMvt4DYRI" Name="Update" />
+        <ProcessDefinition Id="AUbeYLfPXP2Nf05XnL30CY">
+          <Fragment Id="R6wFQDTvCOLOE7WzyTmWXO" Patch="KHKDxmU0opWNfbuaAhYK6t" Enabled="true" />
+          <Fragment Id="CPtgwPsZS5eLUO134qrfVT" Patch="R77olOyhdd0MkPMvt4DYRI" Enabled="true" />
+        </ProcessDefinition>
+        <Link Id="EKi3WusoEWqMFEgAoOSauc" Ids="FKgs5EtPPYjMDwJhdQugAg,BSK7b0j9LZAPoVTZNaensv" />
+        <Link Id="RjY0MEtUiERM9bkZeGDyxy" Ids="Lae73bhpIzkMaVqYFIhmER,Hrx1DGGIch6NvamgyQCZRd" />
+        <Link Id="JIaHD6iS4szOiAT2EuMK2y" Ids="UqrWutYFS00Nqs6Z8pPDx1,I52dTfIAtC7LsCfuVjjxGT" />
+      </Patch>
+    </Node>
+  </Patch>
+  <NugetDependency Id="POPUKPMTwkBNBN20KvVtwv" Location="VL.Devices.Orbbec" Version="0.0.0" />
+  <NugetDependency Id="OGeUjzDmc7pNq5kXIeMc2B" Location="VL.Video" Version="2024.6.7-0310-g6266ca42c1" />
+  <NugetDependency Id="Uja0h1SS9VLMCuntKTvxgQ" Location="VL.Stride" Version="2024.6.7-0310-g6266ca42c1" />
+</Document>

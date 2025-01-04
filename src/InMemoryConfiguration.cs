@@ -1,9 +1,9 @@
 ﻿using Microsoft.Extensions.Logging;
 using System.Collections.Immutable;
-using VL.Devices.TheImagingSource.Advanced;
+using VL.Devices.Orbbec.Advanced;
 
-namespace VL.Devices.TheImagingSource
-{
+namespace VL.Devices.Orbbec
+{/*
     [ProcessNode(Name = "ConfigProperty")]
     public class ConfigNode<T> : IConfiguration
     {
@@ -142,5 +142,5 @@ namespace VL.Devices.TheImagingSource
         {
             original.Configure(propertyMap);
         }
-    }
+    }*/
 }

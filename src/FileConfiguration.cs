@@ -1,11 +1,10 @@
-﻿using ic4;
-using Path = VL.Lib.IO.Path;
+﻿using Path = VL.Lib.IO.Path;
 using System.Collections.Immutable;
-using VL.Devices.TheImagingSource.Advanced;
+using VL.Devices.Orbbec.Advanced;
 
-namespace VL.Devices.TheImagingSource
+namespace VL.Devices.Orbbec
 {
-    [ProcessNode(Name = "ConfigReader")]
+    /*[ProcessNode(Name = "ConfigReader")]
     public class FileConfigurationNode
     {
         IConfiguration? configuration;
@@ -24,7 +23,7 @@ namespace VL.Devices.TheImagingSource
             return configuration!;
         }
     }
-
+    
     class FileConfiguration : IConfiguration
     {
         public Path File { get; }
@@ -37,5 +36,5 @@ namespace VL.Devices.TheImagingSource
         {
             if(File.Exists) propertyMap.DeSerialize(File.ToString());
         }
-    }
+    }*/
 }

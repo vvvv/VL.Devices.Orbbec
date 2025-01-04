@@ -61,7 +61,8 @@ public class OrbbecDeviceDefinition : DynamicEnumDefinitionBase<OrbbecDeviceDefi
 
         var result = new Dictionary<string, object?>()
         {
-            { "Default", devices.DeviceCount() > 0 ? devices.GetDevice(0) : null }
+            { "Default", devices.DeviceCount() > 0 ? new DeviceInfo(0, devices.SerialNumber(0)) : null }
+            //{ "Default", devices.DeviceCount() > 0 ? devices.GetDevice(0) : null }
         };
 
         for (uint i = 0; i < devices.DeviceCount(); i++)

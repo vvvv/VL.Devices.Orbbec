@@ -1,26 +1,25 @@
 ﻿using Microsoft.Extensions.Logging;
 using System.ComponentModel;
-using ic4;
 using VL.Lib.Basics.Video;
 using VL.Model;
 using VL.Devices.Orbbec.Advanced;
 using System.Reactive.Subjects;
 using System.Reactive.Linq;
 
-namespace VL.Devices.TheImagingSource
+namespace VL.Devices.Orbbec
 {
     [ProcessNode]
     public class VideoIn : IVideoSource2, IDisposable
     {
         private readonly ILogger _logger;
-        private readonly IDisposable _ic4LibSubscription;
+        //private readonly IDisposable _ic4LibSubscription;
         private readonly BehaviorSubject<Acquisition?> _aquicitionStarted = new BehaviorSubject<Acquisition?>(null);
 
         private int _changedTicket;
         private DeviceInfo? _device;
         private Int2 _resolution;
         private int _fps;
-        private IConfiguration? _configuration;
+        //private IConfiguration? _configuration;
         private bool _enabled;
 
 
@@ -30,7 +29,7 @@ namespace VL.Devices.TheImagingSource
         public VideoIn([Pin(Visibility = PinVisibility.Hidden)] NodeContext nodeContext)
         {
             _logger = nodeContext.GetLogger();
-            _ic4LibSubscription = ImagingSourceLibrary.Use();
+            //_ic4LibSubscription = ImagingSourceLibrary.Use();
         }
 
         [return: Pin(Name = "Output")]
@@ -38,17 +37,17 @@ namespace VL.Devices.TheImagingSource
             OrbbecDevice? device, 
             [DefaultValue("640, 480")] Int2 resolution,
             [DefaultValue("30")] int FPS,
-            IConfiguration configuration,
+            //IConfiguration configuration,
             [DefaultValue("true")] bool enabled,
             out string Info)
         {
             // By comparing the device info we can be sure that on re-connect of the device we see the change
-            if (!Equals(device?.Tag, _device) || resolution != _resolution || FPS != _fps || configuration != _configuration || enabled != _enabled)
+            if (!Equals(device?.Tag, _device) || enabled != _enabled || resolution != _resolution || FPS != _fps)// || configuration != _configuration)
             {
                 _device = device?.Tag as DeviceInfo;
                 _resolution = resolution;
                 _fps = FPS;
-                _configuration = configuration;
+                //_configuration = configuration;
                 _enabled = enabled;
                 _changedTicket++;
             }
@@ -70,8 +69,8 @@ namespace VL.Devices.TheImagingSource
 
             try
             {
-                var result = Acquisition.Start(this, device, _logger, _resolution, _fps, _configuration);
-                _aquicitionStarted.OnNext(result);
+                var result = Acquisition.Start(this, device, _logger, _resolution, _fps);//, _configuration
+                //_aquicitionStarted.OnNext(result);
                 return result;
             }
             catch (Exception e)

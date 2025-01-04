@@ -2,7 +2,7 @@
 using System.Reactive.Disposables;
 using System.Reactive.Linq;
 
-namespace VL.Devices.TheImagingSource
+namespace VL.Devices.Orbbec
 {
     [ProcessNode(Name = "GetProperty")]
     public class GetProperty : IDisposable

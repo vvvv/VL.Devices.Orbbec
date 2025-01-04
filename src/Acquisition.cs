@@ -7,14 +7,36 @@ using System.Text;
 using VL.Devices.Orbbec.Advanced;
 using Orbbec;
 
-namespace VL.Devices.TheImagingSource
+namespace VL.Devices.Orbbec
 {
     internal class Acquisition : IVideoPlayer
     {
-        public static Acquisition? Start(VideoIn videoIn, DeviceInfo deviceInfo, ILogger logger, Int2 resolution, int fps, IConfiguration? configuration)
+        public static Acquisition? Start(VideoIn videoIn, Advanced.DeviceInfo deviceInfo, ILogger logger, Int2 resolution, int fps)//, IConfiguration? configuration)
         {
-            logger.Log(LogLevel.Information, "Starting image acquisition on {device}", deviceInfo.UniqueName);
+            logger.Log(LogLevel.Information, "Starting image acquisition on {device}", deviceInfo.SerialNumber);
 
+            var contextHandle = ContextManager.GetHandle().DisposeBy(AppHost.Global);
+
+            Device device = contextHandle.Resource.QueryDeviceList().GetDevice(deviceInfo.Index);
+
+            Pipeline pipe = new Pipeline(device);
+
+            try
+            {
+                Config config = new Config();
+                config.EnableVideoStream(StreamType.OB_STREAM_COLOR, resolution.X, resolution.Y, fps, Format.OB_FORMAT_BGRA);
+                //config.EnableVideoStream(StreamType.OB_STREAM_DEPTH);
+
+                pipe.Start(config);
+
+                logger.Log(LogLevel.Information, $"Stream started for device {deviceInfo.SerialNumber}");
+            }
+            catch (Exception ex)
+            {
+                logger.Log(LogLevel.Error, $"Error starting stream for device {deviceInfo.SerialNumber}: {ex.Message}");
+                return null;
+            }
+            /*
             var grabber = new Grabber();
             grabber.DeviceOpen(deviceInfo);
 
@@ -79,9 +101,10 @@ namespace VL.Devices.TheImagingSource
             videoIn.Info += $"\r\n" + sb.ToString();
             */
 
-            return new Acquisition(logger, grabber, sink, new Int2((int)width.Value, (int)height.Value), videoIn);
+            return new Acquisition(contextHandle, logger, pipe, resolution, videoIn);
         }
-        
+
+        /*
         static void CollectPropertiesInfos(SpreadBuilder<PropertyInfo> spb, PropertyMap propertyMap)
         {
             var props = propertyMap.All
@@ -154,26 +177,24 @@ namespace VL.Devices.TheImagingSource
                 sb.AppendLine($"\r\n{offset}{p.Name} ({p.Type}) Description: {p.Description}");
             }
             return;
-        }
+        }*/
 
         private IResourceHandle<Context> _contextHandle;
         private readonly ILogger _logger;
-        private readonly Grabber _grabber;
-        private readonly SnapSink _sink;
+        private readonly Pipeline _pipeline;
         private readonly Int2 _resolution;
 
-        public Acquisition(ILogger logger, IResourceHandle<Context> contextHandle, Grabber grabber, SnapSink sink, Int2 resolution, VideoIn videoIn)//, int fps)
+        public Acquisition(IResourceHandle<Context> contextHandle, ILogger logger, Pipeline pipeline, Int2 resolution, VideoIn videoIn)//, int fps)
         {
             _contextHandle = contextHandle;
             _logger = logger;
-            _grabber = grabber;
-            _sink = sink;
+            _pipeline = pipeline;
             _resolution = resolution; 
         }
 
         public bool IsDisposed { get; private set; }
 
-        public PropertyMap PropertyMap => _grabber.DevicePropertyMap;
+        //public PropertyMap PropertyMap => _grabber.DevicePropertyMap;
 
         //public PixelFormat PixelFormat { get; set; } = new PixelFormat(PixelFormatName.BGRa8);
 
@@ -188,9 +209,9 @@ namespace VL.Devices.TheImagingSource
 
             try
             {
-                _grabber.StreamStop();
-                _grabber.DeviceClose();
-                _grabber.Dispose();
+                _pipeline.Stop();
+                //_pipeline.GetDevice().Dispose();
+                _pipeline.Dispose();
 
                 _contextHandle.Dispose();
             }
@@ -200,24 +221,37 @@ namespace VL.Devices.TheImagingSource
             }
         }
 
-        public unsafe IResourceProvider<VideoFrame>? GrabVideoFrame()
+        public unsafe IResourceProvider<Lib.Basics.Video.VideoFrame>? GrabVideoFrame()
         {
-            var image = _sink.SnapSingle(TimeSpan.FromSeconds(1.5)); //should be long enough for the lowest frame rate
+            Frameset frames = _pipeline.WaitForFrames(100);
+            
+            var colorFrame = frames?.GetColorFrame();
 
-            var width = _resolution.X;
-            var height = _resolution.Y;
-            var stride = image.BufferSize;
+            if (colorFrame == null)
+            {
+                return null;
+            }
 
-            var memoryOwner = new UnmanagedMemoryManager<BgraPixel>(image.Ptr, (int)image.BufferSize);
+            //colorFrame.
 
-            var pitch = (int)image.Pitch - width * sizeof(BgraPixel);
-            var memory = memoryOwner.Memory.AsMemory2D(0, height, width, pitch);
+            //var image = _sink.SnapSingle(TimeSpan.FromSeconds(1.5)); //should be long enough for the lowest frame rate
+
+            var width = colorFrame.GetWidth();
+            var height = colorFrame.GetHeight();
+            var stride = colorFrame.GetDataSize();
+
+            //colorFrame.GetFormat()
+
+            var memoryOwner = new UnmanagedMemoryManager<BgraPixel>(colorFrame.GetDataPtr(), (int)colorFrame.GetDataSize());
+
+            var pitch = width * sizeof(BgraPixel);
+            var memory = memoryOwner.Memory.AsMemory2D(0, (int)height, (int)width, (int)pitch);
             var videoFrame = new VideoFrame<BgraPixel>(memory);
-            return ResourceProvider.Return(videoFrame, (memoryOwner, image),
+            return ResourceProvider.Return(videoFrame, (memoryOwner, colorFrame),
                 static x =>
                 {
                     ((IDisposable)x.memoryOwner).Dispose();
-                    x.image.Dispose();
+                    x.colorFrame.Dispose();
                 });
         }
     }
