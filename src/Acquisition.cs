@@ -23,8 +23,12 @@ namespace VL.Devices.Orbbec
 
             try
             {
+                
+                //StreamProfile colorProfile = VideoStreamProfile.Create(StreamType.OB_STREAM_COLOR, Format.OB_FORMAT_BGRA, (uint)resolution.X, (uint)resolution.Y, (uint)fps);//pipe.GetStreamProfileList(SensorType.OB_SENSOR_COLOR).GetVideoStreamProfile(0, 0, Format.OB_FORMAT_RGB, 0);
+                StreamProfile colorProfile = pipe.GetStreamProfileList(SensorType.OB_SENSOR_COLOR).GetVideoStreamProfile(0, 0, Format.OB_FORMAT_RGB, 0);
                 Config config = new Config();
-                config.EnableVideoStream(StreamType.OB_STREAM_COLOR, resolution.X, resolution.Y, fps, Format.OB_FORMAT_BGRA);
+                //config.EnableVideoStream(SensorType.OB_SENSOR_COLOR, 0, 0, 0, Format.OB_FORMAT_BGRA);
+                config.EnableStream(colorProfile);
                 //config.EnableVideoStream(StreamType.OB_STREAM_DEPTH);
 
                 pipe.Start(config);
@@ -240,7 +244,7 @@ namespace VL.Devices.Orbbec
             var height = colorFrame.GetHeight();
             var stride = colorFrame.GetDataSize();
 
-            //colorFrame.GetFormat()
+            var format = colorFrame.GetFormat();
 
             var memoryOwner = new UnmanagedMemoryManager<BgraPixel>(colorFrame.GetDataPtr(), (int)colorFrame.GetDataSize());
 

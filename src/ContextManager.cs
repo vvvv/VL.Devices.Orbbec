@@ -5,9 +5,7 @@ namespace VL.Devices.Orbbec
 {
     internal static class ContextManager
     {
-        private static IResourceProvider<Context> s_contextProvider = ResourceProvider.New(() => new Context())
-            .Publish()
-            .ShareInParallel();
+        private static IResourceProvider<Context> s_contextProvider = ResourceProvider.New(() => new Context());
 
         public static IResourceHandle<Context> GetHandle()
         {
