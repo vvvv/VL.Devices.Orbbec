@@ -15,21 +15,34 @@ namespace VL.Devices.Orbbec
         {
             logger.Log(LogLevel.Information, "Starting image acquisition on {device}", deviceInfo.SerialNumber);
 
-            var contextHandle = ContextManager.GetHandle().DisposeBy(AppHost.Global);
+            var contextHandle = ContextManager.GetHandle();
 
             Device device = contextHandle.Resource.QueryDeviceList().GetDevice(deviceInfo.Index);
-
             Pipeline pipe = new Pipeline(device);
+
+            StreamProfileList profilesColor = device.GetSensor(SensorType.OB_SENSOR_COLOR).GetStreamProfileList();
+            for (int i = 0; i < profilesColor.ProfileCount(); i++)
+            {
+                var pC = profilesColor.GetProfile(i).As<VideoStreamProfile>();
+
+                if (pC != null && pC.GetFormat() == Format.OB_FORMAT_BGRA)
+                    logger.Log(LogLevel.Information, "Color: " + pC.GetWidth().ToString() + "x" + pC.GetHeight().ToString() + " FPS: " + pC.GetFPS().ToString());
+            }
+
+            /*StreamProfileList profilesDepth = pipe.GetStreamProfileList(SensorType.OB_SENSOR_DEPTH);//device.GetSensor(SensorType.OB_SENSOR_DEPTH).GetStreamProfileList();
+            for (int i = 0; i < profilesDepth.ProfileCount(); i++)
+            {
+                var pD = profilesDepth.GetProfile(i).As<VideoStreamProfile>();
+
+                if (pD != null && pD.GetFormat() == Format.OB_FORMAT_RGB_POINT)
+                    logger.Log(LogLevel.Information, "Depth: " + pD.GetWidth().ToString() + "x" + pD.GetHeight().ToString() + " FPS: " + pD.GetFPS().ToString());
+            }*/
 
             try
             {
-                
-                //StreamProfile colorProfile = VideoStreamProfile.Create(StreamType.OB_STREAM_COLOR, Format.OB_FORMAT_BGRA, (uint)resolution.X, (uint)resolution.Y, (uint)fps);//pipe.GetStreamProfileList(SensorType.OB_SENSOR_COLOR).GetVideoStreamProfile(0, 0, Format.OB_FORMAT_RGB, 0);
-                StreamProfile colorProfile = pipe.GetStreamProfileList(SensorType.OB_SENSOR_COLOR).GetVideoStreamProfile(0, 0, Format.OB_FORMAT_RGB, 0);
+                StreamProfile colorProfile = pipe.GetStreamProfileList(SensorType.OB_SENSOR_COLOR).GetVideoStreamProfile(resolution.X, resolution.Y, Format.OB_FORMAT_BGRA, fps);
                 Config config = new Config();
-                //config.EnableVideoStream(SensorType.OB_SENSOR_COLOR, 0, 0, 0, Format.OB_FORMAT_BGRA);
                 config.EnableStream(colorProfile);
-                //config.EnableVideoStream(StreamType.OB_STREAM_DEPTH);
 
                 pipe.Start(config);
 
@@ -184,6 +197,7 @@ namespace VL.Devices.Orbbec
         }*/
 
         private IResourceHandle<Context> _contextHandle;
+        private IResourceProvider<Frameset> _frames;
         private readonly ILogger _logger;
         private readonly Pipeline _pipeline;
         private readonly Int2 _resolution;
@@ -193,14 +207,15 @@ namespace VL.Devices.Orbbec
             _contextHandle = contextHandle;
             _logger = logger;
             _pipeline = pipeline;
-            _resolution = resolution; 
+            _resolution = resolution;
+
+            _frames = ResourceProvider.New(() => _pipeline.WaitForFrames(1000))
+                .ShareInParallel();
         }
 
         public bool IsDisposed { get; private set; }
 
         //public PropertyMap PropertyMap => _grabber.DevicePropertyMap;
-
-        //public PixelFormat PixelFormat { get; set; } = new PixelFormat(PixelFormatName.BGRa8);
 
         public void Dispose()
         {
@@ -227,12 +242,40 @@ namespace VL.Devices.Orbbec
 
         public unsafe IResourceProvider<Lib.Basics.Video.VideoFrame>? GrabVideoFrame()
         {
-            Frameset frames = _pipeline.WaitForFrames(100);
-            
-            var colorFrame = frames?.GetColorFrame();
+           /* return _frames.Bind(frameset =>
+            {
+                if (frameset is null)
+                    return null;
 
+                var colorFrame = frameset.GetColorFrame();
+                var width = colorFrame.GetWidth();
+                var height = colorFrame.GetHeight();
+                var stride = colorFrame.GetDataSize();
+
+                var format = colorFrame.GetFormat();
+
+                var memoryOwner = new UnmanagedMemoryManager<BgraPixel>(colorFrame.GetDataPtr(), (int)colorFrame.GetDataSize());
+
+                var pitch = width * sizeof(BgraPixel);
+                var memory = memoryOwner.Memory.AsMemory2D(0, (int)height, (int)width, 0);
+                var videoFrame = new VideoFrame<BgraPixel>(memory);
+                return ResourceProvider.Return(videoFrame, memoryOwner,
+                    static x =>
+                    {
+                        ((IDisposable)x).Dispose();
+                    });
+            });*/
+
+
+            Frameset frames = _pipeline.WaitForFrames(100);
+
+            if (frames == null)
+                return null;
+            
+            var colorFrame = frames.GetColorFrame();
             if (colorFrame == null)
             {
+                frames.Dispose();
                 return null;
             }
 
@@ -249,13 +292,13 @@ namespace VL.Devices.Orbbec
             var memoryOwner = new UnmanagedMemoryManager<BgraPixel>(colorFrame.GetDataPtr(), (int)colorFrame.GetDataSize());
 
             var pitch = width * sizeof(BgraPixel);
-            var memory = memoryOwner.Memory.AsMemory2D(0, (int)height, (int)width, (int)pitch);
+            var memory = memoryOwner.Memory.AsMemory2D(0, (int)height, (int)width, 0);
             var videoFrame = new VideoFrame<BgraPixel>(memory);
-            return ResourceProvider.Return(videoFrame, (memoryOwner, colorFrame),
+            return ResourceProvider.Return(videoFrame, (memoryOwner, frames),
                 static x =>
                 {
                     ((IDisposable)x.memoryOwner).Dispose();
-                    x.colorFrame.Dispose();
+                    x.frames.Dispose();
                 });
         }
     }
