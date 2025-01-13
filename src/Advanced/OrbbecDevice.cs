@@ -56,7 +56,7 @@ public class OrbbecDeviceDefinition : DynamicEnumDefinitionBase<OrbbecDeviceDefi
                 { "Default", null! }
             };
         }
-        //_context.Resource?.EnableNetDeviceEnumeration(true);
+        _context.Resource.EnableNetDeviceEnumeration(true);
         DeviceList devices = _context.Resource.QueryDeviceList();
 
         var result = new Dictionary<string, object?>()
