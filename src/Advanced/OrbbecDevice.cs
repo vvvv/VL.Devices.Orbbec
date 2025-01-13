@@ -32,7 +32,7 @@ public class OrbbecDeviceDefinition : DynamicEnumDefinitionBase<OrbbecDeviceDefi
         try
         {
             _context = ContextManager.GetHandle().DisposeBy(AppHost.Global);
-           
+            
             _context.Resource?.SetDeviceChangedCallback((removedList, addedList) =>
             {
                 _devicesChanged.OnNext(this);
@@ -56,7 +56,7 @@ public class OrbbecDeviceDefinition : DynamicEnumDefinitionBase<OrbbecDeviceDefi
                 { "Default", null! }
             };
         }
-
+        //_context.Resource?.EnableNetDeviceEnumeration(true);
         DeviceList devices = _context.Resource.QueryDeviceList();
 
         var result = new Dictionary<string, object?>()

@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Document xmlns:p="property" xmlns:r="reflection" Id="CAVFpoIAlKAP2FSfLJ5iwH" LanguageVersion="2025.7.0-0002-g93330f7cea" Version="0.128">
-  <NugetDependency Id="BKMlRTjek6INClI8OTKWOU" Location="VL.CoreLib" Version="2025.7.0-0002-g93330f7cea" />
+<Document xmlns:p="property" xmlns:r="reflection" Id="CAVFpoIAlKAP2FSfLJ5iwH" LanguageVersion="2024.6.7-0310-g6266ca42c1" Version="0.128">
+  <NugetDependency Id="BKMlRTjek6INClI8OTKWOU" Location="VL.CoreLib" Version="2024.6.7-0310-g6266ca42c1" />
   <Patch Id="I6Ez2fp0vrKPQRZJfnIg0Q">
     <Canvas Id="C7qdhnAsgeIOOnvJ4TQ040" DefaultCategory="Main" BordersChecked="false" CanvasType="FullCategory" />
     <!--
@@ -60,7 +60,7 @@
               <Choice Kind="ProcessAppFlag" Name="TextureWindow" />
             </p:NodeReference>
             <Pin Id="VIhwOE1QkciMljvzz6U478" Name="Node Context" Kind="InputPin" IsHidden="true" />
-            <Pin Id="AtooG0XYzDOMP9EGDVrCpV" Name="Bounds" Kind="InputPin" DefaultValue="869, 126, 786, 432" IsHidden="true" />
+            <Pin Id="AtooG0XYzDOMP9EGDVrCpV" Name="Bounds" Kind="InputPin" DefaultValue="1563, 200, 775, 694" IsHidden="true" />
             <Pin Id="LF3oYxoEoN7NLcA08fZ7Xf" Name="Save Bounds" Kind="InputPin" IsHidden="true" />
             <Pin Id="McpQ2nBxUsgOmYHQ59TU4d" Name="Back Buffer Format" Kind="InputPin" IsHidden="true" />
             <Pin Id="ObR7ND2PviLLENZhI4OC2i" Name="Bound to Document" Kind="InputPin" IsHidden="true" />
@@ -80,16 +80,17 @@
             <Pin Id="OMxt8tfWqa4LIWibkgjMv9" Name="Input Source" Kind="OutputPin" />
             <Pin Id="Q8MNn11KucjOp4shV1K2su" Name="Back Buffer" Kind="OutputPin" IsHidden="true" />
           </Node>
-          <Pad Id="Cqys0aXhv7ZPPgMpcODiib" Comment="Resolution" Bounds="275,114,35,28" ShowValueBox="true" isIOBox="true" Value="1280, 720">
-            <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
-              <Choice Kind="TypeFlag" Name="Int2" />
-            </p:TypeAnnotation>
-          </Pad>
           <Pad Id="Vo1ergQE8oBONU3E8FhgGf" Comment="FPS" Bounds="375,140,35,15" ShowValueBox="true" isIOBox="true" Value="30">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="TypeFlag" Name="Integer32" />
             </p:TypeAnnotation>
           </Pad>
+          <Pad Id="CWpL1XDqsHoN9qrhU1q3Or" Comment="Resolution" Bounds="275,112,35,28" ShowValueBox="true" isIOBox="true" Value="640, 576">
+            <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
+              <Choice Kind="TypeFlag" Name="Int2" />
+            </p:TypeAnnotation>
+          </Pad>
+          <Pad Id="Jq7pVgZd2YzL44k7aTltrs" Comment="Info" Bounds="474,238,209,142" ShowValueBox="true" isIOBox="true" />
         </Canvas>
         <Patch Id="KHKDxmU0opWNfbuaAhYK6t" Name="Create" />
         <Patch Id="R77olOyhdd0MkPMvt4DYRI" Name="Update" />
@@ -101,12 +102,13 @@
         <Link Id="RjY0MEtUiERM9bkZeGDyxy" Ids="Lae73bhpIzkMaVqYFIhmER,Hrx1DGGIch6NvamgyQCZRd" />
         <Link Id="JIaHD6iS4szOiAT2EuMK2y" Ids="UqrWutYFS00Nqs6Z8pPDx1,I52dTfIAtC7LsCfuVjjxGT" />
         <Link Id="UocHucqDuvgOy002oGW20u" Ids="BgcvZckhcN4Nf6olynutTc,JK9wug4q4sNN3aJSctsiFX" />
-        <Link Id="OpsfNNFLj0ELxbUONNFSrZ" Ids="Cqys0aXhv7ZPPgMpcODiib,JogwuyHbwwRNkukQ8tWUde" />
         <Link Id="Fpoj3zJSFFYNfSLtM55uO8" Ids="Vo1ergQE8oBONU3E8FhgGf,AoPapfggVbEMMSak4fFFan" />
+        <Link Id="MYWvspHxy2jOFIbqb2e3z8" Ids="CWpL1XDqsHoN9qrhU1q3Or,JogwuyHbwwRNkukQ8tWUde" />
+        <Link Id="SAXZgXtLYT1L1OIFvoVVSz" Ids="Oduz06qOzlVOASx6godSew,Jq7pVgZd2YzL44k7aTltrs" />
       </Patch>
     </Node>
   </Patch>
   <NugetDependency Id="POPUKPMTwkBNBN20KvVtwv" Location="VL.Devices.Orbbec" Version="0.0.0" />
-  <NugetDependency Id="OGeUjzDmc7pNq5kXIeMc2B" Location="VL.Video" Version="2025.7.0-0002-g93330f7cea" />
-  <NugetDependency Id="Uja0h1SS9VLMCuntKTvxgQ" Location="VL.Stride" Version="2025.7.0-0002-g93330f7cea" />
+  <NugetDependency Id="OGeUjzDmc7pNq5kXIeMc2B" Location="VL.Video" Version="2024.6.7-0310-g6266ca42c1" />
+  <NugetDependency Id="Uja0h1SS9VLMCuntKTvxgQ" Location="VL.Stride" Version="2024.6.7-0310-g6266ca42c1" />
 </Document>

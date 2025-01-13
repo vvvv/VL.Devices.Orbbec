@@ -12,7 +12,6 @@ namespace VL.Devices.Orbbec
     public class VideoIn : IVideoSource2, IDisposable
     {
         private readonly ILogger _logger;
-        //private readonly IDisposable _ic4LibSubscription;
         private readonly BehaviorSubject<Acquisition?> _aquicitionStarted = new BehaviorSubject<Acquisition?>(null);
 
         private int _changedTicket;
@@ -29,13 +28,12 @@ namespace VL.Devices.Orbbec
         public VideoIn([Pin(Visibility = PinVisibility.Hidden)] NodeContext nodeContext)
         {
             _logger = nodeContext.GetLogger();
-            //_ic4LibSubscription = ImagingSourceLibrary.Use();
         }
 
         [return: Pin(Name = "Output")]
         public VideoIn? Update(
             OrbbecDevice? device, 
-            [DefaultValue("640, 480")] Int2 resolution,
+            [DefaultValue("640, 576")] Int2 resolution,
             [DefaultValue("30")] int FPS,
             //IConfiguration configuration,
             [DefaultValue("true")] bool enabled,
