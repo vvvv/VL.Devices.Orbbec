@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/10/nuspec.xsd">
   <metadata>
     <id>VL.Devices.Orbbec</id>
-    <version>0.0.1-alpha</version>
+    <version>0.0.2-alpha</version>
     <title>VL.Devices.Orbbec</title>
     <authors>vvvv</authors>
     <projectUrl>https://github.com/vvvv/VL.Devices.Orbbec</projectUrl>
@@ -18,6 +18,7 @@
   <files>
     <file src="..\lib\**\*.dll" target="lib\" exclude="" />
 	<file src="..\runtimes\**\*.dll" target="runtimes\" exclude="" />
+	<file src="..\runtimes\**\*.xml" target="runtimes\" exclude="" />
     <file src="..\*.vl" target="" exclude="" />
     <file src="..\help\**" target="help\" exclude="" />
     <file src="nugeticon.png" target="icon\" />
