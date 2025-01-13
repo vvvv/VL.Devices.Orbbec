@@ -20,4 +20,4 @@ Based on the [Orbbec SDK C# Wrapper](https://github.com/orbbec/OrbbecSDK_CSharp)
 
 ## Sponsoring
 Development of this library was partially sponsored by:  
-* [Supplay and Demand](https://supply-demand.ca/en)
+* [Supply and Demand](https://supply-demand.ca/en)
