@@ -14,7 +14,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="VL.Core" Version="2024.6.6" />
+    <PackageReference Include="VL.Core" Version="2024.6.7" />
   </ItemGroup>
 
   <ItemGroup>
@@ -22,12 +22,6 @@
     <Using Include="VL.Core.Import" />
     <Using Include="VL.Lib.Collections" />
     <Using Include="Stride.Core.Mathematics" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Update="ids_peak_dotnet_interface.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
   </ItemGroup>
 
   <ItemGroup>
