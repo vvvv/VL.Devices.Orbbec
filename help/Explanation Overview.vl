@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Document xmlns:p="property" xmlns:r="reflection" Id="CAVFpoIAlKAP2FSfLJ5iwH" LanguageVersion="2024.6.7-0310-g6266ca42c1" Version="0.128">
-  <NugetDependency Id="BKMlRTjek6INClI8OTKWOU" Location="VL.CoreLib" Version="2024.6.7-0310-g6266ca42c1" />
+<Document xmlns:p="property" xmlns:r="reflection" Id="CAVFpoIAlKAP2FSfLJ5iwH" LanguageVersion="2024.6.7" Version="0.128">
+  <NugetDependency Id="BKMlRTjek6INClI8OTKWOU" Location="VL.CoreLib" Version="2024.6.7" />
   <Patch Id="I6Ez2fp0vrKPQRZJfnIg0Q">
     <Canvas Id="C7qdhnAsgeIOOnvJ4TQ040" DefaultCategory="Main" BordersChecked="false" CanvasType="FullCategory" />
     <!--
@@ -29,7 +29,7 @@
             <Pin Id="Lae73bhpIzkMaVqYFIhmER" Name="Output" Kind="OutputPin" />
             <Pin Id="Oduz06qOzlVOASx6godSew" Name="Info" Kind="OutputPin" />
           </Node>
-          <Pad Id="FKgs5EtPPYjMDwJhdQugAg" Comment="Enabled" Bounds="475,130,35,35" ShowValueBox="true" isIOBox="true" Value="False">
+          <Pad Id="FKgs5EtPPYjMDwJhdQugAg" Comment="Enabled" Bounds="475,130,35,35" ShowValueBox="true" isIOBox="true" Value="True">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="ImmutableTypeFlag" Name="Boolean" />
             </p:TypeAnnotation>
@@ -60,7 +60,7 @@
               <Choice Kind="ProcessAppFlag" Name="TextureWindow" />
             </p:NodeReference>
             <Pin Id="VIhwOE1QkciMljvzz6U478" Name="Node Context" Kind="InputPin" IsHidden="true" />
-            <Pin Id="AtooG0XYzDOMP9EGDVrCpV" Name="Bounds" Kind="InputPin" DefaultValue="1563, 200, 775, 694" IsHidden="true" />
+            <Pin Id="AtooG0XYzDOMP9EGDVrCpV" Name="Bounds" Kind="InputPin" DefaultValue="1066, 171, 775, 694" IsHidden="true" />
             <Pin Id="LF3oYxoEoN7NLcA08fZ7Xf" Name="Save Bounds" Kind="InputPin" IsHidden="true" />
             <Pin Id="McpQ2nBxUsgOmYHQ59TU4d" Name="Back Buffer Format" Kind="InputPin" IsHidden="true" />
             <Pin Id="ObR7ND2PviLLENZhI4OC2i" Name="Bound to Document" Kind="InputPin" IsHidden="true" />
@@ -109,6 +109,6 @@
     </Node>
   </Patch>
   <NugetDependency Id="POPUKPMTwkBNBN20KvVtwv" Location="VL.Devices.Orbbec" Version="0.0.0" />
-  <NugetDependency Id="OGeUjzDmc7pNq5kXIeMc2B" Location="VL.Video" Version="2024.6.7-0310-g6266ca42c1" />
-  <NugetDependency Id="Uja0h1SS9VLMCuntKTvxgQ" Location="VL.Stride" Version="2024.6.7-0310-g6266ca42c1" />
+  <NugetDependency Id="OGeUjzDmc7pNq5kXIeMc2B" Location="VL.Video" Version="2024.6.7" />
+  <NugetDependency Id="Uja0h1SS9VLMCuntKTvxgQ" Location="VL.Stride" Version="2024.6.7" />
 </Document>

@@ -11,6 +11,7 @@ using static VL.Core.AppHost;
 using VL.Core;
 using System.Collections;
 using System.Runtime.InteropServices;
+using System.Reflection;
 
 namespace VL.Devices.Orbbec
 {
@@ -18,6 +19,11 @@ namespace VL.Devices.Orbbec
     {
         public static Acquisition? Start(VideoIn videoIn, Advanced.DeviceInfo deviceInfo, ILogger logger, Int2 resolution, int fps)//, IConfiguration? configuration)
         {
+            var assemblyPath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+            var extensionsPath = Path.Combine(assemblyPath, @"..\..\runtimes\win-x64\native\extensions");
+            logger.Log(LogLevel.Information, "Settings extensions path: " + extensionsPath);
+            Context.SetExtensionsDirectory(extensionsPath);
+
             logger.Log(LogLevel.Information, "Starting image acquisition on {device}", deviceInfo.SerialNumber);
 
             var contextHandle = ContextManager.GetHandle();
