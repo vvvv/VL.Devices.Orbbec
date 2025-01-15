@@ -23,6 +23,7 @@
             </p:NodeReference>
             <Pin Id="Mv67S5Zg4tXLyt8ChTO1JF" Name="Node Context" Kind="InputPin" IsHidden="true" />
             <Pin Id="I52dTfIAtC7LsCfuVjjxGT" Name="Device" Kind="InputPin" />
+            <Pin Id="VdVtEnRfHnFMKIfoC9ixLs" Name="IP" Kind="InputPin" />
             <Pin Id="JogwuyHbwwRNkukQ8tWUde" Name="Resolution" Kind="InputPin" />
             <Pin Id="AoPapfggVbEMMSak4fFFan" Name="FPS" Kind="InputPin" />
             <Pin Id="BSK7b0j9LZAPoVTZNaensv" Name="Enabled" Kind="InputPin" />
@@ -91,6 +92,11 @@
             </p:TypeAnnotation>
           </Pad>
           <Pad Id="Jq7pVgZd2YzL44k7aTltrs" Comment="Info" Bounds="474,238,209,142" ShowValueBox="true" isIOBox="true" />
+          <Pad Id="CRmkU8tpi8uOYfmSFDcdk1" Comment="IP" Bounds="213,159,118,15" ShowValueBox="true" isIOBox="true" Value="192.168.2.11:8090">
+            <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
+              <Choice Kind="TypeFlag" Name="String" />
+            </p:TypeAnnotation>
+          </Pad>
         </Canvas>
         <Patch Id="KHKDxmU0opWNfbuaAhYK6t" Name="Create" />
         <Patch Id="R77olOyhdd0MkPMvt4DYRI" Name="Update" />
@@ -105,6 +111,7 @@
         <Link Id="Fpoj3zJSFFYNfSLtM55uO8" Ids="Vo1ergQE8oBONU3E8FhgGf,AoPapfggVbEMMSak4fFFan" />
         <Link Id="MYWvspHxy2jOFIbqb2e3z8" Ids="CWpL1XDqsHoN9qrhU1q3Or,JogwuyHbwwRNkukQ8tWUde" />
         <Link Id="SAXZgXtLYT1L1OIFvoVVSz" Ids="Oduz06qOzlVOASx6godSew,Jq7pVgZd2YzL44k7aTltrs" />
+        <Link Id="PhWO25VQdjoMsBy8RhwotR" Ids="CRmkU8tpi8uOYfmSFDcdk1,VdVtEnRfHnFMKIfoC9ixLs" />
       </Patch>
     </Node>
   </Patch>

@@ -5,6 +5,8 @@ using VL.Model;
 using VL.Devices.Orbbec.Advanced;
 using System.Reactive.Subjects;
 using System.Reactive.Linq;
+using Orbbec;
+using System.Net;
 
 namespace VL.Devices.Orbbec
 {
@@ -15,11 +17,12 @@ namespace VL.Devices.Orbbec
         private readonly BehaviorSubject<Acquisition?> _aquicitionStarted = new BehaviorSubject<Acquisition?>(null);
 
         private int _changedTicket;
-        private DeviceInfo? _device;
+        private Advanced.DeviceInfo? _device;
         private Int2 _resolution;
         private int _fps;
         //private IConfiguration? _configuration;
         private bool _enabled;
+        private string _IP;
 
 
         internal string Info { get; set; } = "";
@@ -32,7 +35,8 @@ namespace VL.Devices.Orbbec
 
         [return: Pin(Name = "Output")]
         public VideoIn? Update(
-            OrbbecDevice? device, 
+            OrbbecDevice? device,
+            [DefaultValue("")] string IP,
             [DefaultValue("640, 576")] Int2 resolution,
             [DefaultValue("30")] int FPS,
             //IConfiguration configuration,
@@ -40,9 +44,19 @@ namespace VL.Devices.Orbbec
             out string Info)
         {
             // By comparing the device info we can be sure that on re-connect of the device we see the change
-            if (!Equals(device?.Tag, _device) || enabled != _enabled || resolution != _resolution || FPS != _fps)// || configuration != _configuration)
+            if (!Equals(device?.Tag, _device) || IP != _IP || enabled != _enabled || resolution != _resolution || FPS != _fps)// || configuration != _configuration)
             {
-                _device = device?.Tag as DeviceInfo;
+                _device = device?.Tag as Advanced.DeviceInfo;
+                var ip_port = IP.Split(":");
+                if (ip_port.Length == 2 && IPAddress.TryParse(ip_port[0], out var ip) && ushort.TryParse(ip_port[1], out var port))
+                {
+                    var dvc = ContextManager.GetHandle().Resource?.CreateNetDevice(ip.ToString(), port);
+                    if (dvc != null)
+                        _logger.LogInformation("Net device serial Nr: " + dvc.GetDeviceInfo().SerialNumber());
+                    else
+                        _logger.LogInformation("No net device found at: " + IP);
+                }
+                _IP = IP;
                 _resolution = resolution;
                 _fps = FPS;
                 //_configuration = configuration;
