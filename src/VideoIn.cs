@@ -48,14 +48,22 @@ namespace VL.Devices.Orbbec
             {
                 _device = device?.Tag as Advanced.DeviceInfo;
                 var ip_port = IP.Split(":");
+                Device netDevice = null;
                 if (ip_port.Length == 2 && IPAddress.TryParse(ip_port[0], out var ip) && ushort.TryParse(ip_port[1], out var port))
                 {
-                    var dvc = ContextManager.GetHandle().Resource?.CreateNetDevice(ip.ToString(), port);
-                    if (dvc != null)
-                        _logger.LogInformation("Net device serial Nr: " + dvc.GetDeviceInfo().SerialNumber());
-                    else
-                        _logger.LogInformation("No net device found at: " + IP);
+                    try
+                    {
+                        netDevice = ContextManager.GetHandle().Resource?.CreateNetDevice(ip.ToString(), port);
+                        if (netDevice != null)
+                            _logger.LogInformation("Net device serial Nr: " + netDevice.GetDeviceInfo().SerialNumber());
+                        else
+                            _logger.LogInformation("No net device found at: " + IP);
+                    }
+                    catch (Exception)
+                    {
+                    }
                 }
+                (device.Definition as OrbbecDeviceDefinition).SetNetDevice(netDevice);
                 _IP = IP;
                 _resolution = resolution;
                 _fps = FPS;

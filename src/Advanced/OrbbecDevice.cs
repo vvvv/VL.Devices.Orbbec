@@ -26,6 +26,7 @@ public class OrbbecDeviceDefinition : DynamicEnumDefinitionBase<OrbbecDeviceDefi
 {
     private readonly Subject<object> _devicesChanged = new();
     private IResourceHandle<Context?>? _context;
+    private Device _netDevice;
 
     protected override void Initialize()
     {
@@ -46,6 +47,12 @@ public class OrbbecDeviceDefinition : DynamicEnumDefinitionBase<OrbbecDeviceDefi
         base.Initialize();
     }
 
+    public void SetNetDevice(Device device)
+    {
+        _netDevice = device;
+        _devicesChanged.OnNext(this);
+    }
+
     //Return the current enum entries
     protected override IReadOnlyDictionary<string, object> GetEntries()
     {
@@ -61,16 +68,24 @@ public class OrbbecDeviceDefinition : DynamicEnumDefinitionBase<OrbbecDeviceDefi
 
         var result = new Dictionary<string, object?>()
         {
-            { "Default", devices.DeviceCount() > 0 ? new DeviceInfo(0, devices.SerialNumber(0)) : null }
+            { "Default", _netDevice != null ? new DeviceInfo(0, _netDevice.GetDeviceInfo().SerialNumber()) : devices.DeviceCount() > 0 ? new DeviceInfo(0, devices.SerialNumber(0)) : null }
             //{ "Default", devices.DeviceCount() > 0 ? devices.GetDevice(0) : null }
         };
+
+        uint iOff = 0;
+        if (_netDevice != null)
+        {
+            var dvcInfo = _netDevice.GetDeviceInfo();
+            result.Add(dvcInfo.Name() + " " + dvcInfo.ConnectionType(), new DeviceInfo(0, dvcInfo.SerialNumber()));
+            iOff++;
+        }
 
         for (uint i = 0; i < devices.DeviceCount(); i++)
         {
             var name = devices.Name(i) + " - " + devices.SerialNumber(i);
             if (!result.ContainsKey(name))
             {
-                result.Add(name, new DeviceInfo(i, devices.SerialNumber(i)));
+                result.Add(name, new DeviceInfo(i+iOff, devices.SerialNumber(i)));
             }
         }
 
