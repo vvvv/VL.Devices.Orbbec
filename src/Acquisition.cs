@@ -28,7 +28,7 @@ namespace VL.Devices.Orbbec
 
             var contextHandle = ContextManager.GetHandle();
 
-            Device device = contextHandle.Resource.QueryDeviceList().GetDevice(deviceInfo.Index);
+            Device device = contextHandle.Resource.QueryDeviceList().GetDeviceBySN(deviceInfo.SerialNumber);
             Pipeline pipe = new Pipeline(device);
 
             /*SensorList s = device.GetSensorList();
