@@ -3,16 +3,21 @@ using VL.Core.CompilerServices;
 using Orbbec;
 using System.Reactive.Subjects;
 using VL.Lib.Basics.Resources;
+using Microsoft.Extensions.Logging;
+using System.Reflection;
 
 namespace VL.Devices.Orbbec.Advanced;
 
-internal record DeviceInfo(uint Index, string SerialNumber);
+internal record DeviceInfo(string SerialNumber);
 
 [Serializable]
 public class OrbbecDevice : DynamicEnumBase<OrbbecDevice, OrbbecDeviceDefinition>
 {
     public OrbbecDevice(string value) : base(value)
     {
+        var assemblyPath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+        var extensionsPath = Path.Combine(assemblyPath, @"..\..\runtimes\win-x64\native\extensions");
+        Context.SetExtensionsDirectory(extensionsPath);
     }
 
     [CreateDefault]
@@ -26,7 +31,7 @@ public class OrbbecDeviceDefinition : DynamicEnumDefinitionBase<OrbbecDeviceDefi
 {
     private readonly Subject<object> _devicesChanged = new();
     private IResourceHandle<Context?>? _context;
-    private Device _netDevice;
+    private Dictionary<string, Device> _netDevices = new Dictionary<string, Device>();
 
     protected override void Initialize()
     {
@@ -47,9 +52,46 @@ public class OrbbecDeviceDefinition : DynamicEnumDefinitionBase<OrbbecDeviceDefi
         base.Initialize();
     }
 
-    public void SetNetDevice(Device device)
+    private string NameFromDevice(Device device)
     {
-        _netDevice = device;
+        if (device != null)
+        {
+            var dvcInfo = device.GetDeviceInfo();
+            return dvcInfo.Name() + " SN:" + dvcInfo.SerialNumber() + " " + dvcInfo.ConnectionType();
+        }
+        else
+            return "NULL device";
+    }
+
+    private string SerialFromDevice(Device device)
+    {
+        return device?.GetDeviceInfo().SerialNumber() ?? "invalid";
+    }
+
+    public string AddNetDevice(string ip, int port, ILogger logger)
+    {
+        try
+        {
+            var netDevice = ContextManager.GetHandle().Resource?.CreateNetDevice(ip, (ushort) port);
+            if (netDevice != null)
+            {
+                _netDevices.Add(ip + ":" + port.ToString(), netDevice);
+                _devicesChanged.OnNext(this);
+                return NameFromDevice(netDevice);
+            }
+        }
+        catch ( Exception )
+        {
+            logger.LogInformation("No Orbbec Net device found at: " + ip + ":" + port.ToString());
+            _netDevices.Add(ip + ":" + port.ToString(), null);
+            _devicesChanged.OnNext(this);
+        }
+        return "";
+    }
+
+    public void RemoveNetDevice(string ip, int port)
+    {
+        _netDevices.Remove(ip + ":" + port.ToString());
         _devicesChanged.OnNext(this);
     }
 
@@ -68,24 +110,28 @@ public class OrbbecDeviceDefinition : DynamicEnumDefinitionBase<OrbbecDeviceDefi
 
         var result = new Dictionary<string, object?>()
         {
-            { "Default", _netDevice != null ? new DeviceInfo(0, _netDevice.GetDeviceInfo().SerialNumber()) : devices.DeviceCount() > 0 ? new DeviceInfo(0, devices.SerialNumber(0)) : null }
+            { "Default", _netDevices.Any() ? new DeviceInfo(SerialFromDevice(_netDevices.FirstOrDefault().Value)) : devices.DeviceCount() > 0 ? new DeviceInfo(SerialFromDevice(devices.GetDevice(0))) : null }
             //{ "Default", devices.DeviceCount() > 0 ? devices.GetDevice(0) : null }
         };
 
-        uint iOff = 0;
-        if (_netDevice != null)
+        //add net devices
+        foreach (var entry in _netDevices)
         {
-            var dvcInfo = _netDevice.GetDeviceInfo();
-            result.Add(dvcInfo.Name() + " " + dvcInfo.ConnectionType(), new DeviceInfo(0, dvcInfo.SerialNumber()));
-            iOff++;
-        }
-
-        for (uint i = 0; i < devices.DeviceCount(); i++)
-        {
-            var name = devices.Name(i) + " - " + devices.SerialNumber(i);
+            var name = NameFromDevice(entry.Value);
             if (!result.ContainsKey(name))
             {
-                result.Add(name, new DeviceInfo(i+iOff, devices.SerialNumber(i)));
+                result.Add(name, new DeviceInfo(SerialFromDevice(entry.Value)));
+            }
+        }
+
+        //add usb devices
+        for (uint i = 0; i < devices.DeviceCount(); i++)
+        {
+            var dvc = devices.GetDevice(i);
+            var name = NameFromDevice(dvc);
+            if (!result.ContainsKey(name))
+            {
+                result.Add(name, new DeviceInfo(SerialFromDevice(dvc)));
             }
         }
 

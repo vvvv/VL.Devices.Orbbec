@@ -36,7 +36,6 @@ namespace VL.Devices.Orbbec
         [return: Pin(Name = "Output")]
         public VideoIn? Update(
             OrbbecDevice? device,
-            [DefaultValue("")] string IP,
             [DefaultValue("640, 576")] Int2 resolution,
             [DefaultValue("30")] int FPS,
             //IConfiguration configuration,
@@ -44,27 +43,9 @@ namespace VL.Devices.Orbbec
             out string Info)
         {
             // By comparing the device info we can be sure that on re-connect of the device we see the change
-            if (!Equals(device?.Tag, _device) || IP != _IP || enabled != _enabled || resolution != _resolution || FPS != _fps)// || configuration != _configuration)
+            if (!Equals(device?.Tag, _device) || enabled != _enabled || resolution != _resolution || FPS != _fps)// || configuration != _configuration)
             {
                 _device = device?.Tag as Advanced.DeviceInfo;
-                var ip_port = IP.Split(":");
-                Device netDevice = null;
-                if (ip_port.Length == 2 && IPAddress.TryParse(ip_port[0], out var ip) && ushort.TryParse(ip_port[1], out var port))
-                {
-                    try
-                    {
-                        netDevice = ContextManager.GetHandle().Resource?.CreateNetDevice(ip.ToString(), port);
-                        if (netDevice != null)
-                            _logger.LogInformation("Net device serial Nr: " + netDevice.GetDeviceInfo().SerialNumber());
-                        else
-                            _logger.LogInformation("No net device found at: " + IP);
-                    }
-                    catch (Exception)
-                    {
-                    }
-                }
-                (device.Definition as OrbbecDeviceDefinition).SetNetDevice(netDevice);
-                _IP = IP;
                 _resolution = resolution;
                 _fps = FPS;
                 //_configuration = configuration;
