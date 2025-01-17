@@ -174,25 +174,17 @@ namespace VL.Devices.Orbbec
             var stride = colorFrame.GetDataSize();
 
             var format = colorFrame.GetFormat();
+                       
+            var memoryOwner = new UnmanagedMemoryManager<R16Pixel>(colorFrame.GetDataPtr(), (int)stride);
 
-            byte[] data = new byte[colorFrame.GetDataSize()];
-            colorFrame.CopyData(ref data);
-            data = ConvertDepthToRGBData(data);
-
-            GCHandle pinnedArray = GCHandle.Alloc(data, GCHandleType.Pinned);
-            IntPtr pointer = pinnedArray.AddrOfPinnedObject();
-
-            var memoryOwner = new UnmanagedMemoryManager<BgraPixel>(pointer, (int)colorFrame.GetDataSize() * 2);
-
-            var pitch = width * sizeof(BgraPixel);
+            var piiiitch = width * sizeof(R16Pixel);
             var memory = memoryOwner.Memory.AsMemory2D(0, (int)height, (int)width, 0);
-            var videoFrame = new VideoFrame<BgraPixel>(memory);
-            return ResourceProvider.Return(videoFrame, (memoryOwner, frames, pinnedArray),
+            var videoFrame = new VideoFrame<R16Pixel>(memory);
+            return ResourceProvider.Return(videoFrame, (memoryOwner, frames),
                 static x =>
                 {
                     ((IDisposable)x.memoryOwner).Dispose();
                     x.frames.Dispose();
-                    x.pinnedArray.Free();
                 });
         }
     }
