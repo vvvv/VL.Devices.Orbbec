@@ -65,7 +65,7 @@ public class OrbbecDeviceDefinition : DynamicEnumDefinitionBase<OrbbecDeviceDefi
 
     private string SerialFromDevice(Device device)
     {
-        return device?.GetDeviceInfo().SerialNumber() ?? "invalid";
+        return device?.GetDeviceInfo().SerialNumber() ?? "NULL device";
     }
 
     public string AddNetDevice(string ip, int port, ILogger logger)
@@ -83,8 +83,6 @@ public class OrbbecDeviceDefinition : DynamicEnumDefinitionBase<OrbbecDeviceDefi
         catch ( Exception )
         {
             logger.LogInformation("No Orbbec Net device found at: " + ip + ":" + port.ToString());
-            _netDevices.Add(ip + ":" + port.ToString(), null);
-            _devicesChanged.OnNext(this);
         }
         return "";
     }
