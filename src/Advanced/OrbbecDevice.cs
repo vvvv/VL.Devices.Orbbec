@@ -139,6 +139,14 @@ public class OrbbecDeviceDefinition : DynamicEnumDefinitionBase<OrbbecDeviceDefi
     //Optionally trigger addedList change of your enum. This will in turn call GetEntries() again
     protected override IObservable<object> GetEntriesChangedObservable() => _devicesChanged;
 
+    internal Device? GetDeviceBySN(string serialNumber)
+    {
+        foreach (var netDevice in _netDevices)
+            if (netDevice.Value.GetDeviceInfo().SerialNumber() == serialNumber)
+                return netDevice.Value;
+        return null;
+    }
+
     //Optionally disable alphabetic sorting
     protected override bool AutoSortAlphabetically => false; //true is the default
 }

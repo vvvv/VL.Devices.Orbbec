@@ -17,7 +17,7 @@ namespace VL.Devices.Orbbec
         private readonly BehaviorSubject<Acquisition?> _aquicitionStarted = new BehaviorSubject<Acquisition?>(null);
 
         private int _changedTicket;
-        private Advanced.DeviceInfo? _device;
+        private Advanced.DeviceInfo? _deviceInfo;
         private Int2 _resolution;
         private int _fps;
         //private IConfiguration? _configuration;
@@ -43,9 +43,9 @@ namespace VL.Devices.Orbbec
             out string Info)
         {
             // By comparing the device info we can be sure that on re-connect of the device we see the change
-            if (!Equals(device?.Tag, _device) || enabled != _enabled || resolution != _resolution || FPS != _fps)// || configuration != _configuration)
+            if (!Equals(device?.Tag, _deviceInfo) || enabled != _enabled || resolution != _resolution || FPS != _fps)// || configuration != _configuration)
             {
-                _device = device?.Tag as Advanced.DeviceInfo;
+                _deviceInfo = device?.Tag as Advanced.DeviceInfo;
                 _resolution = resolution;
                 _fps = FPS;
                 //_configuration = configuration;
@@ -64,12 +64,17 @@ namespace VL.Devices.Orbbec
 
         IVideoPlayer? IVideoSource2.Start(VideoPlaybackContext ctx)
         {
-            var device = _device;
-            if (device is null)
+            var deviceInfo = _deviceInfo;
+            if (deviceInfo is null)
                 return null;
 
             try
             {
+                //get the device either from the list of auto-enumerated devices
+                Device? device = ContextManager.GetHandle().Resource.QueryDeviceList().GetDeviceBySN(deviceInfo.SerialNumber);
+                //or from the manually created list of NetDevices
+                if (device == null)
+                   device = OrbbecDeviceDefinition.Instance.GetDeviceBySN(deviceInfo.SerialNumber);
                 var result = Acquisition.Start(this, device, _logger, _resolution, _fps);//, _configuration
                 //_aquicitionStarted.OnNext(result);
                 return result;

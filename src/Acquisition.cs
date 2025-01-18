@@ -17,13 +17,11 @@ namespace VL.Devices.Orbbec
 {
     internal class Acquisition : IVideoPlayer
     {
-        public static Acquisition? Start(VideoIn videoIn, Advanced.DeviceInfo deviceInfo, ILogger logger, Int2 resolution, int fps)//, IConfiguration? configuration)
+        public static Acquisition? Start(VideoIn videoIn, Device device, ILogger logger, Int2 resolution, int fps)//, IConfiguration? configuration)
         {
+            var deviceInfo = device.GetDeviceInfo();
             logger.Log(LogLevel.Information, "Starting image acquisition on {device}", deviceInfo.SerialNumber);
 
-            var contextHandle = ContextManager.GetHandle();
-
-            Device device = contextHandle.Resource.QueryDeviceList().GetDeviceBySN(deviceInfo.SerialNumber);
             Pipeline pipe = new Pipeline(device);
 
             /*SensorList s = device.GetSensorList();
@@ -69,6 +67,7 @@ namespace VL.Devices.Orbbec
                 return null;
             }
 
+            var contextHandle = ContextManager.GetHandle();
             return new Acquisition(contextHandle, logger, pipe, resolution, videoIn);
         }
 
