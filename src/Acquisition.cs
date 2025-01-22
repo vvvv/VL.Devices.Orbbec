@@ -20,7 +20,7 @@ namespace VL.Devices.Orbbec
         public static Acquisition? Start(VideoIn videoIn, Device device, ILogger logger, Int2 resolution, int fps)//, IConfiguration? configuration)
         {
             var deviceInfo = device.GetDeviceInfo();
-            logger.Log(LogLevel.Information, "Starting image acquisition on {device}", deviceInfo.SerialNumber);
+            logger.Log(LogLevel.Information, "Starting image acquisition on {device}", deviceInfo.SerialNumber());
 
             Pipeline pipe = new Pipeline(device);
 
@@ -59,11 +59,11 @@ namespace VL.Devices.Orbbec
 
                 pipe.Start(config);
 
-                logger.Log(LogLevel.Information, $"Stream started for device {deviceInfo.SerialNumber}");
+                logger.Log(LogLevel.Information, $"Stream started for device {deviceInfo.SerialNumber()}");
             }
             catch (Exception ex)
             {
-                logger.Log(LogLevel.Error, $"Error starting stream for device {deviceInfo.SerialNumber}: {ex.Message}");
+                logger.Log(LogLevel.Error, $"Error starting stream for device {deviceInfo.SerialNumber()}: {ex.Message}");
                 return null;
             }
 
