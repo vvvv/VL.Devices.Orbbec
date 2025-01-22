@@ -28,10 +28,10 @@ namespace VL.Devices.Orbbec
         {
             if (IP != _IP || Port != _Port)
             {
+                OrbbecDeviceDefinition.Instance.RemoveNetDevice(_IP, _Port);
+                
                 _IP = IP;
                 _Port = Port;
-
-                OrbbecDeviceDefinition.Instance.RemoveNetDevice(_IP, _Port);
 
                 if (IPAddress.TryParse(_IP, out var ip) && _Port >= 0 && _Port <= ushort.MaxValue)
                     _EnumEntry = OrbbecDeviceDefinition.Instance.AddNetDevice(_IP, _Port, _logger);
