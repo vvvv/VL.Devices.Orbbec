@@ -70,11 +70,17 @@ namespace VL.Devices.Orbbec
 
             try
             {
-                //get the device either from the list of auto-enumerated devices
-                Device? device = ContextManager.GetHandle().Resource.QueryDeviceList().GetDeviceBySN(deviceInfo.SerialNumber);
-                //or from the manually created list of NetDevices
-                if (device == null)
-                   device = OrbbecDeviceDefinition.Instance.GetDeviceBySN(deviceInfo.SerialNumber);
+                Device? device = null;
+                try
+                {
+                    //get the device either from the list of auto-enumerated devices
+                   device = ContextManager.GetHandle().Resource.QueryDeviceList().GetDeviceBySN(deviceInfo.SerialNumber);
+                }
+                catch (Exception e)
+                {  
+                    //or from the manually created list of NetDevices
+                    device = OrbbecDeviceDefinition.Instance.GetDeviceBySN(deviceInfo.SerialNumber);
+                }
                 var result = Acquisition.Start(this, device, _logger, _resolution, _fps);//, _configuration
                 //_aquicitionStarted.OnNext(result);
                 return result;
