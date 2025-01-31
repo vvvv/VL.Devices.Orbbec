@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Document xmlns:p="property" xmlns:r="reflection" Id="CAVFpoIAlKAP2FSfLJ5iwH" LanguageVersion="2025.7.0-0016-ga5bfd21650" Version="0.128">
-  <NugetDependency Id="BKMlRTjek6INClI8OTKWOU" Location="VL.CoreLib" Version="2025.7.0-0016-ga5bfd21650" />
+<Document xmlns:p="property" xmlns:r="reflection" Id="CAVFpoIAlKAP2FSfLJ5iwH" LanguageVersion="2024.6.7" Version="0.128">
+  <NugetDependency Id="BKMlRTjek6INClI8OTKWOU" Location="VL.CoreLib" Version="2024.6.7" />
   <Patch Id="I6Ez2fp0vrKPQRZJfnIg0Q">
     <Canvas Id="C7qdhnAsgeIOOnvJ4TQ040" DefaultCategory="Main" BordersChecked="false" CanvasType="FullCategory" />
     <!--
@@ -50,7 +50,7 @@
             <Pin Id="PSpJNSLg4ZqPMaAMTcXKEe" Name="Prefer Gpu" Kind="InputPin" />
             <Pin Id="BgcvZckhcN4Nf6olynutTc" Name="Output" Kind="OutputPin" />
           </Node>
-          <Pad Id="UqrWutYFS00Nqs6Z8pPDx1" Comment="Device" Bounds="348,162,225,15" ShowValueBox="true" isIOBox="true" Value="Default">
+          <Pad Id="UqrWutYFS00Nqs6Z8pPDx1" Comment="Device" Bounds="348,162,243,15" ShowValueBox="true" isIOBox="true" Value="Default">
             <p:TypeAnnotation LastCategoryFullName="Devices.Orbbec" LastDependency="VL.Devices.Orbbec.vl">
               <Choice Kind="TypeFlag" Name="OrbbecDevice" />
             </p:TypeAnnotation>
@@ -92,7 +92,7 @@
             </p:TypeAnnotation>
           </Pad>
           <Pad Id="Jq7pVgZd2YzL44k7aTltrs" Comment="Info" Bounds="597,385,209,142" ShowValueBox="true" isIOBox="true" />
-          <Pad Id="UGOySgz87vsOmMTVKvz1PB" Comment="IP" Bounds="50,163,72,15" ShowValueBox="true" isIOBox="true" Value="192.168.2.12">
+          <Pad Id="UGOySgz87vsOmMTVKvz1PB" Comment="IP" Bounds="50,163,84,15" ShowValueBox="true" isIOBox="true" Value="192.168.2.12">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="TypeFlag" Name="String" />
             </p:TypeAnnotation>
@@ -674,7 +674,7 @@
             </p:ValueBoxSettings>
           </Pad>
         </Canvas>
-        <Patch Id="KHKDxmU0opWNfbuaAhYK6t" Name="Create" />
+        <Patch Id="KHKDxmU0opWNfbuaAhYK6t" Name="Create" ParticipatingElements="BLLzqaaNz33PDXOP4kIbdz" />
         <Patch Id="R77olOyhdd0MkPMvt4DYRI" Name="Update" />
         <ProcessDefinition Id="AUbeYLfPXP2Nf05XnL30CY">
           <Fragment Id="R6wFQDTvCOLOE7WzyTmWXO" Patch="KHKDxmU0opWNfbuaAhYK6t" Enabled="true" />
@@ -754,8 +754,8 @@
     </Node>
   </Patch>
   <NugetDependency Id="POPUKPMTwkBNBN20KvVtwv" Location="VL.Devices.Orbbec" Version="0.0.0" />
-  <NugetDependency Id="OGeUjzDmc7pNq5kXIeMc2B" Location="VL.Video" Version="2025.7.0-0016-ga5bfd21650" />
-  <NugetDependency Id="Uja0h1SS9VLMCuntKTvxgQ" Location="VL.Stride" Version="2025.7.0-0016-ga5bfd21650" />
-  <NugetDependency Id="HTHOFoJKSOiPDvWS5WYo5y" Location="VL.Stride.Runtime" Version="2025.7.0-0016-ga5bfd21650" />
+  <NugetDependency Id="OGeUjzDmc7pNq5kXIeMc2B" Location="VL.Video" Version="2024.6.7" />
+  <NugetDependency Id="Uja0h1SS9VLMCuntKTvxgQ" Location="VL.Stride" Version="2024.6.7" />
+  <NugetDependency Id="HTHOFoJKSOiPDvWS5WYo5y" Location="VL.Stride.Runtime" Version="2024.6.7" />
   <NugetDependency Id="FACSlaFIa45NlVJNyBldg2" Location="VL.Fuse" Version="1.0.3-beta03" />
 </Document>

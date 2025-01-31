@@ -32,7 +32,6 @@ namespace VL.Devices.Orbbec
             {
                 logger.Log(LogLevel.Information, s.GetSensor((uint)i).GetSensorType().ToString());
             }
-
             StreamProfileList profilesColor = device.GetSensor(SensorType.OB_SENSOR_COLOR).GetStreamProfileList();
             for (int i = 0; i < profilesColor.ProfileCount(); i++)
             {
@@ -55,13 +54,13 @@ namespace VL.Devices.Orbbec
 
             try
             {
-                StreamProfile colorProfile = pipe.GetStreamProfileList(SensorType.OB_SENSOR_COLOR).GetVideoStreamProfile(0, 0, Format.OB_FORMAT_BGRA, fps);
+                //StreamProfile colorProfile = pipe.GetStreamProfileList(SensorType.OB_SENSOR_COLOR) .GetVideoStreamProfile(0, 0, Format.OB_FORMAT_UNKNOWN, 0);
                 StreamProfile depthProfile = pipe.GetStreamProfileList(SensorType.OB_SENSOR_DEPTH).GetVideoStreamProfile(resolution.X, resolution.Y, Format.OB_FORMAT_Y16, fps);
                 
                 Config config = new Config();
                 
                 config.EnableStream(depthProfile);
-                config.EnableStream(colorProfile);
+                config.EnableStream(SensorType.OB_SENSOR_COLOR);
                 //config.SetFrameAggregateOutputMode(FrameAggregateOutputMode.OB_FRAME_AGGREGATE_OUTPUT_ALL_TYPE_FRAME_REQUIRE);
 
                 //pipe.EnableFrameSync();
