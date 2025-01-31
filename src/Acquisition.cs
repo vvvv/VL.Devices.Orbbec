@@ -209,6 +209,12 @@ namespace VL.Devices.Orbbec
             var depthFrame = frames.GetDepthFrame();
 
             using Frame alignedFrameset = _align.Process(frames);
+            if (alignedFrameset == null)
+            {
+                frames.Dispose();
+                return null;
+            }
+
             using Frame frame = _pointCloud.Process(alignedFrameset);
 
             if (frame == null || depthFrame == null)
