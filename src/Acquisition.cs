@@ -59,8 +59,9 @@ namespace VL.Devices.Orbbec
                 
                 Config config = new Config();
                 
-                config.EnableStream(depthProfile);
                 config.EnableStream(SensorType.OB_SENSOR_COLOR);
+                //in order to get the specified fps, we need to enable the depth stream last
+                config.EnableStream(depthProfile);
                 //config.SetFrameAggregateOutputMode(FrameAggregateOutputMode.OB_FRAME_AGGREGATE_OUTPUT_ALL_TYPE_FRAME_REQUIRE);
 
                 //pipe.EnableFrameSync();
