@@ -31,9 +31,9 @@
         <!-- Maximum memory size of all data frames, int type, unit: MB, minimum 100MB -->
         <MaxFrameBufferSize>2048</MaxFrameBufferSize>
         <!-- Frame buffer queue size in pipeline -->
-        <PipelineFrameQueueSize>3</PipelineFrameQueueSize>
+        <PipelineFrameQueueSize>10</PipelineFrameQueueSize>
         <!-- Frame buffer queue size in internal processing unit -->
-        <FrameProcessingBlockQueueSize>3</FrameProcessingBlockQueueSize>
+        <FrameProcessingBlockQueueSize>10</FrameProcessingBlockQueueSize>
     </Memory>
 
     <Misc>
