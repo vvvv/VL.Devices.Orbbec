@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/10/nuspec.xsd">
   <metadata>
     <id>VL.Devices.Orbbec</id>
-    <version>0.0.14-alpha</version>
+    <version>0.0.15-alpha</version>
     <title>VL.Devices.Orbbec</title>
     <authors>vvvv</authors>
     <projectUrl>https://github.com/vvvv/VL.Devices.Orbbec</projectUrl>
