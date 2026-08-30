@@ -49,7 +49,7 @@ namespace VL.Devices.Orbbec
 
                 if (pD != null)// && pD.GetFormat() == Format.OB_FORMAT_RGB_POINT)
                     videoIn.Info += $"\r\nDepth resolution: " + pD.GetWidth().ToString() + "x" + pD.GetHeight().ToString() + " FPS: " + pD.GetFPS().ToString();
-                    //logger.Log(LogLevel.Information, "Depth resolution: " + pD.GetWidth().ToString() + "x" + pD.GetHeight().ToString() + " FPS: " + pD.GetFPS().ToString());// + " Format: " + pD.GetFormat().ToString());
+                    logger.Log(OurLogLevel.Information, "Depth resolution: " + pD.GetWidth().ToString() + "x" + pD.GetHeight().ToString() + " FPS: " + pD.GetFPS().ToString() + " Format: " + pD.GetFormat().ToString());
             }
 
             try
