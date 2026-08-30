@@ -1,3 +1,6 @@
 [submodule "OrbbecSDK_CSharp"]
 	path = OrbbecSDK_CSharp
 	url = git@github.com:orbbec/OrbbecSDK_CSharp.git
+[submodule "OrbbecSDK_DotNet"]
+	path = OrbbecSDK_DotNet
+	url = git@github.com:orbbec/OrbbecSDK_DotNet.git
