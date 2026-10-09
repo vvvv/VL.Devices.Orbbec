@@ -1,20 +1,20 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
+    <TargetFramework>net10.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <!--<GenerateDocumentationFile>True</GenerateDocumentationFile>-->
     <OutputPath>..\lib</OutputPath>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
 
-    <VVVVInstallPath>C:\Program Files\vvvv\vvvv_gamma_6.0-0179-g427422701e</VVVVInstallPath>
+    <VVVVInstallPath>C:\Program Files\vvvv\vvvv_gamma_8.0-0170-g6f2eb6d984-win-x64</VVVVInstallPath>
     <RepoRootPath>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..'))</RepoRootPath>
     <VVVVRepoPath>$([System.IO.Path]::GetFullPath('$(RepoRootPath)'))</VVVVRepoPath>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="VL.Core" Version="2025.7.1-0164-g42ad9555c3" />
+    <PackageReference Include="VL.Core" Version="2026.8.0-0170-g6f2eb6d984" />
   </ItemGroup>
 
   <ItemGroup>
@@ -25,7 +25,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Include="..\OrbbecSDK_CSharp\src\*">
+    <Compile Include="..\OrbbecSDK_DotNet\src\*.cs">
       <LinkBase>sdk</LinkBase>
     </Compile>
   </ItemGroup>

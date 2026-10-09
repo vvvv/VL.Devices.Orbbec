@@ -108,7 +108,7 @@ public class OrbbecDeviceDefinition : DynamicEnumDefinitionBase<OrbbecDeviceDefi
 
         var result = new Dictionary<string, object?>()
         {
-            { "Default", _netDevices.Any() ? new DeviceInfo(SerialFromDevice(_netDevices.FirstOrDefault().Value)) : devices.DeviceCount() > 0 ? new DeviceInfo(SerialFromDevice(devices.GetDevice(0))) : null }
+            { "Default", _netDevices.Any() ? _netDevices.FirstOrDefault().Value : devices.DeviceCount() > 0 ? devices.GetDevice(0) : null }
             //{ "Default", devices.DeviceCount() > 0 ? devices.GetDevice(0) : null }
         };
 
@@ -118,7 +118,7 @@ public class OrbbecDeviceDefinition : DynamicEnumDefinitionBase<OrbbecDeviceDefi
             var name = NameFromDevice(entry.Value);
             if (!result.ContainsKey(name))
             {
-                result.Add(name, new DeviceInfo(SerialFromDevice(entry.Value)));
+                result.Add(name, entry.Value);
             }
         }
 
@@ -129,7 +129,7 @@ public class OrbbecDeviceDefinition : DynamicEnumDefinitionBase<OrbbecDeviceDefi
             var name = NameFromDevice(dvc);
             if (!result.ContainsKey(name))
             {
-                result.Add(name, new DeviceInfo(SerialFromDevice(dvc)));
+                result.Add(name, dvc);
             }
         }
 
