@@ -16,7 +16,7 @@ For use with vvvv, the visual live-programming environment for .NET: http://vvvv
 - When making a pull-request, please make sure to read the general [guidelines on contributing to vvvv libraries](https://thegraybook.vvvv.org/reference/extending/contributing.html)
 
 ## Credits
-Based on the [Orbbec SDK C# Wrapper](https://github.com/orbbec/OrbbecSDK_CSharp)
+Based on the [Orbbec SDK DotNet Wrapper](https://github.com/orbbec/OrbbecSDK_DotNet/tree/v2-main)
 
 ## Sponsoring
 Development of this library was partially sponsored by:  
