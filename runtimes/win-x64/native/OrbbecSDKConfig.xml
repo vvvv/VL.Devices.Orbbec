@@ -29,7 +29,7 @@
         true-enable, false-disable) -->
         <EnableMemoryPool>true</EnableMemoryPool>
         <!-- Maximum memory size of all data frames, int type, unit: MB, minimum 100MB -->
-        <MaxFrameBufferSize>2048</MaxFrameBufferSize>
+        <MaxFrameBufferSize>4096</MaxFrameBufferSize>
         <!-- Frame buffer queue size in pipeline -->
         <PipelineFrameQueueSize>10</PipelineFrameQueueSize>
         <!-- Frame buffer queue size in internal processing unit -->
