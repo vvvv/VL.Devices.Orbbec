@@ -8,7 +8,7 @@ using System.Reflection;
 
 namespace VL.Devices.Orbbec.Advanced;
 
-internal record DeviceInfo(string SerialNumber);
+//internal record DeviceInfo(string SerialNumber);
 
 [Serializable]
 public class OrbbecDevice : DynamicEnumBase<OrbbecDevice, OrbbecDeviceDefinition>
