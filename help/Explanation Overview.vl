@@ -528,12 +528,12 @@
               <Choice Kind="TypeFlag" Name="Int2" />
             </p:TypeAnnotation>
           </Pad>
-          <Pad Id="F5KtdyVTUwcQFv8zGJN1z4" Comment="Color FPS" Bounds="113,163,35,15" ShowValueBox="true" isIOBox="true" Value="30">
+          <Pad Id="F5KtdyVTUwcQFv8zGJN1z4" Comment="Color FPS" Bounds="113,163,35,15" ShowValueBox="true" isIOBox="true" Value="0">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="TypeFlag" Name="Integer32" />
             </p:TypeAnnotation>
           </Pad>
-          <Pad Id="P2i47IFVYSkMXFXcYga2tn" Comment="Depth Resolution" Bounds="133,192,35,28" ShowValueBox="true" isIOBox="true" Value="1280, 720">
+          <Pad Id="P2i47IFVYSkMXFXcYga2tn" Comment="Depth Resolution" Bounds="133,192,35,28" ShowValueBox="true" isIOBox="true" Value="0, 0">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="TypeFlag" Name="Int2" />
             </p:TypeAnnotation>
@@ -548,7 +548,7 @@
             <Pin Id="KhkEtjbh8TxMR2nwR324r9" Name="Texture" Kind="OutputPin" />
             <Pin Id="Nl225WGGbRVN9qpPqCPCWR" Name="On Data" Kind="OutputPin" />
           </Node>
-          <Pad Id="Jmftl91otefORd7ChMfgLL" Comment="Desired FPS" Bounds="153,223,35,15" ShowValueBox="true" isIOBox="true" Value="25">
+          <Pad Id="Jmftl91otefORd7ChMfgLL" Comment="Desired FPS" Bounds="153,223,35,15" ShowValueBox="true" isIOBox="true" Value="0">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="TypeFlag" Name="Integer32" />
             </p:TypeAnnotation>
@@ -662,10 +662,10 @@
         <Link Id="IwPNADQjAJPLqhvSR7MkT9" Ids="PWjfnI5yRLhPEc5cAR8fO3,CQdye6wpJE2PC0gDl6mWM9" />
         <Link Id="FijvNEbqBnxMks002hUO0G" Ids="Vo0cLW5e8sJNY6odxYYjeD,UdDgcts7iapMnCaCqkddAJ" />
         <Link Id="JWxgX2kozOQNjXIvQnOS2D" Ids="QWTPAM9uBYMObrXzQRh15J,QXfIxZf7nnDQOoxLDEGMq8" />
-        <Link Id="Qpdu3Jrzq9hOAhGPpdjP3O" Ids="Jmftl91otefORd7ChMfgLL,HDjE0UIrMzYN6Zy09CXnZQ" />
-        <Link Id="CNt5RiDdLu0PnSlH69NRb7" Ids="P2i47IFVYSkMXFXcYga2tn,NiVxKtQB3U7MTDHJDhnIjk" />
         <Link Id="GskLI7pUtnRPDPLKvc677c" Ids="B57ZFXPIhRPMRpORrpZqfH,CalEjyUN1IyNGLfVS13Qkc" />
         <Link Id="MTvEbtrBo9aPyKFdbt29b4" Ids="GAFNC8ouVJyMY7G4VIihK7,B8LS4AAAckjMZ01sjKQRSs" />
+        <Link Id="QSVGRhXuQYQLFXywlzMQxh" Ids="HyERIrUvWpfPHZWRjG2FId,NiVxKtQB3U7MTDHJDhnIjk" />
+        <Link Id="LRkq7eOJD8dMQlBm2kNfdL" Ids="F5KtdyVTUwcQFv8zGJN1z4,HDjE0UIrMzYN6Zy09CXnZQ" />
       </Patch>
     </Node>
   </Patch>
