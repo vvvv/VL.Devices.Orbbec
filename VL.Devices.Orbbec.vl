@@ -1098,7 +1098,7 @@
               <Pin Id="GamDF3OOnaUOW4xNeuBBdL" Name="Input" Kind="StateInputPin" />
               <Pin Id="Cr8YAiSbPhEOwr5zjUpkog" Name="Output" Kind="StateOutputPin" />
             </Node>
-            <Node Bounds="248,213,1248,2457" Id="MMrSR4VTLAgNMp4nfxxQYs">
+            <Node Bounds="248,213,1338,2457" Id="MMrSR4VTLAgNMp4nfxxQYs">
               <p:NodeReference LastCategoryFullName="Primitive" LastDependency="Builtin">
                 <Choice Kind="StatefulRegion" Name="Region (Stateful)" Fixed="true" />
                 <CategoryReference Kind="Category" Name="Primitive" />
@@ -1110,7 +1110,7 @@
               <Patch Id="VbeoSQ6rchSMIZzKtiTjLO" ManuallySortedPins="true">
                 <Patch Id="F0h0NWlqmE5O23ITRldLBk" Name="Create" ManuallySortedPins="true" />
                 <Patch Id="JQqJQhHK4owOGH0Fe42Sph" Name="Then" ManuallySortedPins="true" />
-                <Node Bounds="291,436,1193,1840" Id="JgK4FbvXGMqLQo6ZVz6tvJ">
+                <Node Bounds="291,447,1193,1829" Id="JgK4FbvXGMqLQo6ZVz6tvJ">
                   <p:NodeReference LastCategoryFullName="Primitive" LastDependency="Builtin">
                     <Choice Kind="StatefulRegion" Name="Region (Stateful)" Fixed="true" />
                     <CategoryReference Kind="Category" Name="Primitive" />
@@ -1415,26 +1415,6 @@
                       <Pin Id="LLGv2qizBUhOLRoRNtulI0" Name="Input 2" Kind="InputPin" />
                       <Pin Id="LaN5XyydrBrM3jTShf7lQr" Name="Output" Kind="StateOutputPin" />
                     </Node>
-                    <Pad Id="GRalzfrAFREOLjn2AdDGYl" Comment="Full Scale Range" Bounds="545,1595,195,15" ShowValueBox="true" isIOBox="true" Value="-1">
-                      <p:TypeAnnotation LastCategoryFullName="Orbbec" LastDependency="VL.Devices.Orbbec.dll">
-                        <Choice Kind="TypeFlag" Name="AccelFullScaleRange" />
-                      </p:TypeAnnotation>
-                    </Pad>
-                    <Pad Id="IKXxyNFGuY9MlCTEKXTL7U" Comment="Sample Rate" Bounds="578,1625,168,15" ShowValueBox="true" isIOBox="true" Value="0">
-                      <p:TypeAnnotation LastCategoryFullName="Orbbec" LastDependency="VL.Devices.Orbbec.dll">
-                        <Choice Kind="TypeFlag" Name="AccelSampleRate" />
-                      </p:TypeAnnotation>
-                    </Pad>
-                    <Pad Id="CyCFueECh24PFTEre5roya" Comment="Full Scale Range" Bounds="544,1695,192,15" ShowValueBox="true" isIOBox="true" Value="-1">
-                      <p:TypeAnnotation LastCategoryFullName="Orbbec" LastDependency="VL.Devices.Orbbec.dll">
-                        <Choice Kind="TypeFlag" Name="GyroFullScaleRange" />
-                      </p:TypeAnnotation>
-                    </Pad>
-                    <Pad Id="HFMdTgvS9XnPECP92kv5Z8" Comment="Sample Rate" Bounds="576,1730,166,15" ShowValueBox="true" isIOBox="true" Value="0">
-                      <p:TypeAnnotation LastCategoryFullName="Orbbec" LastDependency="VL.Devices.Orbbec.dll">
-                        <Choice Kind="TypeFlag" Name="GyroSampleRate" />
-                      </p:TypeAnnotation>
-                    </Pad>
                     <Node Bounds="511,750,336,19" Id="R2DiHrZq9sNMwC4xUiENI9">
                       <p:NodeReference LastCategoryFullName="Devices.Orbbec.Orbbec" LastDependency="VL.Devices.Orbbec.vl">
                         <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
@@ -1505,23 +1485,32 @@
                       </p:ValueBoxSettings>
                     </Pad>
                     <ControlPoint Id="G013hHLVsG5PawHVC3Vu1P" Bounds="1256,985" />
+                    <Pad Id="AIAyUtLgvezM4xn7Op8sWU" Bounds="1127,1571,201,57" ShowValueBox="true" isIOBox="true" Value="&lt;&lt; here we keep the same logick as in the sdk's sample.">
+                      <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
+                        <Choice Kind="TypeFlag" Name="String" />
+                      </p:TypeAnnotation>
+                      <p:ValueBoxSettings>
+                        <p:fontsize p:Type="Int32">9</p:fontsize>
+                        <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Comment</p:stringtype>
+                      </p:ValueBoxSettings>
+                    </Pad>
                   </Patch>
                   <ControlPoint Id="Qw7h29LHDeYNCk0lAcNtLT" Bounds="473,2270" Alignment="Bottom" />
-                  <ControlPoint Id="NXZB5NTvVIpOfocrhZLUAr" Bounds="661,442" Alignment="Top" />
+                  <ControlPoint Id="NXZB5NTvVIpOfocrhZLUAr" Bounds="661,453" Alignment="Top" />
                   <ControlPoint Id="SrAAI5sldWCLNwad1YgpzH" Bounds="562,2270" Alignment="Bottom" />
-                  <ControlPoint Id="CAV4wi9MZkDPeZCGH24hyt" Bounds="741,442" Alignment="Top" />
-                  <ControlPoint Id="E2FxGicm5liNQ71qZ0mFXG" Bounds="305,442" Alignment="Top" />
+                  <ControlPoint Id="CAV4wi9MZkDPeZCGH24hyt" Bounds="741,453" Alignment="Top" />
+                  <ControlPoint Id="E2FxGicm5liNQ71qZ0mFXG" Bounds="305,453" Alignment="Top" />
                   <ControlPoint Id="OGRBdLmofFXPPOj4wXpN6z" Bounds="620,2270" Alignment="Bottom" />
                   <ControlPoint Id="NkN2y3QcSRlOJqSJGddSzO" Bounds="939,2270" Alignment="Bottom" />
-                  <ControlPoint Id="QeRHPA04C71NnYP0LChFdH" Bounds="598,442" Alignment="Top" />
+                  <ControlPoint Id="QeRHPA04C71NnYP0LChFdH" Bounds="598,453" Alignment="Top" />
                   <ControlPoint Id="H4QmMuUUosgMFwNzFTgUEq" Bounds="1252,2270" Alignment="Bottom" />
-                  <ControlPoint Id="DgYXSFOu9GXQcOBvnbVI71" Bounds="767,442" Alignment="Top" />
+                  <ControlPoint Id="DgYXSFOu9GXQcOBvnbVI71" Bounds="767,453" Alignment="Top" />
                   <ControlPoint Id="CnjYTzeRk1rNPHtAABHHCB" Bounds="1387,2270" Alignment="Bottom" />
-                  <ControlPoint Id="O2bg8HK3Sk8QBuAOpGzdyr" Bounds="1391,442" Alignment="Top" />
+                  <ControlPoint Id="O2bg8HK3Sk8QBuAOpGzdyr" Bounds="1391,453" Alignment="Top" />
                   <ControlPoint Id="Ggbhe2xDQPrLWy2S4m9yO4" Bounds="702,2270" Name="Depth Width" Alignment="Bottom" />
-                  <ControlPoint Id="LjEOuXCB5LGMVjPdugiTJS" Bounds="695,442" Name="Depth Width" Alignment="Top" />
+                  <ControlPoint Id="LjEOuXCB5LGMVjPdugiTJS" Bounds="807,453" Name="Depth Width" Alignment="Top" />
                   <ControlPoint Id="FLQjOrPkV3zPxPkHhXvay7" Bounds="780,2270" Name="Depth Hight" Alignment="Bottom" />
-                  <ControlPoint Id="U8Paf3GKfghLG54ie9agz7" Bounds="768,442" Name="Depth Hight" Alignment="Top" />
+                  <ControlPoint Id="U8Paf3GKfghLG54ie9agz7" Bounds="892,453" Name="Depth Hight" Alignment="Top" />
                 </Node>
                 <Node Bounds="437,382,72,19" Id="TQE3er43jeIPUdjIrO7Itf">
                   <p:NodeReference LastCategoryFullName="Primitive.Boolean" LastDependency="VL.CoreLib.vl">
@@ -1758,7 +1747,11 @@
                   <Pin Id="Tc2YBfvPJqiQdFIMbkuJ85" Name="Input 3" Kind="InputPin" />
                   <Pin Id="RqAwvAsmGYVLInY1Nteo5y" Name="Input 4" Kind="InputPin" />
                 </Node>
-                <Pad Id="UFs4lULykcMLk1TJhUIF3z" Comment="" Bounds="1021,370,35,35" ShowValueBox="true" isIOBox="true" />
+                <Pad Id="UFs4lULykcMLk1TJhUIF3z" Comment="" Bounds="1021,380,35,35" ShowValueBox="true" isIOBox="true" />
+                <ControlPoint Id="HSw4hltOHp5MIaq6VVl1h9" Bounds="1571,1728" />
+                <ControlPoint Id="QKnwEZoqfHKP9zKnqoaWrK" Bounds="1512,1600" />
+                <ControlPoint Id="OPRK87vVT14P6ViRI7Xmo1" Bounds="1494,1580" />
+                <ControlPoint Id="IxaqbmAAGEzPiyIT0bgaha" Bounds="1544,1710" />
               </Patch>
               <ControlPoint Id="GltPpgRVHUrN4FrcK5kQz1" Bounds="473,219" Alignment="Top" />
               <ControlPoint Id="N0zt9I77y1TLIf5HY6sVho" Bounds="554,2664" Alignment="Bottom" />
@@ -1776,6 +1769,10 @@
               <ControlPoint Id="VuZT1tf6wNnOYEyyPWrICC" Bounds="1382,2664" Alignment="Bottom" />
               <ControlPoint Id="SEuq3Q5D2h6PhHeMwkbTgf" Bounds="702,2664" Alignment="Bottom" />
               <ControlPoint Id="Ep9bn9XHUlkNtTY0kbThN5" Bounds="780,2664" Alignment="Bottom" />
+              <ControlPoint Id="KQru2nNps3ZLIlnjmJ9XIo" Bounds="1569,219" Alignment="Top" />
+              <ControlPoint Id="CmQSZbGwdMvNACW3MJbPyL" Bounds="1527,219" Alignment="Top" />
+              <ControlPoint Id="SOdUnd9CNqJLprwQalqHcg" Bounds="1506,219" Alignment="Top" />
+              <ControlPoint Id="CPhgPlfRTSUPECqnv4pl7Q" Bounds="1547,219" Alignment="Top" />
             </Node>
             <ControlPoint Id="BSHqKhlGVKNPG97O97PzKf" Bounds="473,171" />
             <Pad Id="LYnygkWDlgwM9SXbU6yfpJ" Comment="Force" Bounds="83,101,51,50" ShowValueBox="true" isIOBox="true" Value="false">
@@ -2657,6 +2654,10 @@
             </Node>
             <ControlPoint Id="TrSbzho8fxtOrFYQ3luszG" Bounds="702,2700" />
             <ControlPoint Id="BWkDcWGkv36NoZakbfsUGB" Bounds="780,2720" />
+            <ControlPoint Id="PuVwmWCF2bwPzUT7qEoeyS" Bounds="1569,180" />
+            <ControlPoint Id="Bgy0vcrZ32uOcIDpGw0aHJ" Bounds="1527,135" />
+            <ControlPoint Id="P7dz0605mEBO6HmmxArAwH" Bounds="1506,110" />
+            <ControlPoint Id="Eko1HuHpiQ4O8HS5e9LLBa" Bounds="1547,155" />
           </Canvas>
           <Patch Id="R8mzNk4fLaCOCzl83rlKyo" Name="Create" ParticipatingElements="Jo5qzOWVzHYLhs2VVwNQEZ" />
           <Patch Id="GXIvkQmy6x1Ld0UzLQUu6M" Name="Dispose (Internal)" ParticipatingElements="J0EuXVXKLYFLE7U91jVSjR" />
@@ -2680,6 +2681,26 @@
             <Pin Id="DzXB6QSh92pO13gDD6niYD" Name="Depth Enabled" Kind="InputPin" />
             <Pin Id="DmW5dktpYyIPPuYIeWmmAY" Name="IR Enabled" Kind="InputPin" />
             <Pin Id="O2iRDW3qiIxN0ETy1FXaad" Name="PointCloud Enabled" Kind="InputPin" />
+            <Pin Id="I85VhSHn2LKL26sScP7ws8" Name="Gyro Sample Rate" Kind="InputPin" Visibility="Optional">
+              <p:TypeAnnotation LastCategoryFullName="Orbbec" LastDependency="VL.Devices.Orbbec.dll">
+                <Choice Kind="TypeFlag" Name="GyroSampleRate" />
+              </p:TypeAnnotation>
+            </Pin>
+            <Pin Id="Q6SlSXvVPXKOT60LAk6WV1" Name="Accel Sample Rate" Kind="InputPin" Visibility="Optional">
+              <p:TypeAnnotation LastCategoryFullName="Orbbec" LastDependency="VL.Devices.Orbbec.dll">
+                <Choice Kind="TypeFlag" Name="AccelSampleRate" />
+              </p:TypeAnnotation>
+            </Pin>
+            <Pin Id="L5eheKgwA50NQiKNxgatKl" Name="Accel Full Scale Range" Kind="InputPin" DefaultValue="OB_ACCEL_FS_UNKNOWN" Visibility="Optional">
+              <p:TypeAnnotation LastCategoryFullName="Orbbec" LastDependency="VL.Devices.Orbbec.dll">
+                <Choice Kind="TypeFlag" Name="AccelFullScaleRange" />
+              </p:TypeAnnotation>
+            </Pin>
+            <Pin Id="MPFMlDdRODxPxUlVwYSMxp" Name="Gyro Full Scale Range" Kind="InputPin" DefaultValue="OB_GYRO_FS_UNKNOWN" Visibility="Optional">
+              <p:TypeAnnotation LastCategoryFullName="Orbbec" LastDependency="VL.Devices.Orbbec.dll">
+                <Choice Kind="TypeFlag" Name="GyroFullScaleRange" />
+              </p:TypeAnnotation>
+            </Pin>
             <Pin Id="JEzM06ceQzaOK7xI9IN6eM" Name="Enabled" Kind="InputPin" />
           </Patch>
           <Link Id="GoZowh8lBHbOT4Vv9eyhay" Ids="H8expRzdvjlLLm2GDTkq3A,JbmvTh1jRfrLAeu8AY3R7z" IsFeedback="true" />
@@ -2843,10 +2864,6 @@
           <Link Id="EpmqCB3l5kDMUDxfD867Oc" Ids="QMVLcRHzaGyOcngfJewd8L,LLGv2qizBUhOLRoRNtulI0" />
           <Link Id="K09lSFok1C1NdhoYnVw63a" Ids="LaN5XyydrBrM3jTShf7lQr,MNZgkOI98OUQAibR0abRdz" />
           <Link Id="TInm29ryI2VLWvVTXg0QPw" Ids="LaN5XyydrBrM3jTShf7lQr,Ota1jpaVPMNPAYngXFOOUA" />
-          <Link Id="PlvyMWis9qhO86LkngL9ST" Ids="GRalzfrAFREOLjn2AdDGYl,DtW0iJwf7D5MbIt1XtTm01" />
-          <Link Id="EO1XO0aq0r7QQ9iMOiL9BJ" Ids="IKXxyNFGuY9MlCTEKXTL7U,DU2OnQYjesDMvnaoGqRaK3" />
-          <Link Id="K3AAk0itwaLQGl9SwcQHxE" Ids="CyCFueECh24PFTEre5roya,MUoyAmqXdC3LslcMwciltN" />
-          <Link Id="IL4vJgiIwQKPSqgdV4fS6l" Ids="HFMdTgvS9XnPECP92kv5Z8,CmMsfyAHJHjL6ejc37azO0" />
           <Link Id="IQyhHmTnaelPRwvKj1DBwe" Ids="UQVg9fgbkNCQJlq6P1yg0w,PzAOm3cdxlSPAaG6ZKA7FJ" />
           <Link Id="PQrf2zttqCWLkoyy0iW88A" Ids="UR89a1ryRGPPVIJHVL371O,TNmXVkuWAwwLZ52fTuZWJF" />
           <Link Id="CZVIwWIQeOsQYw00EUhQxo" Ids="FPg5PtqbUz9OK8hAStUnC2,PuIJUh1UGhnMsubmPZwcXb" />
@@ -2854,7 +2871,6 @@
           <Link Id="JGh0ShjI9Y6OrO3zgJewaC" Ids="E8DKIXhLKunMm71GLtS9je,KqQv8evcSZfMCkPANIWipj" />
           <Link Id="RPLPMhGMaveOyM2ajIaMAc" Ids="KXkaeB0N8dZPAE3lIgxWCy,EgbTFBVu11ePtvCyS7yZ6J" />
           <Link Id="JMn6kru2IFcPzZQYlFMHof" Ids="RSZLVTDWeMMP2e8BxDUsHI,VPcKZujDt1lNcZeqvhl6mS" />
-          <Link Id="HVQwgiTHuT5MKXRQQcZdC2" Ids="CeRXm8WCDalNfhcZRlyYyL,I2XlSoAeSUQMjBiNVUQWFs" />
           <Link Id="SrwMOqo6xvrPg7DQBZ2eBj" Ids="ODS5lbyqJQMObc9wBonp5p,E5o8eYl1HlHQBNLSZGW5Z8" />
           <Link Id="HQg0Si94bvkO4IEJmSHxcW" Ids="Io7ypg02qkVM3vUPfAOauy,G013hHLVsG5PawHVC3Vu1P,SAAyL9SXidqMdEyiI2uUIS" />
           <Link Id="M4W6OjFijqsPWAvEVHnDjq" Ids="LjEOuXCB5LGMVjPdugiTJS,Ggbhe2xDQPrLWy2S4m9yO4" IsFeedback="true" />
@@ -2871,6 +2887,19 @@
             <Pin Id="MxXl5cHzQ5bP5XbSNRr7VU" Name="Depth Width" Kind="OutputPin" />
             <Pin Id="DmUkt2uWHrTOXJeLUHnNjF" Name="Depth Hight" Kind="OutputPin" />
           </Patch>
+          <Link Id="S2Jt3HHfYInNGKTDtaCV43" Ids="CeRXm8WCDalNfhcZRlyYyL,I2XlSoAeSUQMjBiNVUQWFs" />
+          <Link Id="Skfe5Pqb5qNMcvKwsp2Foj" Ids="KQru2nNps3ZLIlnjmJ9XIo,HSw4hltOHp5MIaq6VVl1h9,CmMsfyAHJHjL6ejc37azO0" />
+          <Link Id="VOx8lMQuuZ4Ou9l9Gv0Qjb" Ids="PuVwmWCF2bwPzUT7qEoeyS,KQru2nNps3ZLIlnjmJ9XIo" />
+          <Link Id="CMgBtBFg2zmNOZ4murHlH7" Ids="I85VhSHn2LKL26sScP7ws8,PuVwmWCF2bwPzUT7qEoeyS" IsHidden="true" />
+          <Link Id="RtFBsp55awULtTwQYmZVeP" Ids="CmQSZbGwdMvNACW3MJbPyL,QKnwEZoqfHKP9zKnqoaWrK,DU2OnQYjesDMvnaoGqRaK3" />
+          <Link Id="E618z5LkOLzM7uCkunpxHS" Ids="Bgy0vcrZ32uOcIDpGw0aHJ,CmQSZbGwdMvNACW3MJbPyL" />
+          <Link Id="Sig6USzH9rtMVBNxKZADXy" Ids="Q6SlSXvVPXKOT60LAk6WV1,Bgy0vcrZ32uOcIDpGw0aHJ" IsHidden="true" />
+          <Link Id="MnvRU65pQ7xQTcmU55huUp" Ids="SOdUnd9CNqJLprwQalqHcg,OPRK87vVT14P6ViRI7Xmo1,DtW0iJwf7D5MbIt1XtTm01" />
+          <Link Id="GomJAYpl4zrLs2mUzVUvce" Ids="P7dz0605mEBO6HmmxArAwH,SOdUnd9CNqJLprwQalqHcg" />
+          <Link Id="ELrNuMDgKOEOfBOkKJXHGF" Ids="L5eheKgwA50NQiKNxgatKl,P7dz0605mEBO6HmmxArAwH" IsHidden="true" />
+          <Link Id="S4Zdz1PWTEhMDZTlsDTutq" Ids="CPhgPlfRTSUPECqnv4pl7Q,IxaqbmAAGEzPiyIT0bgaha,MUoyAmqXdC3LslcMwciltN" />
+          <Link Id="RkcRIlHNpgCPOKCjNvcDfm" Ids="Eko1HuHpiQ4O8HS5e9LLBa,CPhgPlfRTSUPECqnv4pl7Q" />
+          <Link Id="GG9G3EkLLIJNyihw4ixebg" Ids="MPFMlDdRODxPxUlVwYSMxp,Eko1HuHpiQ4O8HS5e9LLBa" IsHidden="true" />
         </Patch>
       </Node>
       <!--
