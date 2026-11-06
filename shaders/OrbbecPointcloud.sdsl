@@ -1,0 +1,37 @@
+shader OrbbecPointcloud : ColorUtilityTemp
+{
+    struct Pointcloud
+    {
+        float3 Pos;
+    };
+
+    struct PointcloudColor
+    {
+        float3 Pos;
+        float3 Col;
+    };
+
+
+//////////
+//helper methods
+//////////
+
+    float3 GetPos(StructuredBuffer<Pointcloud> p, uint id)
+    {
+        float3 o = p[id].Pos * float3(1.0f, -1.0f, -1.0f);
+        return o;
+    }
+
+    float3 GetPosition(StructuredBuffer<PointcloudColor> p, uint id)
+    {
+        float3 o = p[id].Pos * float3(1.0f, -1.0f, -1.0f);
+        return o;
+    }
+
+    float3 GetColor(StructuredBuffer<PointcloudColor> p, uint id)
+    {
+        float3 c = p[id].Col / 255.0f;
+        c = SRgbToLinearPrecise(float4(c, 1.0f)).xyz;
+        return c;
+    }
+};

@@ -1,0 +1,19 @@
+[Summary("")]
+shader ConvertOrbbecPoitcloud_ComputeFX : ComputeShaderBase, OrbbecPointcloud
+{
+	stage int count;
+    
+    StructuredBuffer<Pointcloud> PointsIn;
+	RWStructuredBuffer<Pointcloud> PointsOut;
+
+    override void Compute()
+    {
+        uint index = streams.DispatchThreadId.x;
+        
+        if (index >= count) return;
+
+        float3 p = GetPos(PointsIn, index);
+
+        PointsOut[index].Pos = p;
+    }
+};

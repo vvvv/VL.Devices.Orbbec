@@ -1,0 +1,15 @@
+[Summary("")]
+shader ColorFromPointcloutColor_ShaderFX : ComputeFloat4, ShaderBaseStream, OrbbecPointcloud, ComputeColor
+{
+    rgroup PerMaterial
+    {
+        stage StructuredBuffer<PointcloudColor> Points;
+    }
+
+    override float4 Compute()
+    {
+        uint id = streams.InstanceID;
+
+        return float4(Points[id].Col, 1);
+    }
+};

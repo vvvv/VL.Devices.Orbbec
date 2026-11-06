@@ -1,0 +1,21 @@
+[Summary("")]
+shader ConvertOrbbecPointcloudColor_ComputeFX : ComputeShaderBase, OrbbecPointcloud
+{
+	stage int count;
+    
+    stage StructuredBuffer<PointcloudColor> PointsIn;
+	stage RWStructuredBuffer<PointcloudColor> PointsOut;
+
+    override void Compute()
+    {
+        uint index = streams.DispatchThreadId.x;
+        
+        if (index >= count) return;
+
+        float3 p = GetPosition(PointsIn, index);
+        float3 c = GetColor(PointsIn, index);
+
+        PointsOut[index].Pos = p;
+        PointsOut[index].Col = c;
+    }
+};

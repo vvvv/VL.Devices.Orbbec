@@ -1,0 +1,30 @@
+[Summary("")]
+shader ComputePointsToMatrixes_ComputeFX : ComputeShaderBase, OrbbecPointcloud, TransformUtils
+{
+	struct Transform //needed put float4x4 into a structured buffer
+    {
+        float4x4 Matrix;
+    };
+    
+    stage int count;
+    stage float size = 0.001f;
+    
+    StructuredBuffer<Pointcloud> Points;
+	RWStructuredBuffer<Transform> InstanceWorld;
+	RWStructuredBuffer<Transform> InstanceWorldInverse;
+
+    override void Compute()
+    {
+        uint index = streams.DispatchThreadId.x;
+        
+        if (index >= count) return;
+
+        float4x4 world;
+        float4x4 worldInverse;
+
+        TransformTSWithInverse(Points[index].Pos, size, world, worldInverse);
+
+        InstanceWorld[index].Matrix = world;
+        InstanceWorldInverse[index].Matrix = worldInverse;
+    }
+};
