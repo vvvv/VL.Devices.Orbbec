@@ -1,5 +1,5 @@
 [Summary("")]
-shader ComputePointsToMatrixes_ComputeFX : ComputeShaderBase, OrbbecPointcloud, TransformUtils
+shader ComputePointsToMatrices_ComputeFX : ComputeShaderBase, OrbbecPointcloud, TransformUtils
 {
 	struct Transform //needed put float4x4 into a structured buffer
     {
