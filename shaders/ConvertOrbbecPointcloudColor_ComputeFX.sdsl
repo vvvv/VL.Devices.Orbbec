@@ -12,10 +12,6 @@ shader ConvertOrbbecPointcloudColor_ComputeFX : ComputeShaderBase, OrbbecPointcl
         
         if (index >= count) return;
 
-        float3 p = GetPosition(PointsIn, index);
-        float3 c = GetColor(PointsIn, index);
-
-        PointsOut[index].Pos = p;
-        PointsOut[index].Col = c;
+        PointsOut[index] = ToStrideSpace(PointsIn[index]);
     }
 };

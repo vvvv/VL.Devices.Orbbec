@@ -13,7 +13,7 @@ shader CustomSpriteRenderer_DrawFX : VS_PS_Base, ColorBase, ShaderUtils, OrbbecP
         float3 p = Points[streams.InstanceID].Pos;
         float3 c = Points[streams.InstanceID].Col;
 
-        float3 op = streams.Position * size;
+        float3 op = streams.Position * (p == float3(0.0f, 0.0f, 0.0f) ? 0.0f : size);
         op = mul(float4(op, 1.0f), extract_rotation_matrix(ViewInverse)).xyz;
         op += p;        
         

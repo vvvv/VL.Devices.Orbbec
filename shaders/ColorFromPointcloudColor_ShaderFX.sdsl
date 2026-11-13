@@ -1,5 +1,5 @@
 [Summary("")]
-shader ColorFromPointcloutColor_ShaderFX : ComputeFloat4, ShaderBaseStream, OrbbecPointcloud, ComputeColor
+shader ColorFromPointcloudColor_ShaderFX : ComputeFloat4, ShaderBaseStream, OrbbecPointcloud, ComputeColor
 {
     rgroup PerMaterial
     {
