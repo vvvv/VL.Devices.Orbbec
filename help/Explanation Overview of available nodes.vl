@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Document xmlns:p="property" xmlns:r="reflection" Id="CAVFpoIAlKAP2FSfLJ5iwH" LanguageVersion="2026.8.0-0282-gae355685da" Version="0.128">
+<Document xmlns:p="property" xmlns:r="reflection" Id="CAVFpoIAlKAP2FSfLJ5iwH" LanguageVersion="2026.8.0-0328-g2d427d5a66" Version="0.128">
   <NugetDependency Id="BKMlRTjek6INClI8OTKWOU" Location="VL.CoreLib" />
   <Patch Id="I6Ez2fp0vrKPQRZJfnIg0Q">
     <Canvas Id="C7qdhnAsgeIOOnvJ4TQ040" DefaultCategory="Main" BordersChecked="false" CanvasType="FullCategory" />
@@ -15,7 +15,7 @@
       </p:NodeReference>
       <Patch Id="AIaQUBKXZZONqZSfIQfKsK">
         <Canvas Id="G61AeaQQh54NlDbhJaepCo" CanvasType="Group">
-          <Node Bounds="99,640,76,19" Id="QNAH49CqitwNdmhovvnwP2">
+          <Node Bounds="99,639,76,19" Id="QNAH49CqitwNdmhovvnwP2">
             <p:NodeReference LastCategoryFullName="Main" LastDependency="VL.Devices.Orbbec.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <Choice Kind="ProcessAppFlag" Name="ColorTexture" />
@@ -57,7 +57,7 @@
               <p:buttonmode p:Assembly="VL.UI.Forms" p:Type="VL.HDE.PatchEditor.Editors.ButtonModeEnum">Toggle</p:buttonmode>
             </p:ValueBoxSettings>
           </Pad>
-          <Node Bounds="369,640,79,19" Id="BJOQ79kupwbL2MLF9N9Gu5">
+          <Node Bounds="369,639,79,19" Id="BJOQ79kupwbL2MLF9N9Gu5">
             <p:NodeReference LastCategoryFullName="Main" LastDependency="VL.Devices.Orbbec.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <Choice Kind="ProcessAppFlag" Name="DepthTexture" />
@@ -70,35 +70,35 @@
           </Node>
           <Pad Id="C4EgLoknbU8QcM2EeM3FA0" Comment="" Bounds="371,723,219,257" ShowValueBox="true" isIOBox="true" />
           <Pad Id="CalEjyUN1IyNGLfVS13Qkc" Comment="" Bounds="643,723,228,256" ShowValueBox="true" isIOBox="true" />
-          <Node Bounds="920,639,93,19" Id="TPS3zWqdmCDPQFgotfnOcA">
+          <Node Bounds="920,639,66,19" Id="TPS3zWqdmCDPQFgotfnOcA">
             <p:NodeReference LastCategoryFullName="Devices.Orbbec" LastDependency="VL.Devices.Orbbec.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <FullNameCategoryReference ID="Devices.Orbbec" />
-              <Choice Kind="ProcessAppFlag" Name="PointCloudBuffer" />
+              <Choice Kind="ProcessAppFlag" Name="PointCloud" />
             </p:NodeReference>
             <Pin Id="Jo9y40ijjZhNvFpP2INEM8" Name="Node Context" Kind="InputPin" IsHidden="true" />
             <Pin Id="NUoisvqNW4GLwfnbQUeNw2" Name="Orbbec" Kind="InputPin" />
+            <Pin Id="QPtOap9gwaSQFGRxEXYoeM" Name="Raw Buffer" Kind="OutputPin" IsHidden="true" />
+            <Pin Id="Ew0XRtEwfcpLaVWeI6gktd" Name="On Data" Kind="OutputPin" />
             <Pin Id="Iwpu9rFNvDHNfnD29BK2aN" Name="Buffer" Kind="OutputPin" />
             <Pin Id="TPesYP4jxQULZZWU8RbjFu" Name="Element Count" Kind="OutputPin" />
-            <Pin Id="Ew0XRtEwfcpLaVWeI6gktd" Name="On Data" Kind="OutputPin" />
-            <Pin Id="UzipaE7H0fEMVRjIidhIEm" Name="Pointcloud Type" Kind="InputPin" />
           </Node>
-          <Pad Id="HyERIrUvWpfPHZWRjG2FId" Comment="Color Resolution" Bounds="130,208,35,28" ShowValueBox="true" isIOBox="true" Value="0, 0">
+          <Pad Id="HyERIrUvWpfPHZWRjG2FId" Comment="Color Resolution" Bounds="130,201,35,28" ShowValueBox="true" isIOBox="true" Value="0, 0">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="TypeFlag" Name="Int2" />
             </p:TypeAnnotation>
           </Pad>
-          <Pad Id="F5KtdyVTUwcQFv8zGJN1z4" Comment="Color FPS" Bounds="150,239,35,15" ShowValueBox="true" isIOBox="true" Value="0">
+          <Pad Id="F5KtdyVTUwcQFv8zGJN1z4" Comment="Color FPS" Bounds="159,240,35,15" ShowValueBox="true" isIOBox="true" Value="0">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="TypeFlag" Name="Integer32" />
             </p:TypeAnnotation>
           </Pad>
-          <Pad Id="P2i47IFVYSkMXFXcYga2tn" Comment="Depth Resolution" Bounds="170,268,35,28" ShowValueBox="true" isIOBox="true" Value="0, 0">
+          <Pad Id="P2i47IFVYSkMXFXcYga2tn" Comment="Depth Resolution" Bounds="188,280,35,28" ShowValueBox="true" isIOBox="true" Value="0, 0">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="TypeFlag" Name="Int2" />
             </p:TypeAnnotation>
           </Pad>
-          <Node Bounds="641,641,60,19" Id="RpND0K8tCbhOJMVlL04aUJ">
+          <Node Bounds="641,639,60,19" Id="RpND0K8tCbhOJMVlL04aUJ">
             <p:NodeReference LastCategoryFullName="Devices.Orbbec" LastDependency="VL.Devices.Orbbec.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <Choice Kind="ProcessAppFlag" Name="IRTexture" />
@@ -109,7 +109,7 @@
             <Pin Id="KhkEtjbh8TxMR2nwR324r9" Name="Texture" Kind="OutputPin" />
             <Pin Id="Nl225WGGbRVN9qpPqCPCWR" Name="On Data" Kind="OutputPin" />
           </Node>
-          <Pad Id="VhRPp4fUHprOQVe2X0ooXp" Comment="Device" Bounds="110,168,241,15" ShowValueBox="true" isIOBox="true" Value="Default">
+          <Pad Id="VhRPp4fUHprOQVe2X0ooXp" Comment="Device" Bounds="101,170,241,15" ShowValueBox="true" isIOBox="true" Value="Default">
             <p:TypeAnnotation LastCategoryFullName="Devices.Orbbec" LastDependency="VL.Devices.Orbbec.vl">
               <Choice Kind="TypeFlag" Name="OrbbecDevice" />
             </p:TypeAnnotation>
@@ -158,7 +158,7 @@
             <Pin Id="B57ZFXPIhRPMRpORrpZqfH" Name="Texture" Kind="OutputPin" />
             <Pin Id="RGupsC13x0NNnir3DW8QUO" Name="On Data" Kind="OutputPin" />
           </Node>
-          <Node Bounds="1051,639,100,19" Id="SvZgqOle5NjMtdJzUAU3Zd">
+          <Node Bounds="1051,639,65,19" Id="SvZgqOle5NjMtdJzUAU3Zd">
             <p:NodeReference LastCategoryFullName="Devices.Orbbec" LastDependency="VL.Devices.Orbbec.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <Choice Kind="ProcessAppFlag" Name="IMUData" />
@@ -166,10 +166,10 @@
             <p:HelpFocus p:Assembly="VL.Lang" p:Type="VL.Model.HelpPriority">High</p:HelpFocus>
             <Pin Id="T6EpOomYtgvLFdnty7XGZG" Name="Node Context" Kind="InputPin" IsHidden="true" />
             <Pin Id="Ok1wDxXXKoTNXiFo83BF5A" Name="Orbbec" Kind="InputPin" />
-            <Pin Id="S8HvnWclj0KLkk82ryOHJi" Name="Time Stamp" Kind="OutputPin" />
             <Pin Id="MnqK3A8OxSYMcF3GwlIHRB" Name="Temperature" Kind="OutputPin" />
             <Pin Id="SbCS4VIWYj5OdJ3QPeIyuH" Name="Accel Direction" Kind="OutputPin" />
             <Pin Id="MOS5rjl87hJQZMeuw8nyDa" Name="Gyro Direction" Kind="OutputPin" />
+            <Pin Id="S8HvnWclj0KLkk82ryOHJi" Name="Time Stamp" Kind="OutputPin" />
           </Node>
           <Node Bounds="783,679,84,19" Id="LwqQXTkjIbUPGGqKtyrZcq">
             <p:NodeReference LastCategoryFullName="Main" LastDependency="VL.Devices.Orbbec.vl">
@@ -204,7 +204,7 @@
             <Pin Id="FeUhOft7cb5Pho2op8c3qJ" Name="Texture" Kind="OutputPin" />
             <Pin Id="CMM8fdLMG4qPser8L8P4ek" Name="On Data" Kind="OutputPin" />
           </Node>
-          <Pad Id="E94Q9bbWjQAMOjoVS1JXU5" Comment="Temperature" Bounds="1085,689,35,15" ShowValueBox="true" isIOBox="true" />
+          <Pad Id="E94Q9bbWjQAMOjoVS1JXU5" Comment="Temperature" Bounds="1053,690,35,15" ShowValueBox="true" isIOBox="true" />
           <Pad Id="JPuA9ABhou3MPigu6YiVN4" Bounds="110,70,258,21" ShowValueBox="true" isIOBox="true" Value="Supports most of the devices by orbbec:">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="TypeFlag" Name="String" />
@@ -232,7 +232,7 @@
               <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Comment</p:stringtype>
             </p:ValueBoxSettings>
           </Pad>
-          <Pad Id="AVGI0KEQVB0OcaH5e5VkS0" Bounds="312,215,205,114" ShowValueBox="true" isIOBox="true" Value="&lt; Choose 0 for Resolution or FPS to go with the devices defaults. &#xD;&#xA;&#xD;&#xA;When choosing specific values, those will be adjusted to the nearest the device supports!">
+          <Pad Id="AVGI0KEQVB0OcaH5e5VkS0" Bounds="334,213,205,114" ShowValueBox="true" isIOBox="true" Value="&lt; Choose 0 for Resolution or FPS to go with the devices defaults. &#xD;&#xA;&#xD;&#xA;When choosing specific values, those will be adjusted to the nearest the device supports!">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="TypeFlag" Name="String" />
             </p:TypeAnnotation>
@@ -241,7 +241,7 @@
               <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Comment</p:stringtype>
             </p:ValueBoxSettings>
           </Pad>
-          <Pad Id="HHDcHWVXrpXLTiXKYNjIDT" Comment="Depth FPS" Bounds="184,301,35,15" ShowValueBox="true" isIOBox="true" Value="0">
+          <Pad Id="HHDcHWVXrpXLTiXKYNjIDT" Comment="Depth FPS" Bounds="217,320,35,15" ShowValueBox="true" isIOBox="true" Value="0">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="TypeFlag" Name="Integer32" />
             </p:TypeAnnotation>

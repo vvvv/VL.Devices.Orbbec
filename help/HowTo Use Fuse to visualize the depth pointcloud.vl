@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Document xmlns:p="property" xmlns:r="reflection" Id="GB9JZY3z2osMlDyNrQnt9M" LanguageVersion="2026.8.0-0170-g6f2eb6d984" Version="0.128">
+<Document xmlns:p="property" xmlns:r="reflection" Id="FJaeRqB8EEKO3nuU7rSeGm" LanguageVersion="2026.8.0-0328-g2d427d5a66" Version="0.128">
   <NugetDependency Id="BKMlRTjek6INClI8OTKWOU" Location="VL.CoreLib" />
   <Patch Id="I6Ez2fp0vrKPQRZJfnIg0Q">
     <Canvas Id="C7qdhnAsgeIOOnvJ4TQ040" DefaultCategory="Main" CanvasType="FullCategory" />
@@ -37,11 +37,11 @@
             <Pin Id="FLhirnZxV15OScbWlSrM2f" Name="Enabled" Kind="InputPin" />
             <Pin Id="TqInNoZTPNqLzyn3ibihhh" Name="Output" Kind="StateOutputPin" />
           </Node>
-          <Node Bounds="612,330,93,19" Id="TPS3zWqdmCDPQFgotfnOcA">
+          <Node Bounds="612,330,66,19" Id="TPS3zWqdmCDPQFgotfnOcA">
             <p:NodeReference LastCategoryFullName="Devices.Orbbec" LastDependency="VL.Devices.Orbbec.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <FullNameCategoryReference ID="Devices.Orbbec" />
-              <Choice Kind="ProcessAppFlag" Name="PointCloudBuffer" />
+              <Choice Kind="ProcessAppFlag" Name="PointCloud" />
             </p:NodeReference>
             <p:HelpFocus p:Assembly="VL.Lang" p:Type="VL.Model.HelpPriority">High</p:HelpFocus>
             <Pin Id="Jo9y40ijjZhNvFpP2INEM8" Name="Node Context" Kind="InputPin" IsHidden="true" />
@@ -58,10 +58,10 @@
             </p:NodeReference>
             <Pin Id="VTGyhkswvjXMrsLNxB77Lg" Name="Node Context" Kind="InputPin" IsHidden="true" />
             <Pin Id="Cxa1SD7EkOgPxUE6MQ1d1U" Name="AttributeValues" Kind="InputPin" />
-            <Pin Id="G1JJcmV9eK1Lkxcy40VScV" Name="External Scheduler" Kind="InputPin" IsHidden="true" />
             <Pin Id="OI5eWKCWVVxLRJN1HeQOpo" Name="Compute Stage" Kind="InputPin" />
             <Pin Id="S2BPZGxdyy3OggZdUcZupk" Name="Compute Stage 2" Kind="InputPin" />
             <Pin Id="F22wyjKuUTVN0aj6FgXHys" Name="Compute Stage 3" Kind="InputPin" />
+            <Pin Id="G1JJcmV9eK1Lkxcy40VScV" Name="External Scheduler" Kind="InputPin" IsHidden="true" />
             <Pin Id="JdDNwiUU08WM9qMLfF6RgM" Name="Enabled" Kind="InputPin" />
             <Pin Id="IHuEzK10TwqPMl5nGSLo5Z" Name="Output" Kind="OutputPin" />
             <Pin Id="GRXKfPW0VJgNlYzUZL3dBD" Name="Has Changed" Kind="OutputPin" />
@@ -111,6 +111,8 @@
             <Pin Id="Jw4ns5uM7jIPMzRkycgV7w" Name="ShaderNode" Kind="InputPin" />
             <Pin Id="SMUHjpQUXrIP20GZ8Lnb9e" Name="Force Recompile" Kind="InputPin" IsHidden="true" />
             <Pin Id="M3lIAD5UfJRPfBniGI64z6" Name="name" Kind="InputPin" IsHidden="true" />
+            <Pin Id="JoKx73C6PijOPvtCREMBIn" Name="Profiling Name" Kind="InputPin" IsHidden="true" />
+            <Pin Id="UtBQClS5tuyMO3WEazAkeT" Name="Profiling Append" Kind="InputPin" IsHidden="true" />
             <Pin Id="GzGNlGnTwPHNW5aAScbkJf" Name="Write Attributes" Kind="InputPin" IsHidden="true" />
             <Pin Id="Dn0aPjru4kKOxC4zQh3mq4" Name="Iteration Count" Kind="InputPin" IsHidden="true" />
             <Pin Id="F8z9RwoNhpCP5cGXLWtq9h" Name="Enabled" Kind="InputPin" />
@@ -211,6 +213,7 @@
             <Pin Id="TdUdUsRurIGPnKimrom6hy" Name="Output" Kind="StateOutputPin" />
             <Pin Id="HBCet5mg5tEPMz3SdWq5N6" Name="buffer" Kind="OutputPin" />
             <Pin Id="BTVKz6rmPETNuyXQF2xGAn" Name="Stride" Kind="OutputPin" IsHidden="true" />
+            <Pin Id="OeovAzkTnDpLhCkMELcshw" Name="Thread Group Size" Kind="InputPin" />
           </Node>
           <Pad Id="Ski8SjhcpiUMVHdkUNoPpv" Comment="Size" Bounds="1066,1046,45,15" ShowValueBox="true" isIOBox="true" Value="0.005">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
