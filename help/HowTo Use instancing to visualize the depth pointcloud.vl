@@ -41,12 +41,11 @@
             <p:NodeReference LastCategoryFullName="Devices.Orbbec" LastDependency="VL.Devices.Orbbec.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <FullNameCategoryReference ID="Devices.Orbbec" />
-              <Choice Kind="ProcessAppFlag" Name="PointCloud" />
+              <Choice Kind="ProcessAppFlag" Name="Poitcloud" />
             </p:NodeReference>
             <p:HelpFocus p:Assembly="VL.Lang" p:Type="VL.Model.HelpPriority">High</p:HelpFocus>
             <Pin Id="Jo9y40ijjZhNvFpP2INEM8" Name="Node Context" Kind="InputPin" IsHidden="true" />
             <Pin Id="NUoisvqNW4GLwfnbQUeNw2" Name="Orbbec" Kind="InputPin" />
-            <Pin Id="UBjcKw7WqVQMsReiEfzMmP" Name="Raw Buffer" Kind="OutputPin" IsHidden="true" />
             <Pin Id="Ew0XRtEwfcpLaVWeI6gktd" Name="On Data" Kind="OutputPin" />
             <Pin Id="Np9s4YcAOurPwrUkZUM9EV" Name="Buffer" Kind="OutputPin" />
             <Pin Id="TPesYP4jxQULZZWU8RbjFu" Name="Element Count" Kind="OutputPin" />
@@ -326,6 +325,23 @@
               <Choice Kind="TypeFlag" Name="Int2" />
             </p:TypeAnnotation>
           </Pad>
+          <Pad Id="HxJM3l7UsenNhRZuyYQ2d4" Bounds="264,60,250,19" ShowValueBox="true" isIOBox="true" Value="Reduce resolution for better performance">
+            <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
+              <Choice Kind="TypeFlag" Name="String" />
+            </p:TypeAnnotation>
+            <p:ValueBoxSettings>
+              <p:fontsize p:Type="Int32">9</p:fontsize>
+              <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Comment</p:stringtype>
+            </p:ValueBoxSettings>
+          </Pad>
+          <Pad Id="QZOlbiAf0m2LiroZDOf7P7" Comment="Is BGR color" Bounds="268,330,35,35" ShowValueBox="true" isIOBox="true" Value="False">
+            <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
+              <Choice Kind="ImmutableTypeFlag" Name="Boolean" />
+            </p:TypeAnnotation>
+            <p:ValueBoxSettings>
+              <p:buttonmode p:Assembly="VL.UI.Forms" p:Type="VL.HDE.PatchEditor.Editors.ButtonModeEnum">Toggle</p:buttonmode>
+            </p:ValueBoxSettings>
+          </Pad>
         </Canvas>
         <Patch Id="KHKDxmU0opWNfbuaAhYK6t" Name="Create" />
         <Patch Id="R77olOyhdd0MkPMvt4DYRI" Name="Update" />
@@ -353,6 +369,7 @@
         <Link Id="HiOHSLVK9buLqLwbU5aezS" Ids="RwVcKokjEvyPOEe37iCM2V,RXKoMzYay6gOFEYXrGwOOM" />
         <Link Id="GVipJdA2mqWPvl5bhjQVNG" Ids="Du27r8kgbT9MaqG05pDC6u,UP7IcTOOl8dLG5ITVRgkms" />
         <Link Id="AlDaozeTZcsN9FKMZz03H2" Ids="CTWYoiX6vhsNfRl8JyIV8e,NiVxKtQB3U7MTDHJDhnIjk" />
+        <Link Id="AIzxiGRhXr0NdLqn3t0XAf" Ids="QZOlbiAf0m2LiroZDOf7P7,S27AS05OqzjO7bKEerD39Q" />
       </Patch>
     </Node>
   </Patch>
