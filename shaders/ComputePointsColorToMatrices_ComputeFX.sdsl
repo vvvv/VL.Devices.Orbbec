@@ -8,6 +8,7 @@ shader ComputePointsColorToMatrices_ComputeFX : ComputeShaderBase, OrbbecPointcl
     
     stage int count;
     stage float size = 0.001f;
+    stage bool scaleZeroPositions = false;
     
     StructuredBuffer<PointcloudColor> Points;
 	RWStructuredBuffer<Transform> InstanceWorld;
@@ -19,10 +20,21 @@ shader ComputePointsColorToMatrices_ComputeFX : ComputeShaderBase, OrbbecPointcl
         
         if (index >= count) return;
 
+        float s = size;
+
+        if (scaleZeroPositions)
+        {
+            bool condition = Points[index].Pos == float3(0.0f, 0.0f, 0.0f);
+            if (condition)
+            {
+                s = 0.0f;
+            }
+        }
+
         float4x4 world;
         float4x4 worldInverse;
 
-        TransformTSWithInverse(Points[index].Pos, size, world, worldInverse);
+        TransformTSWithInverse(Points[index].Pos, s, world, worldInverse);
 
         InstanceWorld[index].Matrix = world;
         InstanceWorldInverse[index].Matrix = worldInverse;
