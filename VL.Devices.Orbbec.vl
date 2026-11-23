@@ -1799,6 +1799,33 @@
             <ControlPoint Id="Ip4w8VeME7ULpwb8ImfCKf" Bounds="1134,3401" />
             <ControlPoint Id="HfaVPmfiT8MNDEwFXBReWr" Bounds="1154,3381" />
             <ControlPoint Id="F2Af4b2FdzkOJTxII20l5y" Bounds="1174,3361" />
+            <!--
+
+    ************************ CreateDefault (Internal) ************************
+
+-->
+            <Node Name="CreateDefault (Internal)" Bounds="1822,210,69,79" Id="TXFBh13lN0MOmDCixdRCcl">
+              <p:NodeReference>
+                <Choice Kind="OperationDefinition" />
+              </p:NodeReference>
+              <Patch Id="L08Wztz1nIZP7Jn3l7IHEF">
+                <Pin Id="BYwSu0yGioYNxlLLtEkrnN" Name="Output" Kind="OutputPin">
+                  <p:TypeAnnotation LastCategoryFullName="Devices.Orbbec" LastDependency="VL.Devices.Orbbec.vl">
+                    <Choice Kind="TypeFlag" Name="Orbbec" />
+                  </p:TypeAnnotation>
+                </Pin>
+                <Node Bounds="1834,233,40,19" Id="NKmUURUrd1wPCFDqOrhvws">
+                  <p:NodeReference LastCategoryFullName="Primitive.Object" LastDependency="VL.CoreLib.vl">
+                    <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                    <Choice Kind="OperationCallFlag" Name="NULL" />
+                  </p:NodeReference>
+                  <Pin Id="HHOezYsnqiUM3YlokPhRDD" Name="Result" Kind="OutputPin" />
+                </Node>
+                <ControlPoint Id="AaS9uFejDpfLCWuehQMKYT" Bounds="1836,272" />
+                <Link Id="BQeAt3U3RVELB9RNpZSq6d" Ids="AaS9uFejDpfLCWuehQMKYT,BYwSu0yGioYNxlLLtEkrnN" IsHidden="true" />
+                <Link Id="NluhTBOO01PLe9e0JRG2iR" Ids="HHOezYsnqiUM3YlokPhRDD,AaS9uFejDpfLCWuehQMKYT" />
+              </Patch>
+            </Node>
           </Canvas>
           <Patch Id="R8mzNk4fLaCOCzl83rlKyo" Name="Create (Internal)" ParticipatingElements="Jo5qzOWVzHYLhs2VVwNQEZ" />
           <Patch Id="GXIvkQmy6x1Ld0UzLQUu6M" Name="Dispose (Internal)" ParticipatingElements="J0EuXVXKLYFLE7U91jVSjR" />
@@ -1871,6 +1898,7 @@
             <Fragment Id="Vy63bYWzdgQOgxbE5OfXTO" Patch="PYQuuTEQJJdM5gjpKrkI1L" />
             <Fragment Id="GGecWsF0HKWNiPHbNPadmv" Patch="Oa0a36l10aIMOx9lBsZwzT" />
             <Fragment Id="Tokn9zMQOB0LvdF8cQRgQf" Patch="H9npIPy573YQGt62TsS2Ql" />
+            <Fragment Id="EpHhstE9jCCQRsJ5FWoic9" Patch="TXFBh13lN0MOmDCixdRCcl" />
           </ProcessDefinition>
           <Link Id="BEV2MrcaDTSMc24EtAa4UQ" Ids="NXZB5NTvVIpOfocrhZLUAr,Qw7h29LHDeYNCk0lAcNtLT" IsFeedback="true" />
           <Link Id="Hfmsk6E1KTyMUSLOn2pWZp" Ids="AUYbhMBxM7KNdHhF2aSEEv,Qw7h29LHDeYNCk0lAcNtLT" />
