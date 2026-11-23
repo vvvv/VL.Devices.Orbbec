@@ -15,16 +15,16 @@
       </p:NodeReference>
       <Patch Id="AIaQUBKXZZONqZSfIQfKsK">
         <Canvas Id="G61AeaQQh54NlDbhJaepCo" CanvasType="Group">
-          <Node Bounds="99,639,76,19" Id="QNAH49CqitwNdmhovvnwP2">
+          <Node Bounds="99,639,41,19" Id="QNAH49CqitwNdmhovvnwP2">
             <p:NodeReference LastCategoryFullName="Devices.Orbbec" LastDependency="VL.Devices.Orbbec.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <CategoryReference Kind="Category" Name="Orbbec" NeedsToBeDirectParent="true" />
-              <Choice Kind="ProcessAppFlag" Name="Color" />
+              <Choice Kind="ProcessAppFlag" Name="ColorImage" />
             </p:NodeReference>
             <p:HelpFocus p:Assembly="VL.Lang" p:Type="VL.Model.HelpPriority">High</p:HelpFocus>
             <Pin Id="Ez86l2rgK9oNW9bLupWurQ" Name="Node Context" Kind="InputPin" IsHidden="true" />
-            <Pin Id="A1Jw0AZ0xruNnauvwp7RfE" Name="Orbbec" Kind="InputPin" />
-            <Pin Id="PIdccFnZyjBPymZFHArb9f" Name="Texture" Kind="OutputPin" />
+            <Pin Id="A1Jw0AZ0xruNnauvwp7RfE" Name="Input" Kind="InputPin" />
+            <Pin Id="PIdccFnZyjBPymZFHArb9f" Name="Output" Kind="OutputPin" />
           </Node>
           <Node Bounds="99,554,265,19" Id="LnrT4qAGDyPOHa4XeIcS4L">
             <p:NodeReference LastCategoryFullName="Main" LastDependency="VL.Devices.Orbbec.vl">
@@ -60,26 +60,26 @@
           <Node Bounds="369,639,44,19" Id="BJOQ79kupwbL2MLF9N9Gu5">
             <p:NodeReference LastCategoryFullName="Devices.Orbbec" LastDependency="VL.Devices.Orbbec.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-              <Choice Kind="ProcessAppFlag" Name="Depth" />
+              <Choice Kind="ProcessAppFlag" Name="DepthImage" />
             </p:NodeReference>
             <p:HelpFocus p:Assembly="VL.Lang" p:Type="VL.Model.HelpPriority">High</p:HelpFocus>
             <Pin Id="FvhLfkWfGlLPwrQxP234hk" Name="Node Context" Kind="InputPin" IsHidden="true" />
-            <Pin Id="CXPIaqWTobVMWrlUUPz5rf" Name="Orbbec" Kind="InputPin" />
-            <Pin Id="KGRGrKLYHHRLDpi4sMFzYq" Name="Texture" Kind="OutputPin" />
+            <Pin Id="CXPIaqWTobVMWrlUUPz5rf" Name="Input" Kind="InputPin" />
+            <Pin Id="KGRGrKLYHHRLDpi4sMFzYq" Name="Output" Kind="OutputPin" />
           </Node>
           <Pad Id="C4EgLoknbU8QcM2EeM3FA0" Comment="" Bounds="371,723,219,257" ShowValueBox="true" isIOBox="true" />
           <Pad Id="CalEjyUN1IyNGLfVS13Qkc" Comment="" Bounds="643,723,228,256" ShowValueBox="true" isIOBox="true" />
-          <Node Bounds="920,639,58,19" Id="TPS3zWqdmCDPQFgotfnOcA">
+          <Node Bounds="920,639,64,19" Id="TPS3zWqdmCDPQFgotfnOcA">
             <p:NodeReference LastCategoryFullName="Devices.Orbbec" LastDependency="VL.Devices.Orbbec.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <FullNameCategoryReference ID="Devices.Orbbec" />
-              <Choice Kind="ProcessAppFlag" Name="Poitcloud" />
+              <Choice Kind="ProcessAppFlag" Name="Pointcloud" />
             </p:NodeReference>
             <Pin Id="Jo9y40ijjZhNvFpP2INEM8" Name="Node Context" Kind="InputPin" IsHidden="true" />
-            <Pin Id="NUoisvqNW4GLwfnbQUeNw2" Name="Orbbec" Kind="InputPin" />
-            <Pin Id="TfX9oRw8kJOPX2h7paDRnG" Name="On Data" Kind="OutputPin" />
+            <Pin Id="NUoisvqNW4GLwfnbQUeNw2" Name="Input" Kind="InputPin" />
             <Pin Id="Iwpu9rFNvDHNfnD29BK2aN" Name="Buffer" Kind="OutputPin" />
             <Pin Id="TPesYP4jxQULZZWU8RbjFu" Name="Element Count" Kind="OutputPin" />
+            <Pin Id="TfX9oRw8kJOPX2h7paDRnG" Name="On Data" Kind="OutputPin" />
           </Node>
           <Pad Id="HyERIrUvWpfPHZWRjG2FId" Comment="Color Resolution" Bounds="130,201,35,28" ShowValueBox="true" isIOBox="true" Value="0, 0">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
@@ -99,12 +99,12 @@
           <Node Bounds="641,639,25,19" Id="RpND0K8tCbhOJMVlL04aUJ">
             <p:NodeReference LastCategoryFullName="Devices.Orbbec" LastDependency="VL.Devices.Orbbec.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-              <Choice Kind="ProcessAppFlag" Name="IR" />
+              <Choice Kind="ProcessAppFlag" Name="IRImage" />
             </p:NodeReference>
             <p:HelpFocus p:Assembly="VL.Lang" p:Type="VL.Model.HelpPriority">High</p:HelpFocus>
             <Pin Id="J3gOtUnvcEgPKR3IyTOz5r" Name="Node Context" Kind="InputPin" IsHidden="true" />
-            <Pin Id="KXyNcNCqJagMD5RC6v9WcP" Name="Orbbec" Kind="InputPin" />
-            <Pin Id="KhkEtjbh8TxMR2nwR324r9" Name="Texture" Kind="OutputPin" />
+            <Pin Id="KXyNcNCqJagMD5RC6v9WcP" Name="Input" Kind="InputPin" />
+            <Pin Id="KhkEtjbh8TxMR2nwR324r9" Name="Output" Kind="OutputPin" />
           </Node>
           <Pad Id="VhRPp4fUHprOQVe2X0ooXp" Comment="Device" Bounds="101,170,241,15" ShowValueBox="true" isIOBox="true" Value="Default">
             <p:TypeAnnotation LastCategoryFullName="Devices.Orbbec" LastDependency="VL.Devices.Orbbec.vl">
@@ -147,55 +147,55 @@
           <Node Bounds="672,679,42,19" Id="KjGMkxizVKnMuPsllGEZCb">
             <p:NodeReference LastCategoryFullName="Devices.Orbbec" LastDependency="VL.Devices.Orbbec.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-              <Choice Kind="ProcessAppFlag" Name="IRLeft" />
+              <Choice Kind="ProcessAppFlag" Name="IRImageLeft" />
             </p:NodeReference>
             <p:HelpFocus p:Assembly="VL.Lang" p:Type="VL.Model.HelpPriority">High</p:HelpFocus>
             <Pin Id="IrtSogtSAESNr1pnACzLFa" Name="Node Context" Kind="InputPin" IsHidden="true" />
-            <Pin Id="LzcFZqxfDbbPrhJpGIeSjC" Name="Orbbec" Kind="InputPin" />
-            <Pin Id="Sz0dEF6IirdN9us0gtdxua" Name="Texture" Kind="OutputPin" />
+            <Pin Id="LzcFZqxfDbbPrhJpGIeSjC" Name="Input" Kind="InputPin" />
+            <Pin Id="Sz0dEF6IirdN9us0gtdxua" Name="Output" Kind="OutputPin" />
           </Node>
           <Node Bounds="1051,639,65,19" Id="SvZgqOle5NjMtdJzUAU3Zd">
             <p:NodeReference LastCategoryFullName="Devices.Orbbec" LastDependency="VL.Devices.Orbbec.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-              <Choice Kind="ProcessAppFlag" Name="IMU" />
+              <Choice Kind="ProcessAppFlag" Name="IMUData" />
             </p:NodeReference>
             <p:HelpFocus p:Assembly="VL.Lang" p:Type="VL.Model.HelpPriority">High</p:HelpFocus>
             <Pin Id="T6EpOomYtgvLFdnty7XGZG" Name="Node Context" Kind="InputPin" IsHidden="true" />
-            <Pin Id="Ok1wDxXXKoTNXiFo83BF5A" Name="Orbbec" Kind="InputPin" />
+            <Pin Id="Ok1wDxXXKoTNXiFo83BF5A" Name="Input" Kind="InputPin" />
             <Pin Id="S8HvnWclj0KLkk82ryOHJi" Name="Time Stamp" Kind="OutputPin" />
             <Pin Id="MnqK3A8OxSYMcF3GwlIHRB" Name="Temperature" Kind="OutputPin" />
             <Pin Id="SbCS4VIWYj5OdJ3QPeIyuH" Name="Accel Direction" Kind="OutputPin" />
             <Pin Id="MOS5rjl87hJQZMeuw8nyDa" Name="Gyro Direction" Kind="OutputPin" />
           </Node>
-          <Node Bounds="783,679,49,19" Id="LwqQXTkjIbUPGGqKtyrZcq">
+          <Node Bounds="759,680,76,19" Id="LwqQXTkjIbUPGGqKtyrZcq">
             <p:NodeReference LastCategoryFullName="Devices.Orbbec" LastDependency="VL.Devices.Orbbec.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-              <Choice Kind="ProcessAppFlag" Name="IRRight" />
+              <Choice Kind="ProcessAppFlag" Name="IRImageRight" />
             </p:NodeReference>
             <p:HelpFocus p:Assembly="VL.Lang" p:Type="VL.Model.HelpPriority">High</p:HelpFocus>
             <Pin Id="AtERp07PNjjL7oGinuMlJ3" Name="Node Context" Kind="InputPin" IsHidden="true" />
-            <Pin Id="R92jMfeoNHnM6be6qdMtOu" Name="Orbbec" Kind="InputPin" />
-            <Pin Id="AbqeWTws28mQcJpMYStHrW" Name="Texture" Kind="OutputPin" />
+            <Pin Id="R92jMfeoNHnM6be6qdMtOu" Name="Input" Kind="InputPin" />
+            <Pin Id="AbqeWTws28mQcJpMYStHrW" Name="Output" Kind="OutputPin" />
           </Node>
           <Node Bounds="129,670,58,19" Id="Iybu8VGgQJUNvIf0TQAgCV">
             <p:NodeReference LastCategoryFullName="Devices.Orbbec" LastDependency="VL.Devices.Orbbec.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-              <Choice Kind="ProcessAppFlag" Name="ColorLeft" />
+              <Choice Kind="ProcessAppFlag" Name="ColorImageLeft" />
             </p:NodeReference>
             <p:HelpFocus p:Assembly="VL.Lang" p:Type="VL.Model.HelpPriority">High</p:HelpFocus>
             <Pin Id="R1HwXM5SlByNwBBchqJ9id" Name="Node Context" Kind="InputPin" IsHidden="true" />
-            <Pin Id="CVXhLh3MIk5L5mt3OPrsCQ" Name="Orbbec" Kind="InputPin" />
-            <Pin Id="FMq2OI6GisvQbeIYrB1UAg" Name="Texture" Kind="OutputPin" />
+            <Pin Id="CVXhLh3MIk5L5mt3OPrsCQ" Name="Input" Kind="InputPin" />
+            <Pin Id="FMq2OI6GisvQbeIYrB1UAg" Name="Output" Kind="OutputPin" />
           </Node>
-          <Node Bounds="209,670,65,19" Id="QqupyEWqIfWMQ9pRzXXqf1">
+          <Node Bounds="232,670,65,19" Id="QqupyEWqIfWMQ9pRzXXqf1">
             <p:NodeReference LastCategoryFullName="Devices.Orbbec" LastDependency="VL.Devices.Orbbec.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-              <Choice Kind="ProcessAppFlag" Name="ColorRight" />
+              <Choice Kind="ProcessAppFlag" Name="ColorImageRight" />
             </p:NodeReference>
             <p:HelpFocus p:Assembly="VL.Lang" p:Type="VL.Model.HelpPriority">High</p:HelpFocus>
             <Pin Id="EHW9TdZbtA3N0fT36SIN8O" Name="Node Context" Kind="InputPin" IsHidden="true" />
-            <Pin Id="OtQqXwW60hmOItpEXzZakc" Name="Orbbec" Kind="InputPin" />
-            <Pin Id="KTDIG1KyMp4M94YajFE00x" Name="Texture" Kind="OutputPin" />
+            <Pin Id="OtQqXwW60hmOItpEXzZakc" Name="Input" Kind="InputPin" />
+            <Pin Id="KTDIG1KyMp4M94YajFE00x" Name="Output" Kind="OutputPin" />
           </Node>
           <Pad Id="E94Q9bbWjQAMOjoVS1JXU5" Comment="Temperature" Bounds="1073,690,35,15" ShowValueBox="true" isIOBox="true" />
           <Pad Id="JPuA9ABhou3MPigu6YiVN4" Bounds="110,70,258,21" ShowValueBox="true" isIOBox="true" Value="Supports most of the devices by orbbec:">
@@ -266,9 +266,9 @@
         <Link Id="D4rKceLzirBOtOwcGpAAmg" Ids="TqInNoZTPNqLzyn3ibihhh,OtQqXwW60hmOItpEXzZakc" />
         <Link Id="FlLejZvUNlwPySDZtlUn7E" Ids="TqInNoZTPNqLzyn3ibihhh,LzcFZqxfDbbPrhJpGIeSjC" />
         <Link Id="EXqtv2n4E1vL9q1djMkhyN" Ids="TqInNoZTPNqLzyn3ibihhh,R92jMfeoNHnM6be6qdMtOu" />
-        <Link Id="MJD1JPxfVMXLURnJQeImYQ" Ids="PIdccFnZyjBPymZFHArb9f,NehJtfrJeCMPX4KCMtN9ft" />
         <Link Id="UGvmbXoWlQdMhNCtPeHYR2" Ids="MnqK3A8OxSYMcF3GwlIHRB,E94Q9bbWjQAMOjoVS1JXU5" />
         <Link Id="UHeXBSYtFjoLXc6RrZIGvJ" Ids="HHDcHWVXrpXLTiXKYNjIDT,V046KrDQIJnLVSzcqCP5ZO" />
+        <Link Id="KBnCohKk2IkNgbiWctjtXo" Ids="PIdccFnZyjBPymZFHArb9f,NehJtfrJeCMPX4KCMtN9ft" />
       </Patch>
     </Node>
   </Patch>

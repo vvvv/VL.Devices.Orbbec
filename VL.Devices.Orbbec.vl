@@ -420,7 +420,7 @@
                       </p:ValueBoxSettings>
                     </Pad>
                     <ControlPoint Id="G013hHLVsG5PawHVC3Vu1P" Bounds="1256,985" />
-                    <Pad Id="AIAyUtLgvezM4xn7Op8sWU" Bounds="1127,1571,201,57" ShowValueBox="true" isIOBox="true" Value="&lt;&lt; here we keep the same logick as in the sdk's sample.">
+                    <Pad Id="AIAyUtLgvezM4xn7Op8sWU" Bounds="1127,1571,201,57" ShowValueBox="true" isIOBox="true" Value="&lt;&lt; here we keep the same logic as in the sdk's sample.">
                       <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
                         <Choice Kind="TypeFlag" Name="String" />
                       </p:TypeAnnotation>
@@ -1662,9 +1662,35 @@
               <Pin Id="Dwe8GueUcstL45bmfh2c3E" Name="Update" Kind="InputPin" />
             </Node>
             <Node Bounds="1112,3331,65,19" Id="QlIDRD7K6bYNRpbtF0gTSt">
-              <p:NodeReference LastCategoryFullName="Devices.Orbbec" LastDependency="VL.Devices.Orbbec.vl">
+              <p:NodeReference LastCategoryFullName="Devices.Orbbec" LastDependency="VL.Devices.Orbbec.vl" OverloadStrategy="AllPinsThatAreNotCommon">
                 <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                 <Choice Kind="ProcessAppFlag" Name="IMUData" />
+                <PinReference Kind="InputPin" Name="Orbbec" />
+                <PinReference Kind="InputPin" Name="Update" />
+                <PinReference Kind="OutputPin" Name="Time Stamp">
+                  <p:DataTypeReference p:Type="TypeReference" LastCategoryFullName="System" LastDependency="VL.CoreLib.vl">
+                    <Choice Kind="TypeFlag" Name="TimeSpan" />
+                  </p:DataTypeReference>
+                </PinReference>
+                <PinReference Kind="OutputPin" Name="Time Stamp" />
+                <PinReference Kind="OutputPin" Name="Temperature">
+                  <p:DataTypeReference p:Type="TypeReference" LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
+                    <Choice Kind="TypeFlag" Name="Float32" />
+                  </p:DataTypeReference>
+                </PinReference>
+                <PinReference Kind="OutputPin" Name="Temperature" />
+                <PinReference Kind="OutputPin" Name="Accel Direction">
+                  <p:DataTypeReference p:Type="TypeReference" LastCategoryFullName="3D" LastDependency="VL.CoreLib.vl">
+                    <Choice Kind="TypeFlag" Name="Vector3" />
+                  </p:DataTypeReference>
+                </PinReference>
+                <PinReference Kind="OutputPin" Name="Accel Direction" />
+                <PinReference Kind="OutputPin" Name="Gyro Direction">
+                  <p:DataTypeReference p:Type="TypeReference" LastCategoryFullName="3D" LastDependency="VL.CoreLib.vl">
+                    <Choice Kind="TypeFlag" Name="Vector3" />
+                  </p:DataTypeReference>
+                </PinReference>
+                <PinReference Kind="OutputPin" Name="Gyro Direction" />
               </p:NodeReference>
               <p:HelpFocus p:Assembly="VL.Lang" p:Type="VL.Model.HelpPriority">High</p:HelpFocus>
               <Pin Id="IlQ6cFdelm5OsRTaVAVkBp" Name="Node Context" Kind="InputPin" IsHidden="true" />
@@ -2035,7 +2061,7 @@
           <Link Id="KfRsagiOTLbP5PBJTvzusv" Ids="ReBMpts3TBPLdJPItcxIW2,EjoQGqwdFP9LkERqH4UiDN" />
           <Link Id="KxhqvZhBZFIN38WQ2htrND" Ids="OGCkkFDtne7MjdBN8K5dqF,MbNsuY1peynOhNLTb6Oblv" />
           <Link Id="N4aoX8CzNmRLYgCt8Wg8Xv" Ids="MbNsuY1peynOhNLTb6Oblv,EfMwJ4G5VlgPWx4EdhNFHK" IsHidden="true" />
-          <Patch Id="PGzEzZkzZO5NbPzcKvUKb7" Name="Clolor (Internal)">
+          <Patch Id="PGzEzZkzZO5NbPzcKvUKb7" Name="Color (Internal)">
             <Pin Id="EfMwJ4G5VlgPWx4EdhNFHK" Name="Texture" Kind="OutputPin" />
           </Patch>
           <Link Id="VruyNJAgewSMbROh5ATgl9" Ids="LhhEwWAkK5zM3mk6xCPdvM,BiMh54kYjnDNDMfV6g1yZz" />
@@ -2868,10 +2894,10 @@
       </Node>
       <!--
 
-    ************************ PointCloudToInstasingComponent ************************
+    ************************ PointcloudInstancingComponent ************************
 
 -->
-      <Node Name="PointCloudToInstasingComponent" Bounds="182,760" Id="QHYSDoxMxtxOZFxulSf4Bv">
+      <Node Name="PointcloudInstancingComponent" Bounds="182,760" Id="QHYSDoxMxtxOZFxulSf4Bv">
         <p:NodeReference>
           <Choice Kind="ContainerDefinition" />
         </p:NodeReference>
@@ -3133,9 +3159,9 @@
             <ControlPoint Id="K03oFiuZGImLQMHrBa9bmT" Bounds="245,70" />
           </Canvas>
           <Patch Id="ANRmJzOrjR7Ov1uNrlWWVQ" Name="Create" />
-          <Patch Id="UQR3kr6oNfOMhBN8FZjkWA" Name="Update">
-            <Pin Id="EG0CFQTWWRMNT23y7l0uSf" Name="Is BGR color" Kind="InputPin" />
+          <Patch Id="UQR3kr6oNfOMhBN8FZjkWA" Name="Update" ManuallySortedPins="true">
             <Pin Id="CYu4HfDmwbbNnLF81T4m8S" Name="Pointcloud Buffer" Kind="InputPin" />
+            <Pin Id="EG0CFQTWWRMNT23y7l0uSf" Name="Color Is BGR" Kind="InputPin" />
             <Pin Id="E5zYzbJYonGOTCjZ1o5lEn" Name="Size" Kind="InputPin" DefaultValue="0.01">
               <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
                 <Choice Kind="TypeFlag" Name="Float32" />
@@ -10738,10 +10764,10 @@
       </Canvas>
       <!--
 
-    ************************ Color ************************
+    ************************ ColorImage ************************
 
 -->
-      <Node Name="Color" Bounds="179,320" Id="PjOTEiSvzbPOXy4rq0vB9P">
+      <Node Name="ColorImage" Bounds="179,320" Id="PjOTEiSvzbPOXy4rq0vB9P">
         <p:NodeReference>
           <Choice Kind="ContainerDefinition" />
         </p:NodeReference>
@@ -10772,7 +10798,7 @@
                   <p:NodeReference LastCategoryFullName="Devices.Orbbec.Orbbec" LastDependency="VL.Devices.Orbbec.vl">
                     <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                     <CategoryReference Kind="ClassType" Name="Orbbec" />
-                    <Choice Kind="OperationCallFlag" Name="Clolor" />
+                    <Choice Kind="OperationCallFlag" Name="Color" />
                   </p:NodeReference>
                   <Pin Id="RunPIGfh7HHLpj4e2m8WXr" Name="Input" Kind="StateInputPin" />
                   <Pin Id="D21Vu25niI1NZcYS2TcDNz" Name="Output" Kind="StateOutputPin" />
@@ -10786,18 +10812,13 @@
           </Canvas>
           <Patch Id="BSBFlrpQE0wNCSHC9TsyJr" Name="Create" />
           <Patch Id="JNqMnDrazycLV5NDhUS8pK" Name="Update">
-            <Pin Id="JdUUCTvhnnvLW04LmSrWfY" Name="Orbbec" Kind="InputPin">
+            <Pin Id="JdUUCTvhnnvLW04LmSrWfY" Name="Input" Kind="InputPin">
               <p:TypeAnnotation LastCategoryFullName="Devices.Orbbec" LastDependency="VL.Devices.Orbbec.vl">
                 <Choice Kind="TypeFlag" Name="Orbbec" />
               </p:TypeAnnotation>
             </Pin>
-            <Pin Id="MMJBPUfayv9Ll9SV1Q2n8j" Name="Texture" Kind="OutputPin" />
+            <Pin Id="MMJBPUfayv9Ll9SV1Q2n8j" Name="Output" Kind="OutputPin" />
           </Patch>
-          <!--
-
-    ************************  ************************
-
--->
           <ProcessDefinition Id="QEYoya5gQFCMXMsUpuJZlK">
             <Fragment Id="CEw8kG8Fb51NWtR40qRsv9" Patch="BSBFlrpQE0wNCSHC9TsyJr" Enabled="true" />
             <Fragment Id="Kh2iXMGblYiMYfqGppkVDK" Patch="JNqMnDrazycLV5NDhUS8pK" Enabled="true" />
@@ -10814,10 +10835,10 @@
       </Node>
       <!--
 
-    ************************ ColorLeft ************************
+    ************************ ColorImageLeft ************************
 
 -->
-      <Node Name="ColorLeft" Bounds="340,320" Id="Bt1WRITecaPNZh7hTWwefK">
+      <Node Name="ColorImageLeft" Bounds="340,320" Id="Bt1WRITecaPNZh7hTWwefK">
         <p:NodeReference>
           <Choice Kind="ContainerDefinition" />
         </p:NodeReference>
@@ -10865,12 +10886,12 @@
           </Canvas>
           <Patch Id="E2WxMBAuQ17QSikYBg8GGb" Name="Create" />
           <Patch Id="JCvi7mBbCQiL9EEQHGseW9" Name="Update">
-            <Pin Id="AOC1XgONVqOO0M90YrCTGe" Name="Orbbec" Kind="InputPin">
+            <Pin Id="AOC1XgONVqOO0M90YrCTGe" Name="Input" Kind="InputPin">
               <p:TypeAnnotation LastCategoryFullName="Devices.Orbbec" LastDependency="VL.Devices.Orbbec.vl">
                 <Choice Kind="TypeFlag" Name="Orbbec" />
               </p:TypeAnnotation>
             </Pin>
-            <Pin Id="UtixTtPLGcsNeg64IYl5AP" Name="Texture" Kind="OutputPin" />
+            <Pin Id="UtixTtPLGcsNeg64IYl5AP" Name="Output" Kind="OutputPin" />
           </Patch>
           <ProcessDefinition Id="POTzMxQcqElPwP1w9wgeC5">
             <Fragment Id="QALhiTYIjDnM0NPbNVlECM" Patch="E2WxMBAuQ17QSikYBg8GGb" Enabled="true" />
@@ -10888,10 +10909,10 @@
       </Node>
       <!--
 
-    ************************ ColorRight ************************
+    ************************ ColorImageRight ************************
 
 -->
-      <Node Name="ColorRight" Bounds="340,360" Id="IcyMLz48sS6NtjiAGXf6xs">
+      <Node Name="ColorImageRight" Bounds="340,360" Id="IcyMLz48sS6NtjiAGXf6xs">
         <p:NodeReference>
           <Choice Kind="ContainerDefinition" />
         </p:NodeReference>
@@ -10939,12 +10960,12 @@
           </Canvas>
           <Patch Id="AgbPfa4wbs3MCyD5YhOVXu" Name="Create" />
           <Patch Id="OMIgoTBjFv7QWJnGOrPn3f" Name="Update">
-            <Pin Id="UsvcvfhQ99lNlTUFr5Wg8I" Name="Orbbec" Kind="InputPin">
+            <Pin Id="UsvcvfhQ99lNlTUFr5Wg8I" Name="Input" Kind="InputPin">
               <p:TypeAnnotation LastCategoryFullName="Devices.Orbbec" LastDependency="VL.Devices.Orbbec.vl">
                 <Choice Kind="TypeFlag" Name="Orbbec" />
               </p:TypeAnnotation>
             </Pin>
-            <Pin Id="EEAVynJsC5dM3BKWR0Gz5J" Name="Texture" Kind="OutputPin" />
+            <Pin Id="EEAVynJsC5dM3BKWR0Gz5J" Name="Output" Kind="OutputPin" />
           </Patch>
           <ProcessDefinition Id="NiyBzgXjmU5NVfED8rNijB">
             <Fragment Id="BKIY8zT9FBSPVIMuP703z6" Patch="AgbPfa4wbs3MCyD5YhOVXu" Enabled="true" />
@@ -10962,10 +10983,10 @@
       </Node>
       <!--
 
-    ************************ IR ************************
+    ************************ IRImage ************************
 
 -->
-      <Node Name="IR" Bounds="179,430" Id="MkFXJwhjQmhP877MrkeIt3">
+      <Node Name="IRImage" Bounds="179,430" Id="MkFXJwhjQmhP877MrkeIt3">
         <p:NodeReference>
           <Choice Kind="ContainerDefinition" />
         </p:NodeReference>
@@ -11013,12 +11034,12 @@
           </Canvas>
           <Patch Id="ABRDIbAhyiwMIHb7eMmXqN" Name="Create" />
           <Patch Id="VytrPTidorjPeiFE7hFicw" Name="Update">
-            <Pin Id="DaRSBz3FJUhQF2rA3pmH7p" Name="Orbbec" Kind="InputPin">
+            <Pin Id="DaRSBz3FJUhQF2rA3pmH7p" Name="Input" Kind="InputPin">
               <p:TypeAnnotation LastCategoryFullName="Devices.Orbbec" LastDependency="VL.Devices.Orbbec.vl">
                 <Choice Kind="TypeFlag" Name="Orbbec" />
               </p:TypeAnnotation>
             </Pin>
-            <Pin Id="MO3emfbFXHSOZpUJAyCdiu" Name="Texture" Kind="OutputPin" />
+            <Pin Id="MO3emfbFXHSOZpUJAyCdiu" Name="Output" Kind="OutputPin" />
           </Patch>
           <ProcessDefinition Id="KpCQEByJlYmL8lJOprWYXI">
             <Fragment Id="MtvHijcn22tLaaPFgUw4oQ" Patch="ABRDIbAhyiwMIHb7eMmXqN" Enabled="true" />
@@ -11036,10 +11057,10 @@
       </Node>
       <!--
 
-    ************************ IRLeft ************************
+    ************************ IRImageLeft ************************
 
 -->
-      <Node Name="IRLeft" Bounds="340,430" Id="SDjBoN82gPuQHQnala8A5m">
+      <Node Name="IRImageLeft" Bounds="340,430" Id="SDjBoN82gPuQHQnala8A5m">
         <p:NodeReference>
           <Choice Kind="ContainerDefinition" />
         </p:NodeReference>
@@ -11087,12 +11108,12 @@
           </Canvas>
           <Patch Id="Er2TgQji1kUPNekSE22pQm" Name="Create" />
           <Patch Id="OGK4dCjFNU0N13jyYtmd8p" Name="Update">
-            <Pin Id="D2st8B2KkBMOVRk7XCOWWG" Name="Orbbec" Kind="InputPin">
+            <Pin Id="D2st8B2KkBMOVRk7XCOWWG" Name="Input" Kind="InputPin">
               <p:TypeAnnotation LastCategoryFullName="Devices.Orbbec" LastDependency="VL.Devices.Orbbec.vl">
                 <Choice Kind="TypeFlag" Name="Orbbec" />
               </p:TypeAnnotation>
             </Pin>
-            <Pin Id="Vyp7fxRpyGdOZLazpPbdEP" Name="Texture" Kind="OutputPin" />
+            <Pin Id="Vyp7fxRpyGdOZLazpPbdEP" Name="Output" Kind="OutputPin" />
           </Patch>
           <ProcessDefinition Id="Two8gC04XCvOVFFbQvdQIu">
             <Fragment Id="MHJKRbml8mHP98q2CMoQaK" Patch="Er2TgQji1kUPNekSE22pQm" Enabled="true" />
@@ -11110,10 +11131,10 @@
       </Node>
       <!--
 
-    ************************ IRRight ************************
+    ************************ IRImageRight ************************
 
 -->
-      <Node Name="IRRight" Bounds="340,470" Id="MdP8EQJ0gw2LhJxQ3HeIdS">
+      <Node Name="IRImageRight" Bounds="340,470" Id="MdP8EQJ0gw2LhJxQ3HeIdS">
         <p:NodeReference>
           <Choice Kind="ContainerDefinition" />
         </p:NodeReference>
@@ -11161,12 +11182,12 @@
           </Canvas>
           <Patch Id="CyVSXHiBQlhNokRjckm9Eg" Name="Create" />
           <Patch Id="FCFa1YwHcX3LQJodqYRIf0" Name="Update">
-            <Pin Id="QtlkqoSdjc5OYfC2yRYQQx" Name="Orbbec" Kind="InputPin">
+            <Pin Id="QtlkqoSdjc5OYfC2yRYQQx" Name="Input" Kind="InputPin">
               <p:TypeAnnotation LastCategoryFullName="Devices.Orbbec" LastDependency="VL.Devices.Orbbec.vl">
                 <Choice Kind="TypeFlag" Name="Orbbec" />
               </p:TypeAnnotation>
             </Pin>
-            <Pin Id="UZ3KMvSHjG6Oj8MNnmgXt2" Name="Texture" Kind="OutputPin" />
+            <Pin Id="UZ3KMvSHjG6Oj8MNnmgXt2" Name="Output" Kind="OutputPin" />
           </Patch>
           <ProcessDefinition Id="IbwV8qamHOXPnhEL3ehiJ9">
             <Fragment Id="UPo7sTtjg5iOc7dm8JGJMn" Patch="CyVSXHiBQlhNokRjckm9Eg" Enabled="true" />
@@ -11184,10 +11205,10 @@
       </Node>
       <!--
 
-    ************************ Depth ************************
+    ************************ DepthImage ************************
 
 -->
-      <Node Name="Depth" Bounds="179,540" Id="FpcQwZV5cakPhHBSp68RBE">
+      <Node Name="DepthImage" Bounds="179,540" Id="FpcQwZV5cakPhHBSp68RBE">
         <p:NodeReference>
           <Choice Kind="ContainerDefinition" />
         </p:NodeReference>
@@ -11235,12 +11256,12 @@
           </Canvas>
           <Patch Id="Ie3HnQs92u3Oe2TZlenrOq" Name="Create" />
           <Patch Id="CtrndyYcnzuNk8JMgGqGBr" Name="Update">
-            <Pin Id="FJcJFjPu5WvMsL9NAtUoU1" Name="Orbbec" Kind="InputPin">
+            <Pin Id="FJcJFjPu5WvMsL9NAtUoU1" Name="Input" Kind="InputPin">
               <p:TypeAnnotation LastCategoryFullName="Devices.Orbbec" LastDependency="VL.Devices.Orbbec.vl">
                 <Choice Kind="TypeFlag" Name="Orbbec" />
               </p:TypeAnnotation>
             </Pin>
-            <Pin Id="IW96ReRk89kNotS5nJPHbm" Name="Texture" Kind="OutputPin" />
+            <Pin Id="IW96ReRk89kNotS5nJPHbm" Name="Output" Kind="OutputPin" />
           </Patch>
           <ProcessDefinition Id="KDeqh8PCiIqQbWrtF7YZGP">
             <Fragment Id="P8X2hsBkJzSLuLEzYs8SMt" Patch="Ie3HnQs92u3Oe2TZlenrOq" Enabled="true" />
@@ -11258,10 +11279,10 @@
       </Node>
       <!--
 
-    ************************ Poitcloud ************************
+    ************************ Pointcloud ************************
 
 -->
-      <Node Name="Poitcloud" Bounds="179,590" Id="Se1Yf9WdCjrLMZDAkERmXk">
+      <Node Name="Pointcloud" Bounds="179,590" Id="Se1Yf9WdCjrLMZDAkERmXk">
         <p:NodeReference>
           <Choice Kind="ContainerDefinition" />
         </p:NodeReference>
@@ -11316,15 +11337,15 @@
             <ControlPoint Id="ObixWgYqNs2QRIe9C43fn6" Bounds="402,430" />
           </Canvas>
           <Patch Id="U3gh1NIwsGIPiQhspV5EyI" Name="Create" />
-          <Patch Id="MxHSVSSFHE0Oyx9UErZeGq" Name="Update">
-            <Pin Id="SZv8Bnw9gaCO3DeXp7t7QT" Name="Orbbec" Kind="InputPin">
+          <Patch Id="MxHSVSSFHE0Oyx9UErZeGq" Name="Update" ManuallySortedPins="true">
+            <Pin Id="SZv8Bnw9gaCO3DeXp7t7QT" Name="Input" Kind="InputPin">
               <p:TypeAnnotation LastCategoryFullName="Devices.Orbbec" LastDependency="VL.Devices.Orbbec.vl">
                 <Choice Kind="TypeFlag" Name="Orbbec" />
               </p:TypeAnnotation>
             </Pin>
-            <Pin Id="K9ezxFQaV8UPO8wFPwyjm2" Name="On Data" Kind="OutputPin" />
             <Pin Id="H2AY7fj3VXRPgW4RbWBFH0" Name="Buffer" Kind="OutputPin" />
             <Pin Id="QSsScB9bDWVMEvFEMMEcmf" Name="Element Count" Kind="OutputPin" />
+            <Pin Id="K9ezxFQaV8UPO8wFPwyjm2" Name="On Data" Kind="OutputPin" />
           </Patch>
           <ProcessDefinition Id="ULaAjIXKPyIOWFkpzqYWTD">
             <Fragment Id="IzR3dvw5CyTNOWpbPjYwAa" Patch="U3gh1NIwsGIPiQhspV5EyI" Enabled="true" />
@@ -11350,10 +11371,10 @@
       </Node>
       <!--
 
-    ************************ IMU ************************
+    ************************ IMUData ************************
 
 -->
-      <Node Name="IMU" Bounds="179,640" Id="BvEa5FwjUesQTpp7mFlZ8h">
+      <Node Name="IMUData" Bounds="179,640" Id="BvEa5FwjUesQTpp7mFlZ8h">
         <p:NodeReference>
           <Choice Kind="ContainerDefinition" />
         </p:NodeReference>
@@ -11413,7 +11434,7 @@
           </Canvas>
           <Patch Id="Pb2QfOGRfQPOBcU7t54InD" Name="Create" />
           <Patch Id="BVn3kulvycnLHWl7XedY8g" Name="Update">
-            <Pin Id="D2GnKyLa543ONriLaKq14F" Name="Orbbec" Kind="InputPin">
+            <Pin Id="D2GnKyLa543ONriLaKq14F" Name="Input" Kind="InputPin">
               <p:TypeAnnotation LastCategoryFullName="Devices.Orbbec" LastDependency="VL.Devices.Orbbec.vl">
                 <Choice Kind="TypeFlag" Name="Orbbec" />
               </p:TypeAnnotation>

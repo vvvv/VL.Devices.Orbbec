@@ -15,7 +15,7 @@
       </p:NodeReference>
       <Patch Id="AIaQUBKXZZONqZSfIQfKsK">
         <Canvas Id="G61AeaQQh54NlDbhJaepCo" CanvasType="Group">
-          <Node Bounds="277,200,185,19" Id="LnrT4qAGDyPOHa4XeIcS4L">
+          <Node Bounds="321,200,185,19" Id="LnrT4qAGDyPOHa4XeIcS4L">
             <p:NodeReference LastCategoryFullName="Main" LastDependency="VL.Devices.Orbbec.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <Choice Kind="ProcessAppFlag" Name="Orbbec" />
@@ -37,25 +37,25 @@
             <Pin Id="FLhirnZxV15OScbWlSrM2f" Name="Enabled" Kind="InputPin" />
             <Pin Id="TqInNoZTPNqLzyn3ibihhh" Name="Output" Kind="StateOutputPin" />
           </Node>
-          <Node Bounds="277,267,92,19" Id="TPS3zWqdmCDPQFgotfnOcA">
+          <Node Bounds="321,267,64,19" Id="TPS3zWqdmCDPQFgotfnOcA">
             <p:NodeReference LastCategoryFullName="Devices.Orbbec" LastDependency="VL.Devices.Orbbec.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <FullNameCategoryReference ID="Devices.Orbbec" />
-              <Choice Kind="ProcessAppFlag" Name="Poitcloud" />
+              <Choice Kind="ProcessAppFlag" Name="Pointcloud" />
             </p:NodeReference>
             <p:HelpFocus p:Assembly="VL.Lang" p:Type="VL.Model.HelpPriority">High</p:HelpFocus>
             <Pin Id="Jo9y40ijjZhNvFpP2INEM8" Name="Node Context" Kind="InputPin" IsHidden="true" />
-            <Pin Id="NUoisvqNW4GLwfnbQUeNw2" Name="Orbbec" Kind="InputPin" />
-            <Pin Id="Ew0XRtEwfcpLaVWeI6gktd" Name="On Data" Kind="OutputPin" />
+            <Pin Id="SGjvWSFuD4OQd1rOBy3pVe" Name="Input" Kind="InputPin" />
             <Pin Id="Np9s4YcAOurPwrUkZUM9EV" Name="Buffer" Kind="OutputPin" />
             <Pin Id="TPesYP4jxQULZZWU8RbjFu" Name="Element Count" Kind="OutputPin" />
+            <Pin Id="Ew0XRtEwfcpLaVWeI6gktd" Name="On Data" Kind="OutputPin" />
           </Node>
-          <Pad Id="VhRPp4fUHprOQVe2X0ooXp" Comment="Device" Bounds="279,121,241,15" ShowValueBox="true" isIOBox="true" Value="Default">
+          <Pad Id="VhRPp4fUHprOQVe2X0ooXp" Comment="Device" Bounds="323,121,241,15" ShowValueBox="true" isIOBox="true" Value="Default">
             <p:TypeAnnotation LastCategoryFullName="Devices.Orbbec" LastDependency="VL.Devices.Orbbec.vl">
               <Choice Kind="TypeFlag" Name="OrbbecDevice" />
             </p:TypeAnnotation>
           </Pad>
-          <Pad Id="QWTPAM9uBYMObrXzQRh15J" Comment="PointCloud Enabled" Bounds="439,160,35,35" ShowValueBox="true" isIOBox="true" Value="True">
+          <Pad Id="QWTPAM9uBYMObrXzQRh15J" Comment="PointCloud Enabled" Bounds="483,160,35,35" ShowValueBox="true" isIOBox="true" Value="True">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="ImmutableTypeFlag" Name="Boolean" />
             </p:TypeAnnotation>
@@ -63,7 +63,6 @@
               <p:buttonmode p:Assembly="VL.UI.Forms" p:Type="VL.HDE.PatchEditor.Editors.ButtonModeEnum">Toggle</p:buttonmode>
             </p:ValueBoxSettings>
           </Pad>
-          <Pad Id="FpYYHRI9qzIPDTsnwb8wqI" Comment="On Data" Bounds="192,350,35,35" ShowValueBox="true" isIOBox="true" />
           <Node Bounds="321,410,149,19" Id="V0vsnW6VNM6MJAXeiR6427">
             <p:NodeReference LastCategoryFullName="Stride.Rendering.DrawShaders" LastDependency="VL.Stride.Rendering.EffectShaderNodes (C:\Users\alex\Documents\libs\VL.Devices.Orbbec\help)">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
@@ -241,9 +240,7 @@
           <Fragment Id="R6wFQDTvCOLOE7WzyTmWXO" Patch="KHKDxmU0opWNfbuaAhYK6t" Enabled="true" />
           <Fragment Id="CPtgwPsZS5eLUO134qrfVT" Patch="R77olOyhdd0MkPMvt4DYRI" Enabled="true" />
         </ProcessDefinition>
-        <Link Id="FiptZ0PTT3WLVVer5imCN9" Ids="TqInNoZTPNqLzyn3ibihhh,NUoisvqNW4GLwfnbQUeNw2" />
         <Link Id="N3Y8wUVJxlNMWSeiJe6d1V" Ids="VhRPp4fUHprOQVe2X0ooXp,Vid5Owul6sBOLbqf5DLzJR" />
-        <Link Id="IIaGt15FlwTMKsfeG67oA9" Ids="Ew0XRtEwfcpLaVWeI6gktd,FpYYHRI9qzIPDTsnwb8wqI" />
         <Link Id="MxRuhYON0b9OSFwYnIpD9J" Ids="QWTPAM9uBYMObrXzQRh15J,QXfIxZf7nnDQOoxLDEGMq8" />
         <Link Id="CxIlsKTbmhfPpfNh9V1VBo" Ids="MbX31q48rnNP1BCdpiCO2m,P2pM2lUuIasMdxmUrx7sYM" />
         <Link Id="IHsghYJkBz4LLBcaTRuUKR" Ids="UCamQRFIxW8NLomMNmYuGa,Ob2VRCXLlMyP6wC1zlQ6CW" />
@@ -256,6 +253,7 @@
         <Link Id="HIhZ2AyPNF3Ll3NVoLb4aB" Ids="TPesYP4jxQULZZWU8RbjFu,S04GLhm7KIOPq22e9XFnua,Ftmh8WQ9bUlM4mZrheS8PC" />
         <Link Id="HEqm47bcNXROkDSb4fE7Ph" Ids="Np9s4YcAOurPwrUkZUM9EV,UYB5ZKDgoIDP9BWz1ruq7n" />
         <Link Id="SfRi9atReSoNHg7yxtkPfw" Ids="AbSNqw404ncMWqHgZ7kMeN,QF4rJJApDYQPXHoIdnWsWC" />
+        <Link Id="K71Hy3Pl23xOOEeEZS3MBJ" Ids="TqInNoZTPNqLzyn3ibihhh,SGjvWSFuD4OQd1rOBy3pVe" />
       </Patch>
     </Node>
   </Patch>
