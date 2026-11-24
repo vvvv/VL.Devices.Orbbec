@@ -143,7 +143,7 @@
                     <Node Bounds="511,1472,414,19" Id="LMqZyEdQCrGMNc6ZgilbMz">
                       <p:NodeReference LastCategoryFullName="Main.Orbbec" LastDependency="VL.Devices.Orbbec.vl">
                         <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                        <Choice Kind="OperationCallFlag" Name="EnableIRStrems" />
+                        <Choice Kind="OperationCallFlag" Name="EnableIRStreams" />
                       </p:NodeReference>
                       <Pin Id="CuN5mNF9ec7M9j2MCDjDLa" Name="Config" Kind="InputPin" />
                       <Pin Id="OaBz5UTPAaCLuMYuzOru3W" Name="Pipeline" Kind="InputPin" />
@@ -353,7 +353,7 @@
                     <Node Bounds="511,750,336,19" Id="R2DiHrZq9sNMwC4xUiENI9">
                       <p:NodeReference LastCategoryFullName="Devices.Orbbec.Orbbec" LastDependency="VL.Devices.Orbbec.vl">
                         <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                        <Choice Kind="OperationCallFlag" Name="EnableColorStrems" />
+                        <Choice Kind="OperationCallFlag" Name="EnableColorStreams" />
                       </p:NodeReference>
                       <Pin Id="PzAOm3cdxlSPAaG6ZKA7FJ" Name="Config" Kind="InputPin" />
                       <Pin Id="I2XlSoAeSUQMjBiNVUQWFs" Name="Pipeline" Kind="InputPin" />
@@ -786,10 +786,10 @@
             </Node>
             <!--
 
-    ************************ EnableIRStrems (Internal) ************************
+    ************************ EnableIRStreams ************************
 
 -->
-            <Node Name="EnableIRStrems (Internal)" Bounds="2542,357,560,1011" Id="TZcTa4U71IjP54WMCZRup1">
+            <Node Name="EnableIRStreams" Bounds="2542,357,560,1011" Id="TZcTa4U71IjP54WMCZRup1">
               <p:NodeReference>
                 <Choice Kind="OperationDefinition" />
               </p:NodeReference>
@@ -1274,10 +1274,10 @@
             </Node>
             <!--
 
-    ************************ EnableColorStrems (Internal) ************************
+    ************************ EnableColorStreams ************************
 
 -->
-            <Node Name="EnableColorStrems (Internal)" Bounds="1891,350,566,1018" Id="NFXtvPh2BCAO9uDq8dUL08">
+            <Node Name="EnableColorStreams" Bounds="1891,350,566,1018" Id="NFXtvPh2BCAO9uDq8dUL08">
               <p:NodeReference>
                 <Choice Kind="OperationDefinition" />
               </p:NodeReference>
