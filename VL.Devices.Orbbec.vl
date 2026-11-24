@@ -3197,7 +3197,7 @@
             </Pin>
             <Pin Id="VZP401WGnVAPq6zNlxTJH7" Name="Color per instance" Kind="OutputPin" />
             <Pin Id="A5octvKM3kML6uXCeXbTGx" Name="Instacing Component" Kind="OutputPin" />
-            <Pin Id="JlOAee0X8QuPaxPABEsLN6" Name="Scale Zero Positions" Kind="InputPin" DefaultValue="True">
+            <Pin Id="JlOAee0X8QuPaxPABEsLN6" Name="Zero Size Points at Origin" Kind="InputPin" DefaultValue="True" Visibility="Optional">
               <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
                 <Choice Kind="TypeFlag" Name="Boolean" />
               </p:TypeAnnotation>
