@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Document xmlns:p="property" xmlns:r="reflection" Id="CAVFpoIAlKAP2FSfLJ5iwH" LanguageVersion="2026.8.0-0369-g91b925904d" Version="0.128">
+<Document xmlns:p="property" xmlns:r="reflection" Id="CAVFpoIAlKAP2FSfLJ5iwH" LanguageVersion="2026.8.0-0399-g91d5a57ede" Version="0.128">
   <NugetDependency Id="BKMlRTjek6INClI8OTKWOU" Location="VL.CoreLib" />
   <Patch Id="I6Ez2fp0vrKPQRZJfnIg0Q">
     <Canvas Id="C7qdhnAsgeIOOnvJ4TQ040" DefaultCategory="Main" BordersChecked="false" CanvasType="FullCategory" />
@@ -15,7 +15,7 @@
       </p:NodeReference>
       <Patch Id="AIaQUBKXZZONqZSfIQfKsK">
         <Canvas Id="G61AeaQQh54NlDbhJaepCo" CanvasType="Group">
-          <Node Bounds="99,639,41,19" Id="QNAH49CqitwNdmhovvnwP2">
+          <Node Bounds="99,684,69,19" Id="QNAH49CqitwNdmhovvnwP2">
             <p:NodeReference LastCategoryFullName="Devices.Orbbec" LastDependency="VL.Devices.Orbbec.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <CategoryReference Kind="Category" Name="Orbbec" NeedsToBeDirectParent="true" />
@@ -26,7 +26,7 @@
             <Pin Id="A1Jw0AZ0xruNnauvwp7RfE" Name="Input" Kind="InputPin" />
             <Pin Id="PIdccFnZyjBPymZFHArb9f" Name="Output" Kind="OutputPin" />
           </Node>
-          <Node Bounds="99,554,265,19" Id="LnrT4qAGDyPOHa4XeIcS4L">
+          <Node Bounds="99,599,265,19" Id="LnrT4qAGDyPOHa4XeIcS4L">
             <p:NodeReference LastCategoryFullName="Main" LastDependency="VL.Devices.Orbbec.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <Choice Kind="ProcessAppFlag" Name="Orbbec" />
@@ -46,10 +46,11 @@
             <Pin Id="Rx34sAgwyxdOxfbATYQONu" Name="Accel Sample Rate" Kind="InputPin" IsHidden="true" />
             <Pin Id="EAEIhgcfxKTPf1Z7N3h9AE" Name="Accel Full Scale Range" Kind="InputPin" IsHidden="true" />
             <Pin Id="Fyu0aSeEAmQMmchNEDDra5" Name="Gyro Full Scale Range" Kind="InputPin" IsHidden="true" />
+            <Pin Id="BOzXjscntBIOazQJDpR4ve" Name="IMU Enabled" Kind="InputPin" />
             <Pin Id="FLhirnZxV15OScbWlSrM2f" Name="Enabled" Kind="InputPin" />
             <Pin Id="TqInNoZTPNqLzyn3ibihhh" Name="Output" Kind="StateOutputPin" />
           </Node>
-          <Pad Id="Du85gWRA3GoMjUCqewtyPS" Comment="Enabled" Bounds="361,506,35,35" ShowValueBox="true" isIOBox="true" Value="True">
+          <Pad Id="Du85gWRA3GoMjUCqewtyPS" Comment="Enabled" Bounds="361,551,35,35" ShowValueBox="true" isIOBox="true" Value="True">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="ImmutableTypeFlag" Name="Boolean" />
             </p:TypeAnnotation>
@@ -57,7 +58,7 @@
               <p:buttonmode p:Assembly="VL.UI.Forms" p:Type="VL.HDE.PatchEditor.Editors.ButtonModeEnum">Toggle</p:buttonmode>
             </p:ValueBoxSettings>
           </Pad>
-          <Node Bounds="369,639,44,19" Id="BJOQ79kupwbL2MLF9N9Gu5">
+          <Node Bounds="369,684,71,19" Id="BJOQ79kupwbL2MLF9N9Gu5">
             <p:NodeReference LastCategoryFullName="Devices.Orbbec" LastDependency="VL.Devices.Orbbec.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <Choice Kind="ProcessAppFlag" Name="DepthImage" />
@@ -67,9 +68,9 @@
             <Pin Id="CXPIaqWTobVMWrlUUPz5rf" Name="Input" Kind="InputPin" />
             <Pin Id="KGRGrKLYHHRLDpi4sMFzYq" Name="Output" Kind="OutputPin" />
           </Node>
-          <Pad Id="C4EgLoknbU8QcM2EeM3FA0" Comment="" Bounds="371,723,219,257" ShowValueBox="true" isIOBox="true" />
-          <Pad Id="CalEjyUN1IyNGLfVS13Qkc" Comment="" Bounds="643,723,228,256" ShowValueBox="true" isIOBox="true" />
-          <Node Bounds="920,639,64,19" Id="TPS3zWqdmCDPQFgotfnOcA">
+          <Pad Id="C4EgLoknbU8QcM2EeM3FA0" Comment="" Bounds="371,768,219,257" ShowValueBox="true" isIOBox="true" />
+          <Pad Id="CalEjyUN1IyNGLfVS13Qkc" Comment="" Bounds="643,768,228,256" ShowValueBox="true" isIOBox="true" />
+          <Node Bounds="920,684,64,19" Id="TPS3zWqdmCDPQFgotfnOcA">
             <p:NodeReference LastCategoryFullName="Devices.Orbbec" LastDependency="VL.Devices.Orbbec.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <FullNameCategoryReference ID="Devices.Orbbec" />
@@ -96,7 +97,7 @@
               <Choice Kind="TypeFlag" Name="Int2" />
             </p:TypeAnnotation>
           </Pad>
-          <Node Bounds="641,639,25,19" Id="RpND0K8tCbhOJMVlL04aUJ">
+          <Node Bounds="641,684,53,19" Id="RpND0K8tCbhOJMVlL04aUJ">
             <p:NodeReference LastCategoryFullName="Devices.Orbbec" LastDependency="VL.Devices.Orbbec.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <Choice Kind="ProcessAppFlag" Name="IRImage" />
@@ -111,7 +112,7 @@
               <Choice Kind="TypeFlag" Name="OrbbecDevice" />
             </p:TypeAnnotation>
           </Pad>
-          <Pad Id="NehJtfrJeCMPX4KCMtN9ft" Comment="" Bounds="101,721,224,260" ShowValueBox="true" isIOBox="true" />
+          <Pad Id="NehJtfrJeCMPX4KCMtN9ft" Comment="" Bounds="101,766,224,260" ShowValueBox="true" isIOBox="true" />
           <Pad Id="FSFndEfXCoSPqtjOrZHdYn" Comment="Color Enabled" Bounds="361,341,35,35" ShowValueBox="true" isIOBox="true" Value="True">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="ImmutableTypeFlag" Name="Boolean" />
@@ -144,7 +145,7 @@
               <p:buttonmode p:Assembly="VL.UI.Forms" p:Type="VL.HDE.PatchEditor.Editors.ButtonModeEnum">Toggle</p:buttonmode>
             </p:ValueBoxSettings>
           </Pad>
-          <Node Bounds="672,679,42,19" Id="KjGMkxizVKnMuPsllGEZCb">
+          <Node Bounds="672,724,70,19" Id="KjGMkxizVKnMuPsllGEZCb">
             <p:NodeReference LastCategoryFullName="Devices.Orbbec" LastDependency="VL.Devices.Orbbec.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <Choice Kind="ProcessAppFlag" Name="IRImageLeft" />
@@ -154,7 +155,7 @@
             <Pin Id="LzcFZqxfDbbPrhJpGIeSjC" Name="Input" Kind="InputPin" />
             <Pin Id="Sz0dEF6IirdN9us0gtdxua" Name="Output" Kind="OutputPin" />
           </Node>
-          <Node Bounds="1051,639,65,19" Id="SvZgqOle5NjMtdJzUAU3Zd">
+          <Node Bounds="1051,684,65,19" Id="SvZgqOle5NjMtdJzUAU3Zd">
             <p:NodeReference LastCategoryFullName="Devices.Orbbec" LastDependency="VL.Devices.Orbbec.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <Choice Kind="ProcessAppFlag" Name="IMUData" />
@@ -167,7 +168,7 @@
             <Pin Id="SbCS4VIWYj5OdJ3QPeIyuH" Name="Accel Direction" Kind="OutputPin" />
             <Pin Id="MOS5rjl87hJQZMeuw8nyDa" Name="Gyro Direction" Kind="OutputPin" />
           </Node>
-          <Node Bounds="759,680,76,19" Id="LwqQXTkjIbUPGGqKtyrZcq">
+          <Node Bounds="759,725,76,19" Id="LwqQXTkjIbUPGGqKtyrZcq">
             <p:NodeReference LastCategoryFullName="Devices.Orbbec" LastDependency="VL.Devices.Orbbec.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <Choice Kind="ProcessAppFlag" Name="IRImageRight" />
@@ -177,7 +178,7 @@
             <Pin Id="R92jMfeoNHnM6be6qdMtOu" Name="Input" Kind="InputPin" />
             <Pin Id="AbqeWTws28mQcJpMYStHrW" Name="Output" Kind="OutputPin" />
           </Node>
-          <Node Bounds="129,670,58,19" Id="Iybu8VGgQJUNvIf0TQAgCV">
+          <Node Bounds="129,715,86,19" Id="Iybu8VGgQJUNvIf0TQAgCV">
             <p:NodeReference LastCategoryFullName="Devices.Orbbec" LastDependency="VL.Devices.Orbbec.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <Choice Kind="ProcessAppFlag" Name="ColorImageLeft" />
@@ -187,7 +188,7 @@
             <Pin Id="CVXhLh3MIk5L5mt3OPrsCQ" Name="Input" Kind="InputPin" />
             <Pin Id="FMq2OI6GisvQbeIYrB1UAg" Name="Output" Kind="OutputPin" />
           </Node>
-          <Node Bounds="232,670,65,19" Id="QqupyEWqIfWMQ9pRzXXqf1">
+          <Node Bounds="232,715,92,19" Id="QqupyEWqIfWMQ9pRzXXqf1">
             <p:NodeReference LastCategoryFullName="Devices.Orbbec" LastDependency="VL.Devices.Orbbec.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <Choice Kind="ProcessAppFlag" Name="ColorImageRight" />
@@ -197,7 +198,7 @@
             <Pin Id="OtQqXwW60hmOItpEXzZakc" Name="Input" Kind="InputPin" />
             <Pin Id="KTDIG1KyMp4M94YajFE00x" Name="Output" Kind="OutputPin" />
           </Node>
-          <Pad Id="E94Q9bbWjQAMOjoVS1JXU5" Comment="Temperature" Bounds="1073,690,35,15" ShowValueBox="true" isIOBox="true" />
+          <Pad Id="E94Q9bbWjQAMOjoVS1JXU5" Comment="Temperature" Bounds="1073,735,35,15" ShowValueBox="true" isIOBox="true" />
           <Pad Id="JPuA9ABhou3MPigu6YiVN4" Bounds="110,70,258,21" ShowValueBox="true" isIOBox="true" Value="Supports most of the devices by orbbec:">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="TypeFlag" Name="String" />
@@ -239,7 +240,24 @@
               <Choice Kind="TypeFlag" Name="Integer32" />
             </p:TypeAnnotation>
           </Pad>
-          <Pad Id="UjQV3q8qWawPLoSf3b0C4j" Bounds="371,560,187,38" ShowValueBox="true" isIOBox="true" Value="&lt; Node has optional inputs for configuring IMUData">
+          <Pad Id="UjQV3q8qWawPLoSf3b0C4j" Bounds="371,605,187,38" ShowValueBox="true" isIOBox="true" Value="&lt; Node has optional inputs for configuring IMUData">
+            <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
+              <Choice Kind="TypeFlag" Name="String" />
+            </p:TypeAnnotation>
+            <p:ValueBoxSettings>
+              <p:fontsize p:Type="Int32">9</p:fontsize>
+              <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Comment</p:stringtype>
+            </p:ValueBoxSettings>
+          </Pad>
+          <Pad Id="HrwttFV9Xu7NtNLpesTtpd" Comment="IMU Enabled" Bounds="361,501,35,35" ShowValueBox="true" isIOBox="true" Value="False">
+            <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
+              <Choice Kind="ImmutableTypeFlag" Name="Boolean" />
+            </p:TypeAnnotation>
+            <p:ValueBoxSettings>
+              <p:buttonmode p:Assembly="VL.UI.Forms" p:Type="VL.HDE.PatchEditor.Editors.ButtonModeEnum">Toggle</p:buttonmode>
+            </p:ValueBoxSettings>
+          </Pad>
+          <Pad Id="KdigsflGfKfNMrCfncJoy7" Bounds="1122,668,166,63" ShowValueBox="true" isIOBox="true" Value="⚠️ Requires &quot;IMU Enabled&quot; to be activated on the Orbbec node">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="TypeFlag" Name="String" />
             </p:TypeAnnotation>
@@ -268,7 +286,6 @@
         <Link Id="JWxgX2kozOQNjXIvQnOS2D" Ids="QWTPAM9uBYMObrXzQRh15J,QXfIxZf7nnDQOoxLDEGMq8" />
         <Link Id="QSVGRhXuQYQLFXywlzMQxh" Ids="HyERIrUvWpfPHZWRjG2FId,NiVxKtQB3U7MTDHJDhnIjk" />
         <Link Id="LRkq7eOJD8dMQlBm2kNfdL" Ids="F5KtdyVTUwcQFv8zGJN1z4,HDjE0UIrMzYN6Zy09CXnZQ" />
-        <Link Id="E7NzHLTcw3LL7P18fgMOLr" Ids="TqInNoZTPNqLzyn3ibihhh,Ok1wDxXXKoTNXiFo83BF5A" />
         <Link Id="Bd5pgW82h5hOTbcJQQXpWu" Ids="TqInNoZTPNqLzyn3ibihhh,KXyNcNCqJagMD5RC6v9WcP" />
         <Link Id="FYmByuwMEuvPYnXCBkhbOn" Ids="KhkEtjbh8TxMR2nwR324r9,CalEjyUN1IyNGLfVS13Qkc" />
         <Link Id="HakBjIA15HfQVr9XRYTUjo" Ids="TqInNoZTPNqLzyn3ibihhh,CVXhLh3MIk5L5mt3OPrsCQ" />
@@ -278,6 +295,8 @@
         <Link Id="UGvmbXoWlQdMhNCtPeHYR2" Ids="MnqK3A8OxSYMcF3GwlIHRB,E94Q9bbWjQAMOjoVS1JXU5" />
         <Link Id="UHeXBSYtFjoLXc6RrZIGvJ" Ids="HHDcHWVXrpXLTiXKYNjIDT,V046KrDQIJnLVSzcqCP5ZO" />
         <Link Id="KBnCohKk2IkNgbiWctjtXo" Ids="PIdccFnZyjBPymZFHArb9f,NehJtfrJeCMPX4KCMtN9ft" />
+        <Link Id="JftqfNKQUkDMJ7fTA1qofj" Ids="TqInNoZTPNqLzyn3ibihhh,Ok1wDxXXKoTNXiFo83BF5A" />
+        <Link Id="COOU9VD763OOzpvTIKMjEz" Ids="HrwttFV9Xu7NtNLpesTtpd,BOzXjscntBIOazQJDpR4ve" />
       </Patch>
     </Node>
   </Patch>

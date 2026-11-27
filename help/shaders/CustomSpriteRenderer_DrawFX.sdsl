@@ -3,7 +3,7 @@ shader CustomSpriteRenderer_DrawFX : VS_PS_Base, ColorBase, ShaderUtils, OrbbecP
 {
     [Color]
     stage float4 ColorInput = float4(1, 1, 1, 1);
-    stage bool BGRColor = false;
+    stage bool ColorIsBGR = false;
     stage float size = 0.001f;
     
     StructuredBuffer<PointcloudColor> Points;
@@ -15,7 +15,7 @@ shader CustomSpriteRenderer_DrawFX : VS_PS_Base, ColorBase, ShaderUtils, OrbbecP
         float3 p = Points[id].Pos;
         float3 c = Points[id].Col;
 
-        if (BGRColor) c = c.bgr;
+        if (ColorIsBGR) c = c.bgr;
 
         float3 op = streams.Position * (p == float3(0.0f, 0.0f, 0.0f) ? 0.0f : size);
         op = mul(float4(op, 1.0f), extract_rotation_matrix(ViewInverse)).xyz;
