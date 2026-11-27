@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Document xmlns:p="property" xmlns:r="reflection" Id="USX09SusFsNMcmn1pnJlWt" LanguageVersion="2026.8.0-0362-gabf8be82c6" Version="0.128">
+<Document xmlns:p="property" xmlns:r="reflection" Id="USX09SusFsNMcmn1pnJlWt" LanguageVersion="2026.8.0-0399-g91d5a57ede" Version="0.128">
   <NugetDependency Id="BKMlRTjek6INClI8OTKWOU" Location="VL.CoreLib" />
   <Patch Id="I6Ez2fp0vrKPQRZJfnIg0Q">
     <Canvas Id="C7qdhnAsgeIOOnvJ4TQ040" DefaultCategory="Main" CanvasType="FullCategory" />
@@ -15,7 +15,7 @@
       </p:NodeReference>
       <Patch Id="AIaQUBKXZZONqZSfIQfKsK">
         <Canvas Id="G61AeaQQh54NlDbhJaepCo" CanvasType="Group">
-          <Node Bounds="321,200,185,19" Id="LnrT4qAGDyPOHa4XeIcS4L">
+          <Node Bounds="321,200,205,19" Id="LnrT4qAGDyPOHa4XeIcS4L">
             <p:NodeReference LastCategoryFullName="Main" LastDependency="VL.Devices.Orbbec.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <Choice Kind="ProcessAppFlag" Name="Orbbec" />
@@ -34,6 +34,7 @@
             <Pin Id="Rx34sAgwyxdOxfbATYQONu" Name="Accel Sample Rate" Kind="InputPin" IsHidden="true" />
             <Pin Id="EAEIhgcfxKTPf1Z7N3h9AE" Name="Accel Full Scale Range" Kind="InputPin" IsHidden="true" />
             <Pin Id="Fyu0aSeEAmQMmchNEDDra5" Name="Gyro Full Scale Range" Kind="InputPin" IsHidden="true" />
+            <Pin Id="AvLMEYEFHphMZ0NhkIaBCx" Name="IMU Enabled" Kind="InputPin" />
             <Pin Id="FLhirnZxV15OScbWlSrM2f" Name="Enabled" Kind="InputPin" />
             <Pin Id="TqInNoZTPNqLzyn3ibihhh" Name="Output" Kind="StateOutputPin" />
           </Node>
@@ -70,7 +71,7 @@
             </p:NodeReference>
             <Pin Id="UYB5ZKDgoIDP9BWz1ruq7n" Name="Points" Kind="InputPin" />
             <Pin Id="RpEjmaRpx94MFT25xHYAFy" Name="Color Input" Kind="InputPin" />
-            <Pin Id="QF4rJJApDYQPXHoIdnWsWC" Name="BGRColor" Kind="InputPin" />
+            <Pin Id="TJ2R8khQOKNMUwixqAP0f7" Name="Color Is BGR" Kind="InputPin" />
             <Pin Id="LNaw2F1Jun0L7dumSXM9zq" Name="Size" Kind="InputPin" />
             <Pin Id="JbBD6onYUiSMTiaoNIxoQJ" Name="World" Kind="InputPin" />
             <Pin Id="CnRzkmD7SkwPviXGu6d4BL" Name="Parameter Setter" Kind="InputPin" />
@@ -148,7 +149,7 @@
               <Choice Kind="ProcessAppFlag" Name="RenderWindow" />
             </p:NodeReference>
             <Pin Id="QLRUNr7WdUdOgvRb8ztCc9" Name="Node Context" Kind="InputPin" IsHidden="true" />
-            <Pin Id="LxwowPvxulPOh1jzwdntva" Name="Bounds" Kind="InputPin" DefaultValue="1000, 40, 786, 432" IsHidden="true" />
+            <Pin Id="LxwowPvxulPOh1jzwdntva" Name="Bounds" Kind="InputPin" DefaultValue="1526, 88, 786, 432" IsHidden="true" />
             <Pin Id="UHhhFPnvHeNLUBtufZJkKX" Name="Is Borderless" Kind="InputPin" IsHidden="true" />
             <Pin Id="POyyP6YT91cOVkTHh5Jaax" Name="Bound to Document" Kind="InputPin" IsHidden="true" />
             <Pin Id="R4HxQrlmraVN19UqVef9Hi" Name="Dialog If Document Changed" Kind="InputPin" IsHidden="true" />
@@ -225,7 +226,7 @@
             </p:TypeAnnotation>
           </Pad>
           <ControlPoint Id="S04GLhm7KIOPq22e9XFnua" Bounds="503,309" />
-          <Pad Id="AbSNqw404ncMWqHgZ7kMeN" Comment="BGRColor" Bounds="381,340,35,35" ShowValueBox="true" isIOBox="true" Value="False">
+          <Pad Id="IMV4IgwPQ7yPqCBnWcOjpt" Comment="Color Is BGR" Bounds="381,340,35,35" ShowValueBox="true" isIOBox="true" Value="False">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="ImmutableTypeFlag" Name="Boolean" />
             </p:TypeAnnotation>
@@ -252,8 +253,8 @@
         <Link Id="Uj1xVpPo6ANOS4YfVf6gvi" Ids="JU0WzoTskp0NDt4Tkpsdaa,PGyZZiwbpUmNogqYb78cwe" />
         <Link Id="HIhZ2AyPNF3Ll3NVoLb4aB" Ids="TPesYP4jxQULZZWU8RbjFu,S04GLhm7KIOPq22e9XFnua,Ftmh8WQ9bUlM4mZrheS8PC" />
         <Link Id="HEqm47bcNXROkDSb4fE7Ph" Ids="Np9s4YcAOurPwrUkZUM9EV,UYB5ZKDgoIDP9BWz1ruq7n" />
-        <Link Id="SfRi9atReSoNHg7yxtkPfw" Ids="AbSNqw404ncMWqHgZ7kMeN,QF4rJJApDYQPXHoIdnWsWC" />
         <Link Id="K71Hy3Pl23xOOEeEZS3MBJ" Ids="TqInNoZTPNqLzyn3ibihhh,SGjvWSFuD4OQd1rOBy3pVe" />
+        <Link Id="B2FzekxfrEFOTJZtp5bGGK" Ids="IMV4IgwPQ7yPqCBnWcOjpt,TJ2R8khQOKNMUwixqAP0f7" />
       </Patch>
     </Node>
   </Patch>

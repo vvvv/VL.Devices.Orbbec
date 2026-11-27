@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Document xmlns:p="property" xmlns:r="reflection" Id="VJfBWHjUfZGMAcM2cdZPVX" LanguageVersion="2026.8.0-0369-g91b925904d" Version="0.128">
+<Document xmlns:p="property" xmlns:r="reflection" Id="VJfBWHjUfZGMAcM2cdZPVX" LanguageVersion="2026.8.0-0399-g91d5a57ede" Version="0.128">
   <NugetDependency Id="BKMlRTjek6INClI8OTKWOU" Location="VL.CoreLib" />
   <Patch Id="I6Ez2fp0vrKPQRZJfnIg0Q">
     <Canvas Id="C7qdhnAsgeIOOnvJ4TQ040" DefaultCategory="Main" CanvasType="FullCategory" />
@@ -15,7 +15,7 @@
       </p:NodeReference>
       <Patch Id="AIaQUBKXZZONqZSfIQfKsK">
         <Canvas Id="G61AeaQQh54NlDbhJaepCo" CanvasType="Group">
-          <Node Bounds="266,200,185,19" Id="LnrT4qAGDyPOHa4XeIcS4L">
+          <Node Bounds="266,200,205,19" Id="LnrT4qAGDyPOHa4XeIcS4L">
             <p:NodeReference LastCategoryFullName="Main" LastDependency="VL.Devices.Orbbec.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <Choice Kind="ProcessAppFlag" Name="Orbbec" />
@@ -34,10 +34,11 @@
             <Pin Id="Rx34sAgwyxdOxfbATYQONu" Name="Accel Sample Rate" Kind="InputPin" IsHidden="true" />
             <Pin Id="EAEIhgcfxKTPf1Z7N3h9AE" Name="Accel Full Scale Range" Kind="InputPin" IsHidden="true" />
             <Pin Id="Fyu0aSeEAmQMmchNEDDra5" Name="Gyro Full Scale Range" Kind="InputPin" IsHidden="true" />
+            <Pin Id="GG4qGZP3sxhQG6l6OQTu9D" Name="IMU Enabled" Kind="InputPin" />
             <Pin Id="FLhirnZxV15OScbWlSrM2f" Name="Enabled" Kind="InputPin" />
             <Pin Id="TqInNoZTPNqLzyn3ibihhh" Name="Output" Kind="StateOutputPin" />
           </Node>
-          <Node Bounds="266,267,58,19" Id="TPS3zWqdmCDPQFgotfnOcA">
+          <Node Bounds="266,267,64,19" Id="TPS3zWqdmCDPQFgotfnOcA">
             <p:NodeReference LastCategoryFullName="Devices.Orbbec" LastDependency="VL.Devices.Orbbec.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <FullNameCategoryReference ID="Devices.Orbbec" />
@@ -320,7 +321,7 @@
               <Choice Kind="TypeFlag" Name="RGBA" />
             </p:TypeAnnotation>
           </Pad>
-          <Pad Id="CTWYoiX6vhsNfRl8JyIV8e" Comment="Color Resolution" Bounds="288,150,35,28" ShowValueBox="true" isIOBox="true" Value="720, 0">
+          <Pad Id="CTWYoiX6vhsNfRl8JyIV8e" Comment="Color Resolution" Bounds="288,150,35,28" ShowValueBox="true" isIOBox="true" Value="0, 0">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="TypeFlag" Name="Int2" />
             </p:TypeAnnotation>
@@ -334,7 +335,7 @@
               <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Comment</p:stringtype>
             </p:ValueBoxSettings>
           </Pad>
-          <Pad Id="QZOlbiAf0m2LiroZDOf7P7" Comment="Is BGR color" Bounds="348,321,35,35" ShowValueBox="true" isIOBox="true" Value="True">
+          <Pad Id="Ig78IDfVOyLOantDWYaeIU" Comment="Color Is BGR" Bounds="348,310,35,35" ShowValueBox="true" isIOBox="true" Value="False">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="ImmutableTypeFlag" Name="Boolean" />
             </p:TypeAnnotation>
@@ -367,9 +368,9 @@
         <Link Id="MAs944RRMpcL0ITyAvALvI" Ids="B576jQyEk1oNkelm7Ceiow,MZCXjx8v6g3LU7hdPszvU1" />
         <Link Id="HiOHSLVK9buLqLwbU5aezS" Ids="RwVcKokjEvyPOEe37iCM2V,RXKoMzYay6gOFEYXrGwOOM" />
         <Link Id="GVipJdA2mqWPvl5bhjQVNG" Ids="Du27r8kgbT9MaqG05pDC6u,UP7IcTOOl8dLG5ITVRgkms" />
-        <Link Id="AIzxiGRhXr0NdLqn3t0XAf" Ids="QZOlbiAf0m2LiroZDOf7P7,S27AS05OqzjO7bKEerD39Q" />
         <Link Id="PaqsCs4N8eBLhuqaQKH8Cg" Ids="TqInNoZTPNqLzyn3ibihhh,HpXMcy08teqQQCYoBMZmjO" />
         <Link Id="KcCqb2iHLVXLVRzqsDJp4z" Ids="CTWYoiX6vhsNfRl8JyIV8e,NiVxKtQB3U7MTDHJDhnIjk" />
+        <Link Id="QH28QwF0TeFOnBODEM9mf2" Ids="Ig78IDfVOyLOantDWYaeIU,S27AS05OqzjO7bKEerD39Q" />
       </Patch>
     </Node>
   </Patch>
